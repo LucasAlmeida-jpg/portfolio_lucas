@@ -7,11 +7,14 @@
         </div>
         <div>
             <ul class="d-flex gap-5 list-style-none">
-                <li class="list-group-item">Sobre Mim</li>
-                <li class="list-group-item">Habilidades</li>
-                <li class="list-group-item">Contato</li>
-                <li class="list-group-item"><a href="https://github.com/LucasAlmeida-jpg" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li class="list-group-item">{{ $t('aboutMe') }}</li>               
+                <li class="list-group-item">{{ $t('habilities') }}</li>
+                <li class="list-group-item">{{ $t('contact') }}</li>
+                <li class="list-group-item"><a href="https://github.com/LucasAlmeida-jpg" target="_blank" rel="noopener noreferrer">{{ $t('github') }}</a></li>
+            
             </ul>
+            <button @click="$i18n.locale=`EN`">EN</button>
+            <button @click="$i18n.locale=`PT`">PT</button>            
         </div>
     </nav>  
 </template>
@@ -31,7 +34,7 @@
 
 .wave-text {
     font-size: 2em;
-    /* animation: wave 1.5s infinite; */
+    animation: wave 1.5s infinite;
     color: rgb(230, 219, 219);font-weight: bold;
 }
 

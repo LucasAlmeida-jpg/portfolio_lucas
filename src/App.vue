@@ -8,3 +8,12 @@ import All from './views/All.vue';
   <All/>
   <RouterView />
 </template>
+
+<script setup>
+import { onMounted } from 'vue';
+
+
+onMounted(() => {
+  document.cookie = 'locale=PT'
+})
+  </script>

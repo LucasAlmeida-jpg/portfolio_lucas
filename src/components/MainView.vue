@@ -2,13 +2,12 @@
     <section>
       <div class="text-center">
         <h1>
-          <span>Front-End </span>
-          Developer
-          <span>Vue.js</span>
+          <span>{{ $t('developer') }}</span> {{ $t('frontEnd') }} <span>{{ $t('vue') }}</span>
         </h1>
   
-        <p class="mt-4">Nuxt is an open source framework that makes web development intuitive and powerful.
-          Create <br> performant and production-grade full-stack web apps <br> and websites with confidence.</p>
+        <p class="mt-4">
+          {{ $t('aboutLucas') }}
+        </p>
       </div>     
     </section>
     <article class="text-center container my-5">

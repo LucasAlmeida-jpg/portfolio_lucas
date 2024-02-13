@@ -1,19 +1,17 @@
-<script>
-import { RouterLink, RouterView } from 'vue-router'
-import All from './views/All.vue';
-
-</script>
-
 <template>
-  <All/>
-  <RouterView />
+  <div>
+    <router-view />
+  </div>
 </template>
 
-<script setup>
-import { onMounted } from 'vue';
+<script>
 
+import All from './views/All.vue';
 
-onMounted(() => {
-  document.cookie = 'locale=PT'
-})
-  </script>
+export default {
+  components: {
+    All,
+  },
+  
+};
+</script>

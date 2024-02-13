@@ -7,16 +7,18 @@
         </div>
         <div>
             <ul class="d-flex gap-5 list-style-none">
-                <li class="list-group-item">{{ $t('aboutMe') }}</li>               
+                <li class="list-group-item">{{ $t('aboutMe') }}</li>
                 <li class="list-group-item">{{ $t('habilities') }}</li>
                 <li class="list-group-item">{{ $t('contact') }}</li>
-                <li class="list-group-item"><a href="https://github.com/LucasAlmeida-jpg" target="_blank" rel="noopener noreferrer">{{ $t('github') }}</a></li>
-            
+                <li class="list-group-item"><a href="https://github.com/LucasAlmeida-jpg" target="_blank"
+                        rel="noopener noreferrer">{{ $t('github') }}</a></li>
+                <li class="list-group-item">
+                    <button @click="$i18n.locale = `EN`">EN</button>
+                    <button @click="$i18n.locale = `PT`">PT</button>
+                </li>
             </ul>
-            <button @click="$i18n.locale=`EN`">EN</button>
-            <button @click="$i18n.locale=`PT`">PT</button>            
         </div>
-    </nav>  
+    </nav>
 </template>
   
 <style>
@@ -35,7 +37,8 @@
 .wave-text {
     font-size: 2em;
     animation: wave 1.5s infinite;
-    color: rgb(230, 219, 219);font-weight: bold;
+    color: rgb(230, 219, 219);
+    font-weight: bold;
 }
 
 .list-group-item {
@@ -46,11 +49,10 @@
 nav {
     -webkit-backdrop-filter: blur(12.5px);
     backdrop-filter: blur(12.5px);
-    background-color: hsla(0,0%,100%,0);
+    background-color: hsla(0, 0%, 100%, 0);
     position: fixed;
     width: 100%;
-    top: 0;   
+    top: 0;
     z-index: 1;
 }
-
 </style>

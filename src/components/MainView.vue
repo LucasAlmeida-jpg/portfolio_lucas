@@ -4,7 +4,6 @@
         <h1>
           <span>{{ $t('developer') }}</span> {{ $t('frontEnd') }} <span>{{ $t('vue') }}</span>
         </h1>
-  
         <p class="mt-4">
           {{ $t('aboutLucas') }}
         </p>

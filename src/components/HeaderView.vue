@@ -35,7 +35,7 @@
   background: none;
   cursor: pointer;
   font-size: 13px;
-  margin-top: -5px;
+  margin-top: -4px;
   color: white;
   transition: color 0.3s ease-in-out;
 }

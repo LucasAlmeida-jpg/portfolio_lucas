@@ -6,5 +6,32 @@
     "aboutLucas": "I am Lucas, I graduate in Internet Systems Technology from the Federal Institute of São Paulo (IFSP São João da Boa Vista). I am passionate about Front End, with expertise in Vue.js 3.",
     "frontEnd": "Developer",
     "developer": "Front-End",
-    "vue": "Vue.js"
+    "vue": "Vue.js",
+    "description": "Hello, I'm Lucas, a Front-End web development enthusiast and passionate about creating engaging and functional digital experiences. Specialized in the Vue.js ecosystem, I am constantly seeking to enhance my skills and explore new possibilities in the creation of interactive and responsive interfaces.",
+    "skills": "Mainly Skills",
+    "components": "Designing and Developing Custom Components",
+    "router": "Efficient Routing with Vue Router",
+    "statement": "State Management using Vuex",
+    "manipulation": "Event Handling and Dynamic Interactivity",
+    "axios": "API Integration for Providing Dynamic Data",
+    "responsive": "Responsive and Accessible Development"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

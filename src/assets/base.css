@@ -94,3 +94,8 @@ body {
 .spacement{ 
   margin-top: 140px;
 }
+
+span {
+  color: var(--vt-bg-primary);
+  font-weight: 500;
+}

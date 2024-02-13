@@ -1,6 +1,7 @@
 <template>
   <section>
     <div class="text-center">
+      <font-awesome-icon icon="fa-solid fa-coffee"/>
       <h1>
         <span>{{ $t('developer') }}</span> {{ $t('frontEnd') }} <span>{{ $t('vue') }}</span>
       </h1>
@@ -32,6 +33,16 @@
                 <li>➤ {{ $t('axios') }}</li>
                 <li>➤ {{ $t('responsive') }}</li>
              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+        <div class="row d-flex justify-content-center container">
+            <div class="col-md-7 card">
+              <h1>{{ $t('graduate') }}</h1>             
+              <p class="mt-3">{{ $t('course') }} - ({{ $t('aboutGraduation') }})</p>
+              <p>{{ $t('institute') }}</p>
+              <img class="if-institute" src="../assets/if.png" alt="">
             </div>
           </div>
         </div>
@@ -86,5 +97,7 @@ p {
   list-style: lower-latin !important;
 }
 
-
+.if-institute{
+  width: 40px; 
+}
 </style>

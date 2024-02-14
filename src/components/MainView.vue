@@ -1,7 +1,6 @@
 <template>
   <section>
     <div class="text-center">
-      <font-awesome-icon icon="fa-solid fa-coffee"/>
       <h1>
         <span>{{ $t('developer') }}</span> {{ $t('frontEnd') }} <span>{{ $t('vue') }}</span>
       </h1>
@@ -11,11 +10,12 @@
     </div>     
   </section>
   <article class="text-center container my-5">
-    <div id="carouselExample" class="carousel slide  d-flex justify-content-center container" data-bs-ride="carousel">
+    <div id="carouselExample" class="carousel slide d-flex justify-content-center container" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="row d-flex justify-content-center container">
             <div class="col-md-7 card">
+              <img class="thumb-img" src="../assets/user.svg" alt="about_img">
               <h1>{{ $t('aboutMe') }}</h1>
               <p>{{ $t('description') }}</p>
             </div>
@@ -24,6 +24,7 @@
         <div class="carousel-item">
           <div class="row d-flex justify-content-center container">
             <div class="col-md-7 card">
+              <img class="thumb-img" src="../assets/code.svg" alt="code_img">
               <h1>{{ $t('skills') }}</h1>
               <ul>
                 <li>➤ {{ $t('components') }}</li>
@@ -38,7 +39,8 @@
         </div>
         <div class="carousel-item">
         <div class="row d-flex justify-content-center container">
-            <div class="col-md-7 card">
+          <div class="col-md-7 card">
+              <img class="thumb-img" src="../assets/graduation.svg" alt="graduation_img">
               <h1>{{ $t('graduate') }}</h1>             
               <p class="mt-3">{{ $t('course') }} - ({{ $t('aboutGraduation') }})</p>
               <p>{{ $t('institute') }}</p>
@@ -89,9 +91,6 @@ p {
     list-style: none;
 }
 
-.carousel-inner{
-    width: 100% !important;
-}
 .card:nth-child(1) ul {
   text-align: left !important;
   list-style: lower-latin !important;
@@ -99,5 +98,17 @@ p {
 
 .if-institute{
   width: 40px; 
+}
+
+.thumb-img{
+  width: 40px;
+  background-color: var(--vt-bg-primary);
+  position: absolute;
+  top: 0px;
+  right: -20px;
+  border-radius: 50%;
+  padding: 10px;
+  height: 40px;
+  border: 1px solid var(--vt-bg-primary);
 }
 </style>

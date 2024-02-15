@@ -4,9 +4,13 @@
       <h1>
         <span>{{ $t('developer') }}</span> {{ $t('frontEnd') }} <span>{{ $t('vue') }}</span>
       </h1>
-      <p class="mt-4 text-center ">
-        {{ $t('aboutLucas') }}
+      <div class="row">
+        <div class="container d-flex justify-content-center">
+          <p class="mt-4 col-md-8 text-center ">
+        {{ $t('aboutLucas') }} {{ $t('aboutLucasSub') }}
       </p>
+        </div>
+      </div>
     </div>     
   </section>
   <article class="text-center container my-5">
@@ -48,6 +52,22 @@
             </div>
           </div>
         </div>
+        <div class="carousel-item">
+          <div class="row d-flex justify-content-center container">
+            <div class="col-md-7 card">
+              <img class="thumb-img" src="../assets/code.svg" alt="code_img">
+              <h1>Experiência Profissional</h1>
+              <ul>
+                <li>➤ Desenvolvedor Frontend JR na Creators.llc <br> (2022 - Atualmente)</li>
+                <li>➤ {{ $t('router') }}</li>
+                <li>➤ {{ $t('statement')}}</li>
+                <li>➤ {{ $t('manipulation')}}</li>
+                <li>➤ {{ $t('axios') }}</li>
+                <li>➤ {{ $t('responsive') }}</li>
+             </ul>
+            </div>
+          </div>
+        </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -79,12 +99,15 @@ p {
 
 .card {
     background: rgba(15 23 42);
-    border: 0.1px solid var(--vt-bg-primary);   
+    /* border: 0.1px solid var(--vt-bg-primary);    */
     padding: 30px;
     min-height: 315px;
     display: flex;
     align-items: center;
     justify-content: center; 
+    margin-top: 29px;
+    /* margin-left: 26px; */
+    border-radius: 40px;
 }
 
 .card li {
@@ -104,11 +127,10 @@ p {
   width: 40px;
   background-color: var(--vt-bg-primary);
   position: absolute;
-  top: 0px;
-  right: -20px;
+  top: -15px;
+  right: -15px;
   border-radius: 50%;
   padding: 10px;
   height: 40px;
-  border: 1px solid var(--vt-bg-primary);
 }
 </style>

@@ -1,15 +1,22 @@
+
 <template>
-    <nav class="d-flex align-items-center justify-content-between py-3 px-5">
-      <div class="d-flex align-items-center">
-        <h1 class="wave-text"><span>Lucas Almeida</span></h1>
-      </div>
-      <div>
-        <ul class="d-flex gap-5 list-style-none">
-          <li class="list-group-item">{{ $t('aboutMe') }}</li>
-          <li class="list-group-item">{{ $t('habilities') }}</li>
-          <li class="list-group-item">{{ $t('contact') }}</li>
-          <li class="list-group-item">
-            <a href="https://github.com/LucasAlmeida-jpg" target="_blank" rel="noopener noreferrer">{{ $t('github') }}</a>
+  <nav class="navbar nav navbar-expand-lg py-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Lucas Almeida</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">{{ $t('aboutMe') }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">{{ $t('habilities') }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">{{ $t('contact') }}</a>
           </li>
           <li class="list-group-item language-switch d-flex align-items-center">
             <button @click="$i18n.locale = 'EN'" :class="{ active: $i18n.locale === 'EN' }">EN(US)</button>
@@ -17,72 +24,79 @@
           </li>
         </ul>
       </div>
-    </nav>
-  </template>
+    </div>
+  </nav>
+</template>
   
-  <style scoped>
- 
-  .language-switch button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 5px;
-  }
-  
-  .language-switch button {
+<style scoped>
+.language-switch button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.language-switch button {
   border: none;
   background: none;
   cursor: pointer;
   font-size: 13px;
-  margin-top: -4px;
   color: white;
   transition: color 0.3s ease-in-out;
 }
 
 .language-switch button:hover {
-  color: var( --vt-bg-primary); 
+  color: var(--vt-bg-primary);
 }
 
 .language-switch button.active {
   font-weight: bold;
-  color: var( --vt-bg-primary); 
-}
-  </style>
-  
-  
-<style>
-@keyframes wave {
-
-    0%,
-    100% {
-        transform: scaleY(1);
-    }
-
-    50% {
-        transform: scaleY(1.5);
-    }
+  color: var(--vt-bg-primary);
 }
 
 .wave-text {
-    font-size: 2em;
-    /* animation: wave 1.5s infinite; */
-    color: rgb(230, 219, 219);
-    font-weight: bold;
+  font-size: 2em;
+  animation: wave 1.5s infinite;
+  color: rgb(230, 219, 219);
+  font-weight: bold;
 }
 
 .list-group-item {
-    color: rgb(230, 219, 219);
-    font-weight: bold;
+  color: rgb(230, 219, 219);
+  font-weight: bold;
 }
 
-nav {
-    -webkit-backdrop-filter: blur(12.5px);
-    backdrop-filter: blur(12.5px);
-    background-color: hsla(0, 0%, 100%, 0);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1;
+.nav {
+  -webkit-backdrop-filter: blur(12.5px) !important;
+  backdrop-filter: blur(12.5px) !important;
+  background-color: hsla(0, 0%, 100%, 0) !important;
+  position: fixed !important;
+  width: 100% !important;
+  top: 0 !important;
+  z-index: 1 !important;
+}
+
+.nav-link, a{
+  color: white !important;
+}
+
+.navbar-toggler{
+  background: var(--vt-bg-primary);
+    border-radius: 50%;
+    padding: 8px;
+    margin: 0px 10px;
+}
+
+@keyframes wave {
+
+0%,
+100% {
+  transform: scaleY(1);
+}
+
+50% {
+  transform: scaleY(1.5);
+}
 }
 </style>

@@ -13,7 +13,7 @@
             <a class="nav-link" aria-current="page" href="#">{{ $t('aboutMe') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">{{ $t('habilities') }}</a>
+            <a class="nav-link" href="https://github.com/LucasAlmeida-jpg" target="_blank">{{ $t('github') }}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">{{ $t('contact') }}</a>

@@ -88,7 +88,12 @@ body {
 
 .btn {
   background: var(--vt-bg-primary);
+}
 
+.footer-bg{
+  background-color: rgba(15 23 42);
+  text-align: center;
+  padding: 30px;
 }
 
 .spacement{ 

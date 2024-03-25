@@ -1,33 +1,31 @@
-
 <template>
   <nav class="navbar nav navbar-expand-lg py-3">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Lucas Almeida</a>
+      <a class="navbar-brand" href="#" @click="closeMobileMenu()">Lucas Almeida</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse" id="navbarNav" @click="closeMobileMenu()">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">{{ $t('aboutMe') }}</a>
+            <a class="nav-link" aria-current="page" href="#" @click="closeMobileMenu">{{ $t('aboutMe') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/LucasAlmeida-jpg" target="_blank">{{ $t('github') }}</a>
+            <a class="nav-link" href="https://github.com/LucasAlmeida-jpg" target="_blank" @click="closeMobileMenu">{{ $t('github') }}</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">{{ $t('contact') }}</a>
-          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#" @click="closeMobileMenu">{{ $t('contact') }}</a>
+          </li> -->
           <li class="list-group-item language-switch d-flex align-items-center">
-            <button @click="$i18n.locale = 'EN'" :class="{ active: $i18n.locale === 'EN' }">EN(US)</button>
-            <button @click="$i18n.locale = 'PT'" :class="{ active: $i18n.locale === 'PT' }">PT(BR)</button>
+            <button @click="$i18n.locale = 'EN'; closeMobileMenu()" :class="{ active: $i18n.locale === 'EN' }">EN(US)</button>
+            <button @click="$i18n.locale = 'PT'; closeMobileMenu()" :class="{ active: $i18n.locale === 'PT' }">PT(BR)</button>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 </template>
-  
 <style scoped>
 .language-switch button {
   border: none;
@@ -100,3 +98,23 @@
 }
 }
 </style>
+
+<script>
+export default {
+ data(){
+  return {
+
+  }
+ },
+ methods: {
+    toggleMobileMenu() {
+      const navbar = document.querySelector('.navbar-collapse');
+      navbar.classList.toggle('show');
+    },
+    closeMobileMenu() {
+      const navbar = document.querySelector('.navbar-collapse');
+      navbar.classList.remove('show');
+    }
+  }
+}
+</script>

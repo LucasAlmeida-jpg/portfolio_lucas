@@ -58,7 +58,7 @@
               <img class="thumb-img" src="../assets/code.svg" alt="code_img">
               <h1>Experiência Profissional</h1>
               <ul>
-                <li>➤ Desenvolvedor Frontend JR na Creators.llc <br> (2022 - Atualmente)</li>
+                <li>➤ {{ $t('dev') }} <br> {{ $t("time") }}</li>
                 <li>➤ {{ $t('router') }}</li>
                 <li>➤ {{ $t('statement')}}</li>
                 <li>➤ {{ $t('manipulation')}}</li>
@@ -110,6 +110,10 @@ p {
     border-radius: 40px;
 }
 
+.card:hover{
+     border: 0.1px solid var(--vt-bg-primary);    
+     cursor: pointer;
+  }
 .card li {
     list-style: none;
 }
@@ -128,9 +132,17 @@ p {
   background-color: var(--vt-bg-primary);
   position: absolute;
   top: -15px;
-  right: -15px;
   border-radius: 50%;
   padding: 10px;
   height: 40px;
 }
+@media only screen and (max-width: 600px) {
+.carousel-item{
+  width: 107% !important;
+}
+.card {
+    min-height: 480px;
+}
+}
 </style>
+

@@ -1,6 +1,6 @@
 <template>
     <footer class="footer-bg">
-        <span>© 2023 Lucas Gouvea de Almeida </span>   
+        <span>© 2024 Lucas Gouvea de Almeida </span>   
     </footer>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar nav navbar-expand-lg py-3">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#" @click="closeMobileMenu()">{{ typedName }}</a>
+      <a class="navbar-brand animate__animated animate__flipInY" href="#" @click="closeMobileMenu()">Lucas Almeida</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -114,26 +114,10 @@ export default {
  data(){
   return {
     localFilePath: '/src/file/Profile.pdf',
-    name: "Lucas Almeida  ",
-      typedName: "",
-      currentIndex: 0,
-      blinkingInterval: null
   }
- }, mounted() {
-    this.typingInterval = setInterval(this.typeLetter, 300);
-  },
+ }, 
  methods: {
-  typeLetter() {
-      if (this.currentIndex < this.name.length) {
-        this.typedName += this.name[this.currentIndex];
-        this.currentIndex++;
-      } else {
-        clearInterval(this.typingInterval);
-        this.blinkingInterval = setInterval(() => {
-          this.typedName = this.typedName.slice(0, -1) + (this.typedName.slice(-1) === "_" ? " " : "_");
-        }, 500);
-      }
-    },
+ 
     toggleMobileMenu() {
       const navbar = document.querySelector('.navbar-collapse');
       navbar.classList.toggle('show');

@@ -1,12 +1,12 @@
 <template>
   <section  class="slide-in">
     <div class="text-center">
-      <h1 class="animate__animated animate__fadeInRight">
+      <h1 class="animate__animated animate__flipInY">
         <span>{{ $t('developer') }}</span> {{ $t('frontEnd') }} <span>{{ $t('vue') }}</span>
       </h1>
       <div class="row">
         <div class="container d-flex justify-content-center">
-          <p class="mt-4 col-md-8 text-center animate__animated animate__fadeInLeft">
+          <p class="mt-4 col-md-8 text-center animate__animated animate__flipInY">
             {{ $t('aboutLucas') }} {{ $t('aboutLucasSub') }}
           </p>
         </div>
@@ -18,11 +18,11 @@
     <div class="container">
       <ul class="nav nav-pills my-3 text-center d-flex justify-content-center" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
-          <div class="nav-link active animate__animated animate__fadeInRight" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+          <div class="nav-link active animate__animated animate__flipInY" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
             role="tab" aria-controls="pills-home" aria-selected="true">{{ $t('professionals_tag') }}</div>
         </li>
         <li class="nav-item" role="presentation">
-          <div class="nav-link animate__animated animate__fadeInLeft" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" role="tab"
+          <div class="nav-link animate__animated animate__flipInY" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" role="tab"
             aria-controls="pills-profile" aria-selected="false">{{ $t('educational_tag') }}</div>
         </li>
       </ul>
@@ -31,7 +31,7 @@
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
           tabindex="0">      
           <div class="row my-3 d-flex align-items-center justify-content-center">
-            <div class="col-md-6 text-center animate__animated animate__fadeInRight">
+            <div class="col-md-6 text-center animate__animated animate__flipInY">
               <div>
                 <h1>{{ $t('experience_tag') }}</h1>
               </div>
@@ -42,22 +42,22 @@
                 <p>{{ $t('experience') }}</p>
               </div>
             </div>
-            <div class="col-md-6 presentations animate__animated animate__fadeInLeft"><img class="img-presentation" src="../assets/images/computer.svg" alt=""></div>
+            <div class="col-md-6 presentations animate__animated animate__flipInY"><img class="img-presentation" src="../assets/images/computer.svg" alt=""></div>
           </div>
 
         </div>
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
           <div class="row my-3 d-flex align-items-center justify-content-center">
-            <div class="col-md-6 text-center">
+            <div class="col-md-6 animate__animated animate__flipInY text-center">
               <h1>{{ $t('graduate') }}</h1>
               <p class="mt-3">{{ $t('course') }} - ({{ $t('aboutGraduation') }})</p>
               <p>{{ $t('institute') }}</p>
               <img class="if-institute" src="../assets/if.png" alt="">
             </div>
-            <div class="col-md-6 presentations"><img class="img-presentation" src="../assets/images/html.svg" alt=""></div>
+            <div class="col-md-6 presentations animate__animated animate__flipInY"><img class="img-presentation" src="../assets/images/html.svg" alt=""></div>
           </div>
 
-          <div class="row my-3 d-flex align-items-center justify-content-center">
+          <div class="row my-3 d-flex align-items-center justify-content-center animate__animated animate__flipInY">
             <div class="col-md-6 presentation"><img class="img-presentation" src="../assets/images/pc.svg" alt=""></div>
             <div class="col-md-6 text-center">
               <h1>Curso</h1>
@@ -77,15 +77,15 @@
 
       <div class="row d-flex justify-content-center">
         <p>Front-End</p>
-        <div class="col-md-4" v-for="s in skills">
-          <p class="mt-2 tag col-md-12 text-center ">
+        <div class="col-md-2" v-for="s in skills">
+          <p class="mt-2 tag col-md-12 text-center animate__animated animate__fadeInRight">
             {{ s }}
           </p>
         </div>
       </div>
-      <div class="row mt-5 d-flex justify-content-center">
+      <div class="row mt-5 d-flex justify-content-center animate__animated animate__fadeInLeft">
         <p>Tools</p>
-        <div class="col-md-4" v-for="s in tools">
+        <div class="col-md-2" v-for="s in tools">
           <p class="mt-2 tag col-md-12 text-center ">
             {{ s }}
           </p>
@@ -122,7 +122,7 @@ export default {
   data() {
     return {
       skills: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'NUXT (SSR)', 'Vuex', 'Fetching Data', 'Axios', 'Chart.js'],
-      tools: ['Node.Js', 'SCSS (SASS)', 'Bootstrap', 'Webpack', 'I18N (Internationalization)', 'Artisan'],
+      tools: ['Node.Js', 'SCSS (SASS)', 'Bootstrap', 'Webpack', 'I18N', 'Artisan'],
     }
   },
 

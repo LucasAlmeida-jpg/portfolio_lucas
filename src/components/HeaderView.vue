@@ -17,9 +17,7 @@
           <li class="nav-item">
             <a class="nav-link" href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank" @click="closeMobileMenu">Linkedin</a>
           </li>
-          <li>
-           <a class="nav-link" :href="localFilePath" target="_blank">Currículo</a>
-          </li>
+          
           <!-- <li class="nav-item">
             <a class="nav-link" href="#" @click="closeMobileMenu">{{ $t('contact') }}</a>
           </li> -->

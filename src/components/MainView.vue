@@ -106,7 +106,7 @@
           </p>
         </div>
 
-        <div class="d-flex align-items-center justify-content-center">
+        <div class="d-flex align-items-center justify-content-center social">
           <div>
             <a class="me-3" href="http://" target="_blank" rel="noopener noreferrer"><img src="/src/assets/images/github.png" alt=""></a>          
             <a href="https://github.com/LucasAlmeida-jpg" target="_blank" rel="noopener noreferrer"><img src="/src/assets/images/linkedin.png" alt=""></a>
@@ -198,7 +198,9 @@ p {
   padding: 10px;
   height: 40px;
 }
-
+.social img {
+  width: 30px;
+}
 @media only screen and (max-width: 600px) {
   .carousel-item {
     width: 107% !important;

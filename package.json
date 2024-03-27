@@ -15,9 +15,12 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.6",
     "bootstrap": "^5.2.3",
-    "vue": "^3.4.15",
+    "jquery": "^3.7.1",
+    "popper.js": "^1.16.1",
+    "vue": "^3.4.21",
     "vue-i18n": "^9.9.1",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vue2-transitions": "^0.3.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.3",

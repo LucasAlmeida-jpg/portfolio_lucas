@@ -14,6 +14,12 @@
           <li class="nav-item">
             <a class="nav-link" href="https://github.com/LucasAlmeida-jpg" target="_blank" @click="closeMobileMenu">{{ $t('github') }}</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank" @click="closeMobileMenu">Linkedin</a>
+          </li>
+          <li>
+           <a class="nav-link" :href="localFilePath" target="_blank">Currículo</a>
+          </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#" @click="closeMobileMenu">{{ $t('contact') }}</a>
           </li> -->
@@ -26,6 +32,8 @@
     </div>
   </nav>
 </template>
+
+
 <style scoped>
 .language-switch button {
   border: none;
@@ -52,7 +60,10 @@
   font-weight: bold;
   color: var(--vt-bg-primary);
 }
-
+.navbar-brand{
+  padding: 10px;
+  border-radius: 12px;
+}
 .wave-text {
   font-size: 2em;
   animation: wave 1.5s infinite;
@@ -103,7 +114,7 @@
 export default {
  data(){
   return {
-
+    localFilePath: '/src/file/Profile.pdf'
   }
  },
  methods: {

@@ -5,7 +5,7 @@
   <section class="spacement">
     <MainView />
   </section>
-  <footer>
+  <footer class="mt-5">
     <FooterView></FooterView>
   </footer>
 </template>

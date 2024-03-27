@@ -37,10 +37,11 @@
               <div>
                 <h1>{{ $t('experience_tag') }}</h1>
               </div>
-              <a href="https://creators.llc/" target="_blank">
-                <img class="mb-2 animate__animated animate__rotateIn" src="../assets/images/Group.svg" alt="">
-              </a>
-              <p><b>Creators LLC</b> - <span>{{ $t('developer') }} {{ $t('frontEnd') }}</span> <b>(2022 - {{
+              <p>
+                <!-- <a href="https://creators.llc/" target="_blank">
+                <img class="me-2 animate__animated animate__rotateIn" src="../assets/images/Group.svg" alt="">
+              </a> -->
+              <b>Creators LLC</b> - <span>{{ $t('developer') }} {{ $t('frontEnd') }}</span> <b>(2022 - {{
           $t('currently') }})</b></p>
               <div class="d-flex align-items-center">
                 <p>{{ $t('experience') }}</p>
@@ -57,7 +58,7 @@
               <h1>{{ $t('graduate') }}</h1>
               <p class="mt-3">{{ $t('course') }} - ({{ $t('aboutGraduation') }})</p>
               <p>{{ $t('institute') }}</p>
-              <img class="if-institute" src="../assets/if.png" alt="">
+              <!-- <img class="if-institute" src="../assets/if.png" alt=""> -->
             </div>
             <div class="col-md-6 presentations animate__animated animate__flipInY"><img class="img-presentation"
                 src="../assets/images/html.svg" alt=""></div>

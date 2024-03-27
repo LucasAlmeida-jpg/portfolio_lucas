@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar nav navbar-expand-lg py-3">
     <div class="container-fluid">
-      <a class="navbar-brand animate__animated animate__flipInY" href="#" @click="closeMobileMenu()">Lucas Almeida</a>
+      <a class="navbar-brand animate__animated animate__rotateInDownLeft" href="#" @click="closeMobileMenu()">Lucas Almeida</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

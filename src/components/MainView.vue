@@ -35,7 +35,7 @@
               <div>
                 <h1>{{ $t('experience_tag') }}</h1>
               </div>
-              <img class="mb-2" src="../assets/images/Group.svg" alt="">
+              <img class="mb-2 animate__animated animate__rotateIn" src="../assets/images/Group.svg" alt="">
               <p><b>Creators LLC</b> - <span>{{ $t('developer') }} {{ $t('frontEnd') }}</span> <b>(2022 - {{
           $t('currently') }})</b></p>
               <div class="d-flex align-items-center">
@@ -57,7 +57,7 @@
             <div class="col-md-6 presentations animate__animated animate__flipInY"><img class="img-presentation" src="../assets/images/html.svg" alt=""></div>
           </div>
 
-          <div class="row my-3 d-flex align-items-center justify-content-center animate__animated animate__flipInY">
+          <div class="row my-3 d-flex align-items-center justify-content-center animate__animated  animate__flipInY">
             <div class="col-md-6 presentation"><img class="img-presentation" src="../assets/images/pc.svg" alt=""></div>
             <div class="col-md-6 text-center">
               <h1>Curso</h1>
@@ -77,15 +77,15 @@
 
       <div class="row d-flex justify-content-center">
         <p>Front-End</p>
-        <div class="col-md-2" v-for="s in skills">
-          <p class="mt-2 tag col-md-12 text-center animate__animated animate__fadeInRight">
+        <div class="col-auto" v-for="s in skills">
+          <p class="mt-2 tag text-center animate__animated animate__fadeInRight">
             {{ s }}
           </p>
         </div>
       </div>
       <div class="row mt-5 d-flex justify-content-center animate__animated animate__fadeInLeft">
         <p>Tools</p>
-        <div class="col-md-2" v-for="s in tools">
+        <div class="col-auto" v-for="s in tools">
           <p class="mt-2 tag col-md-12 text-center ">
             {{ s }}
           </p>
@@ -140,13 +140,18 @@ section {
 }
 
 .tag {
-  border: none;
+  border: 1px solid;
   color: var(--vt-bg-primary);
   border-radius: 31px;
   transition: background-color 0.3s ease;
   cursor: pointer;
-  box-shadow: 0 0 10px 5px rgba(0, 220, 130, 0.7);
+  font-size: 14px;
+  padding: 0px 10px;
 
+
+}
+.tag:hover {
+  box-shadow: 0 0 20px 1px rgba(0, 220, 130, 0.9);
 }
 
 span {
@@ -160,14 +165,12 @@ p {
 
 .card {
   background: rgba(15 23 42);
-  /* border: 0.1px solid var(--vt-bg-primary);    */
   padding: 30px;
   min-height: 315px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 29px;
-  /* margin-left: 26px; */
   border-radius: 40px;
 }
 

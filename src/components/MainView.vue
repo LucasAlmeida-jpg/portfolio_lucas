@@ -1,12 +1,12 @@
 <template>
   <section  class="slide-in">
     <div class="text-center">
-      <h1>
+      <h1 class="animate__animated animate__fadeInRight">
         <span>{{ $t('developer') }}</span> {{ $t('frontEnd') }} <span>{{ $t('vue') }}</span>
       </h1>
       <div class="row">
         <div class="container d-flex justify-content-center">
-          <p class="mt-4 col-md-8 text-center ">
+          <p class="mt-4 col-md-8 text-center animate__animated animate__fadeInLeft">
             {{ $t('aboutLucas') }} {{ $t('aboutLucasSub') }}
           </p>
         </div>
@@ -14,15 +14,15 @@
     </div>
   </section>
 
-  <section class="slide-out">
+  <section>
     <div class="container">
       <ul class="nav nav-pills my-3 text-center d-flex justify-content-center" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
-          <div class="nav-link active " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+          <div class="nav-link active animate__animated animate__fadeInRight" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
             role="tab" aria-controls="pills-home" aria-selected="true">{{ $t('professionals_tag') }}</div>
         </li>
         <li class="nav-item" role="presentation">
-          <div class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" role="tab"
+          <div class="nav-link animate__animated animate__fadeInLeft" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" role="tab"
             aria-controls="pills-profile" aria-selected="false">{{ $t('educational_tag') }}</div>
         </li>
       </ul>
@@ -31,7 +31,7 @@
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
           tabindex="0">      
           <div class="row my-3 d-flex align-items-center justify-content-center">
-            <div class="col-md-6 text-center">
+            <div class="col-md-6 text-center animate__animated animate__fadeInRight">
               <div>
                 <h1>{{ $t('experience_tag') }}</h1>
               </div>
@@ -42,7 +42,7 @@
                 <p>{{ $t('experience') }}</p>
               </div>
             </div>
-            <div class="col-md-6 presentations"><img class="img-presentation" src="../assets/images/computer.svg" alt=""></div>
+            <div class="col-md-6 presentations animate__animated animate__fadeInLeft"><img class="img-presentation" src="../assets/images/computer.svg" alt=""></div>
           </div>
 
         </div>

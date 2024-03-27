@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar nav navbar-expand-lg py-3">
+  <nav class=" nav navbar-expand-lg py-3">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" @click="closeMobileMenu()">{{ typedName }}</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -8,7 +8,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav" @click="closeMobileMenu()">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item animate__flipInX">
             <a class="nav-link" aria-current="page" href="#" @click="closeMobileMenu">{{ $t('aboutMe') }}</a>
           </li>
           <li class="nav-item">

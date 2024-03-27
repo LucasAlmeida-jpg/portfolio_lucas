@@ -105,6 +105,13 @@
             Entre em contato através dos dados ou enviando um e-mail para<a href="mailto:lucasalmeidagouvea123@gmail.com">este e-mail.</a>
           </p>
         </div>
+
+        <div class="d-flex align-items-center justify-content-center">
+          <div>
+            <a class="me-3" href="http://" target="_blank" rel="noopener noreferrer"><img src="/src/assets/images/github.png" alt=""></a>          
+            <a href="https://github.com/LucasAlmeida-jpg" target="_blank" rel="noopener noreferrer"><img src="/src/assets/images/linkedin.png" alt=""></a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

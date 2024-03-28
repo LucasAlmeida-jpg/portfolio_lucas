@@ -149,7 +149,16 @@ body {
 }
 @media only screen and (max-width: 600px) { 
 
-  body{
-    padding: 0px 10px;
+   p, ul, li{
+    font-size: 15px !important;
+  }
+  h1{
+    font-size: 20px;
+  }
+  .mainViewSection{
+   padding: 0px 25px !important;
+  }
+  .skills{
+    margin-top: 20px;
   }
 }

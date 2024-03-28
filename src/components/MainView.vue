@@ -1,4 +1,5 @@
 <template>
+  <div class="mainViewSection">
   <section class="slide-in">
     <div class="text-center">
       <h1 class="animate__animated animate__flipInY">
@@ -6,7 +7,7 @@
       </h1>
       <div class="row">
         <div class="container d-flex justify-content-center">
-          <p class="mt-4 col-md-8 text-center animate__animated animate__flipInY">
+          <p class="mt-4 col-md-8 animate__animated animate__flipInY">
             {{ $t('aboutLucas') }} {{ $t('aboutLucasSub') }}
           </p>
         </div>
@@ -18,12 +19,12 @@
     <div class="container">
       <ul class="nav nav-pills my-3 text-center d-flex justify-content-center" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
-          <div class="nav-link active animate__animated animate__flipInY" id="pills-home-tab" data-bs-toggle="pill"
-            data-bs-target="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">{{
-          $t('professionals_tag') }}</div>
+          <div class="tag me-2 nav-link active animate__animated animate__flipInY" id="pills-home-tab" data-bs-toggle="pill"
+            data-bs-target="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
+            {{ $t('professionals_tag') }}</div>
         </li>
         <li class="nav-item" role="presentation">
-          <div class="nav-link animate__animated animate__flipInY" id="pills-profile-tab" data-bs-toggle="pill"
+          <div class="tag nav-link animate__animated animate__flipInY" id="pills-profile-tab" data-bs-toggle="pill"
             data-bs-target="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">{{
           $t('educational_tag') }}</div>
         </li>
@@ -33,8 +34,8 @@
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
           tabindex="0">
           <div class="row my-3 d-flex align-items-center justify-content-center">
-            <div class="col-md-6 text-center animate__animated animate__flipInY">
-              <div>
+            <div class="col-md-6 animate__animated animate__flipInY">
+              <div class="mb-3">
                 <h1>{{ $t('experience_tag') }}</h1>
               </div>
               <p>
@@ -44,7 +45,7 @@
               <b>Creators LLC</b> - <span>{{ $t('developer') }} {{ $t('frontEnd') }}</span> <b>(2022 - {{
           $t('currently') }})</b></p>
               <div class="d-flex align-items-center">
-                <p>{{ $t('experience') }}</p>
+                <p >{{ $t('experience') }}</p>
               </div>
             </div>
             <div class="col-md-6 presentations animate__animated animate__flipInY"><img class="img-presentation"
@@ -54,7 +55,7 @@
         </div>
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
           <div class="row my-3 d-flex align-items-center justify-content-center">
-            <div class="col-md-6 animate__animated animate__flipInY text-center">
+            <div class="col-md-6 animate__animated animate__flipInY">
               <h1>{{ $t('graduate') }}</h1>
               <p class="mt-3">{{ $t('course') }} - ({{ $t('aboutGraduation') }})</p>
               <p>{{ $t('institute') }}</p>
@@ -66,7 +67,7 @@
 
           <div class="row my-3 d-flex align-items-center justify-content-center animate__animated  animate__flipInY">
             <div class="col-md-6 presentation"><img class="img-presentation" src="../assets/images/pc.svg" alt=""></div>
-            <div class="col-md-6 text-center">
+            <div class="col-md-6">
               <h1>Curso</h1>
               <p class="mt-3">Conclusão de curso pela metodologia Callan Method</p>
               <p>Instituto USK Callan Method</p>
@@ -77,7 +78,7 @@
       </div>
     </div>
   </section>
-
+</div>
   <section class="skills">
     <div class="text-center">
       <h1> SKILLS</h1>
@@ -101,6 +102,7 @@
     </div>
   </section>
 
+<div class="mainViewSection">
   <section class="mt-5">
     <div class="text-center">
       <h1>Contato</h1>
@@ -116,15 +118,17 @@
 
         <div class="d-flex align-items-center justify-content-center social">
           <div>
-            <a class="me-3" href="http://" target="_blank" rel="noopener noreferrer"><img
+            <a class="me-3" href="https://github.com/LucasAlmeida-jpg" target="_blank" rel="noopener noreferrer"><img
                 src="/src/assets/images/github.png" alt=""></a>
-            <a href="https://github.com/LucasAlmeida-jpg" target="_blank" rel="noopener noreferrer"><img
+
+            <a href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank" rel="noopener noreferrer"><img
                 src="/src/assets/images/linkedin.png" alt=""></a>
           </div>
         </div>
       </div>
     </div>
   </section>
+</div>
 </template>
 
 <script>

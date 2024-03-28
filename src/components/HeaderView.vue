@@ -96,6 +96,61 @@
     margin: 0px 10px;
 }
 
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.icon-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px auto;
+  transition: all 0.2s;
+  background-color: #333;
+}
+
+.icon-close {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.icon-close::before,
+.icon-close::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+  transition: all 0.2s;
+}
+
+.icon-close::before {
+  transform: rotate(45deg);
+}
+
+.icon-close::after {
+  transform: rotate(-45deg);
+}
+
+/* Estilos para o botão do hamburguer quando ativo */
+.is-active .icon-bar {
+  background-color: transparent;
+}
+
+.is-active .icon-close::before,
+.is-active .icon-close::after {
+  background-color: #fff;
+}
+
 @keyframes wave {
 
 0%,

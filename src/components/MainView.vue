@@ -3,7 +3,7 @@
   <section class="slide-in">
     <div class="text-center">
       <h1 class="animate__animated animate__flipInY">
-        <span>{{ $t('developer') }}</span> {{ $t('frontEnd') }} <span>{{ $t('vue') }}</span>
+        {{ $t('developer') }} {{ $t('frontEnd') }} <span>{{ $t('vue') }}</span>
       </h1>
       <div class="row">
         <div class="container d-flex justify-content-center">
@@ -17,7 +17,7 @@
 
   <section>
     <div class="container">
-      <ul class="nav nav-pills my-3 text-center d-flex justify-content-center" id="pills-tab" role="tablist">
+      <ul class="nav nav-pills my-3 d-flex justify-content-center" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
           <div class="tag me-2 nav-link active animate__animated animate__flipInY" id="pills-home-tab" data-bs-toggle="pill"
             data-bs-target="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
@@ -33,45 +33,43 @@
 
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
           tabindex="0">
-          <div class="row my-3 d-flex align-items-center justify-content-center">
-            <div class="col-md-6 animate__animated animate__flipInY">
-              <div class="mb-3">
-                <h1>{{ $t('experience_tag') }}</h1>
+          <div class="row my-3 d-flex align-items-center">
+            <div class="mt-3 text-center experience">
+              <h1>{{ $t('experience_tag') }}</h1>
+            </div>
+            <div class="col-md-6 card animate__animated animate__flipInY">
+              <div class="mb-1">
+                <span class="fs-5 text">Creators LLC {{ $t('developer') }} {{ $t('frontEnd') }} (2022 - {{ $t('currently') }})</span>
               </div>
-              <p>
-                <!-- <a href="https://creators.llc/" target="_blank">
-                <img class="me-2 animate__animated animate__rotateIn" src="../assets/images/Group.svg" alt="">
-              </a> -->
-              <b>Creators LLC</b> - <span>{{ $t('developer') }} {{ $t('frontEnd') }}</span> <b>(2022 - {{
-          $t('currently') }})</b></p>
-              <div class="d-flex align-items-center">
+              <div class="d-flex align-items-center mt-3">
                 <p >{{ $t('experience') }}</p>
               </div>
             </div>
-            <div class="col-md-6 presentations animate__animated animate__flipInY"><img class="img-presentation"
+            <div class="col-md-6 presentations animate__animated animate__flipInY"><img class="img-presentation img-computer"
                 src="../assets/images/computer.svg" alt=""></div>
           </div>
 
         </div>
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-          <div class="row my-3 d-flex align-items-center justify-content-center">
-            <div class="col-md-6 animate__animated animate__flipInY">
-              <h1>{{ $t('graduate') }}</h1>
-              <p class="mt-3">{{ $t('course') }} - ({{ $t('aboutGraduation') }})</p>
-              <p>{{ $t('institute') }}</p>
-              <!-- <img class="if-institute" src="../assets/if.png" alt=""> -->
+          <div class="row my-3 d-flex align-items-center">
+            <h1 class="mt-3 text-center experience">{{ $t('graduate') }}</h1>
+            <div class="col-md-6 card animate__animated animate__flipInY">
+              <span class="mt-3 fs-5 text">{{ $t('course') }}</span>
+              <span class="fs-5 text">{{ $t('aboutGraduation') }}</span>
+              <p class="mt-4">{{ $t('institute') }}</p>
             </div>
-            <div class="col-md-6 presentations animate__animated animate__flipInY"><img class="img-presentation"
+            <div class="col-md-6 presentations animate__animated animate__flipInY"><img class="img-presentation img-mobile"
                 src="../assets/images/html.svg" alt=""></div>
           </div>
 
           <div class="row my-3 d-flex align-items-center justify-content-center animate__animated  animate__flipInY">
-            <div class="col-md-6 presentation"><img class="img-presentation" src="../assets/images/pc.svg" alt=""></div>
-            <div class="col-md-6">
-              <h1>Curso</h1>
+            <div class="col-md-6 presentation">
+              <img class="img-presentation" src="../assets/images/pc.svg" alt=""></div>
+            <div class="col-md-6 card">
+              <span class="fs-5 text">Curso</span>
               <p class="mt-3">Conclusão de curso pela metodologia Callan Method</p>
               <p>Instituto USK Callan Method</p>
-              <img class="w-25 rounded" src="../assets/images/callan-method.jpg" alt="">
+              <img class="w-25 rounded mt-2" src="../assets/images/callan-method.jpg" alt="">
             </div>
           </div>
         </div>
@@ -84,7 +82,7 @@
       <h1> SKILLS</h1>
 
       <div class="row d-flex justify-content-center">
-        <p>Front-End</p>
+        <p class="mt-2">Front-End</p>
         <div class="col-auto" v-for="s in skills">
           <p class="mt-2 tag text-center animate__animated animate__fadeInRight">
             {{ s }}
@@ -105,14 +103,12 @@
 <div class="mainViewSection">
   <section class="mt-5">
     <div class="text-center">
-      <h1>Contato</h1>
+      <h1>{{ $t('contact') }}</h1>
 
       <div class="row d-flex justify-content-center">
-        <p>Mande uma mensagem</p>
         <div class="col-md-12">
-          <p class="mt-2 text-center">
-            Entre em contato através dos dados ou enviando um e-mail para<a
-              href="mailto:lucasalmeidagouvea123@gmail.com">este e-mail.</a>
+          <p class="mt-2 text-center">{{ $t('getInTouch') }}<a
+              href="mailto:lucasalmeidagouvea123@gmail.com">{{ $t('thisEmail') }}</a>
           </p>
         </div>
 
@@ -180,18 +176,13 @@ p {
 
 .card {
   background: rgba(15 23 42);
-  padding: 30px;
-  min-height: 315px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 29px;
-  border-radius: 40px;
-}
-
-.card:hover {
-  border: 0.1px solid var(--vt-bg-primary);
-  cursor: pointer;
+    padding: 35px;
+    height: auto;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* margin-top: 29px; */
+    border-radius: 40px;
 }
 
 .card li {

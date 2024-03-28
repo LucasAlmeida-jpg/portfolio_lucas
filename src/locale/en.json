@@ -23,9 +23,13 @@
     "aboutLucasSub": "Receiving feedback is always very welcome. I value teamwork collaboration, showing concern to support those who are starting out, as I have experienced this phase myself and understand the initial challenges. I have the habit of offering suggestions and expressing my point of view regarding improvement opportunities, allowing me to share my knowledge and gain new insights with the group.",
     "currently": "Currently",
     "experience": "Experience as a Frontend/Fullstack Developer, using tools like Vue.js and Laravel (PHP) to design interfaces for B2B solutions. Active collaboration in an agile team, prioritizing the achievement of measurable results.",
-    "professionals_tag": "Professionals",
+    "professionals_tag": "Professional",
     "educational_tag": "Educational",
-    "experience_tag": "Professional Experience"
+    "experience_tag": "Professional Experience",
+    "getInTouch": "Get in touch using the information below or by sending an email to",
+    "thisEmail": "this email.",
+    "contact": "Contact"
+
 
 
 

@@ -25,9 +25,11 @@
     "work": "Experiência como Desenvolvedor Frontend/Fullstack, empregando ferramentas como Vue.js e Laravel (PHP) para conceber interfaces destinadas a soluções B2B. Colaboração ativa em uma equipe ágil, priorizando a obtenção de resultados mensuráveis.",
     "currently": "Atualmente",
     "experience": "Experiência como Desenvolvedor Frontend/Fullstack, empregando ferramentas como Vue.js e Laravel (PHP) para conceber interfaces destinadas a soluções B2B. Colaboração ativa em uma equipe ágil, priorizando a obtenção de resultados mensuráveis.",
-    "professionals_tag": "Profissionais",
+    "professionals_tag": "Profissional",
     "educational_tag": "Educacional",
-    "experience_tag": "Experiência Profissional"
-
+    "experience_tag": "Experiência Profissional",
+    "getInTouch": "Entre em contato através dos dados ou enviando um e-mail para",
+    "thisEmail": "este e-mail.",
+    "contact": "Contato"
     
 }

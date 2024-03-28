@@ -161,4 +161,26 @@ body {
   .skills{
     margin-top: 20px;
   }
+  .card {
+    min-height: 254px !important;
+    text-align: start !important;
+    display: flex;
+  }
+  .img-mobile{
+   display: none;
+  }
+  .img-computer{
+    position: absolute;
+    bottom: -67px;
+    right: 0;
+    width: 121px !important;
+  }
+
+  .experience {
+    margin-bottom: 30px;
+  }
+
+  .skills{
+    margin-top: 80px !important;
+  }
 }

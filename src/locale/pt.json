@@ -16,7 +16,7 @@
     "axios": "Integração de APIs para fornecer dados dinâmicos",
     "responsive": "Desenvolvimento responsivo e acessível",
     "graduate": "Formação Acadêmica",
-    "course": "Bacharelado em Tecnologia em Sistemas para Internet",
+    "course": "Bacharel em Tecnologia em Sistemas para Internet",
     "aboutGraduation": "2021 - 2023", 
     "institute": "Instituto Federal de São Joao da Boa Vista - SP",
     "dev": "Desenvolvedor Frontend JR na Creators.llc",
@@ -30,6 +30,8 @@
     "experience_tag": "Experiência Profissional",
     "getInTouch": "Entre em contato através dos dados ou enviando um e-mail para",
     "thisEmail": "este e-mail.",
-    "contact": "Contato"
+    "contact": "Contato",
+    "conclusion": "Conclusão de curso pela metodologia Callan Method Instituto USK Callan Method",
+    "skills": "HABILIDADES"
     
 }

@@ -2,9 +2,10 @@
   <div class="mainViewSection">
   <section class="slide-in">
     <div class="text-center">
-      <h1 class="animate__animated animate__flipInY">
-        {{ $t('developer') }} {{ $t('frontEnd') }} <span>{{ $t('vue') }}</span>
-      </h1>
+      <h1>
+      <span v-for="(char, index) in animatedText" :key="index">{{ char }}</span>
+      <span v-bind="showCursor" class="cursor">_</span>
+    </h1>
       <div class="row">
         <div class="container d-flex justify-content-center">
           <p class="mt-4 col-md-8 animate__animated animate__flipInY">
@@ -67,8 +68,7 @@
               <img class="img-presentation" src="../assets/images/pc.svg" alt=""></div>
             <div class="col-md-6 card">
               <span class="fs-5 text">Curso</span>
-              <p class="mt-3">Conclusão de curso pela metodologia Callan Method</p>
-              <p>Instituto USK Callan Method</p>
+              <p class="mt-3">{{ $t('conclusion') }}</p>
               <img class="w-25 rounded mt-2" src="../assets/images/callan-method.jpg" alt="">
             </div>
           </div>
@@ -79,12 +79,12 @@
 </div>
   <section class="skills">
     <div class="text-center">
-      <h1> SKILLS</h1>
+      <h1>{{ $t('skills') }}</h1>
 
-      <div class="row d-flex justify-content-center">
+      <div class="row d-flex justify-content-center animate__animated animate__fadeInRight">
         <p class="mt-2">Front-End</p>
         <div class="col-auto" v-for="s in skills">
-          <p class="mt-2 tag text-center animate__animated animate__fadeInRight">
+          <p class="mt-2 tag text-center ">
             {{ s }}
           </p>
         </div>
@@ -133,12 +133,29 @@ export default {
     return {
       skills: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'NUXT (SSR)', 'Vuex', 'Fetching Data', 'Axios', 'Chart.js'],
       tools: ['Node.Js', 'SCSS (SASS)', 'Bootstrap', 'Webpack', 'I18N', 'Artisan'],
+      fullText: "",
+      animatedText: "",
+      currentIndex: 0,
+      showCursor: true,
+      typingSpeed: 100,
     }
   },
 
   methods: {
+    typeText() {
+      if (this.currentIndex < this.fullText.length) {
+        this.animatedText += this.fullText.charAt(this.currentIndex);
+        this.currentIndex++;
+        setTimeout(this.typeText, this.typingSpeed);
+      } else {
+        this.showCursor = false;
+      }
+    }
+  },
 
-    //
+  mounted() {
+    this.fullText = this.$t('developer') + " " + this.$t('frontEnd') + " " + this.$t('vue');
+    this.typeText();
   }
 }
 </script>
@@ -147,6 +164,23 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+  color: white !important;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .tag {
@@ -178,10 +212,6 @@ p {
   background: rgba(15 23 42);
     padding: 35px;
     height: auto;
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* margin-top: 29px; */
     border-radius: 40px;
 }
 

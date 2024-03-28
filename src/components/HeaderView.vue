@@ -1,12 +1,12 @@
 <template>
   <nav class="navbar nav navbar-expand-lg py-3">
     <div class="container-fluid">
-      <a class="navbar-brand animate__animated animate__rotateInDownLeft fw-bold" href="#" @click="closeMobileMenu()">Lucas Almeida</a>
+      <a class="navbar-brand animate__animated animate__shakeY fw-bold" href="#" @click="closeMobileMenu()">Lucas Almeida</a>
       <button class="navbar-toggler animate__animated animate__flipInY" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav" @click="closeMobileMenu()">
+      <div class="collapse navbar-collapse  animate__animated animate__shakeY" id="navbarNav" @click="closeMobileMenu()">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#" @click="closeMobileMenu">{{ $t('aboutMe') }}</a>

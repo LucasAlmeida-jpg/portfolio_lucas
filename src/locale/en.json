@@ -3,7 +3,7 @@
     "habilities": "Skills",
     "contact": "Contact",
     "github" :"GitHub",
-    "aboutLucas": "I am Lucas, I graduate in Internet Systems Technology from the Federal Institute of São Paulo (IFSP São João da Boa Vista). I am passionate about Front End, with expertise in Vue.js 3.",
+    "aboutLucas": "I am Lucas, I graduated in Internet Systems Technology from the Federal Institute of São Paulo (IFSP São João da Boa Vista). I am passionate about Front End, with expertise in Vue.js 3.",
     "frontEnd": "Developer",
     "developer": "Front-End",
     "vue": "Vue.js",
@@ -28,7 +28,11 @@
     "experience_tag": "Professional Experience",
     "getInTouch": "Get in touch using the information below or by sending an email to",
     "thisEmail": "this email.",
-    "contact": "Contact"
+    "contact": "Contact",
+    "conclusion": "Course completion using the Callan Method at Institute USK Callan Method",
+    "skills": "SKILLS"
+
+
 
 
 

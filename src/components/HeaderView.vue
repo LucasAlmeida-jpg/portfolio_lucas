@@ -6,7 +6,7 @@
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse  animate__animated animate__shakeY" id="navbarNav" @click="closeMobileMenu()">
+      <div class="collapse navbar-collapse  animate__animated animate__shakeY" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#" @click="closeMobileMenu">{{ $t('aboutMe') }}</a>
@@ -17,14 +17,23 @@
           <li class="nav-item">
             <a class="nav-link" href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank" @click="closeMobileMenu">Linkedin</a>
           </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img class="translate" src="../assets/images/translate.png" alt="">
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item dropdown-item-mobile" @click="$i18n.locale = 'EN';" :class="{ active: $i18n.locale === 'EN' }">EN(US)</a></li>
+            <li><a class="dropdown-item dropdown-item-mobile" @click="$i18n.locale = 'PT';" :class="{ active: $i18n.locale === 'PT' }">PT(BR)</a></li>
+          </ul>
+        </li>
           
           <!-- <li class="nav-item">
             <a class="nav-link" href="#" @click="closeMobileMenu">{{ $t('contact') }}</a>
           </li> -->
-          <li class="list-group-item language-switch d-flex align-items-center">
+          <!-- <li class="list-group-item language-switch d-flex align-items-center">
             <button @click="$i18n.locale = 'EN'; closeMobileMenu()" :class="{ active: $i18n.locale === 'EN' }">EN(US)</button>
             <button @click="$i18n.locale = 'PT'; closeMobileMenu()" :class="{ active: $i18n.locale === 'PT' }">PT(BR)</button>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -50,6 +59,16 @@
   transition: color 0.3s ease-in-out;
 }
 
+.translate{
+  filter: invert(1);
+    width: 20px;
+
+}
+.dropdown-item.active, .dropdown-item:active{
+background-color: var(--vt-bg-primary);
+border-radius: 40px; 
+margin: 12px 0px;
+}
 .language-switch button:hover {
   color: var(--vt-bg-primary);
 }

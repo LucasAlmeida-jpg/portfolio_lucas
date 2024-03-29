@@ -90,7 +90,7 @@
         </div>
       </div>
       <div class="row mt-5 d-flex justify-content-center animate__animated animate__fadeInLeft">
-        <p>Tools</p>
+        <p>{{ $t('tools') }}</p>
         <div class="col-auto" v-for="s in tools">
           <p class="mt-2 tag col-md-12 text-center ">
             {{ s }}
@@ -98,7 +98,7 @@
         </div>
       </div>
       <div class="row mt-5 d-flex justify-content-center animate__animated animate__fadeInLeft">
-        <p>Learning</p>
+        <p>{{ $t('learning') }}</p>
         <div class="col-auto" v-for="s in back">
           <p class="mt-2 tag col-md-12 text-center ">
             {{ s }}

@@ -166,14 +166,11 @@ body {
     text-align: start !important;
     display: flex;
   }
-  .img-mobile{
+  .img-mobile-none{
    display: none !important;
   }
-  .img-computer{
-    position: absolute;
-    bottom: -67px;
-    right: 0;
-    width: 121px !important;
+  .img-computer, .img-mobile{
+    width: 100% !important;
   }
 
   .experience {

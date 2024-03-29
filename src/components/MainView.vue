@@ -17,7 +17,7 @@
   </section>
 
   <section>
-    <div class="container">
+    <div class="container mt-5">
       <ul class="nav nav-pills my-3 d-flex justify-content-center" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
           <div class="tag me-2 nav-link active animate__animated animate__flipInY" id="pills-home-tab" data-bs-toggle="pill"
@@ -40,14 +40,44 @@
             </div>
             <div class="col-md-6 card animate__animated animate__flipInY">
               <div class="mb-1">
-                <span class="fs-5 text">Creators LLC {{ $t('developer') }} {{ $t('frontEnd') }} (2022 - {{ $t('currently') }})</span>
+                <span class="fs-5 text">Creators LLC {{ $t('developer') }} {{ $t('frontEnd') }}</span>
               </div>
-              <div class="d-flex align-items-center mt-3">
-                <p >{{ $t('experience') }}</p>
+              <div class="mt-3">
+                <p>{{ $t('experience') }}</p>
+                <span>(2022 - {{ $t('currently') }})</span>
+              </div>
+            </div>
+            <div class="col-md-6 presentations animate__animated animate__flipInY"><img class="img-presentation presentation img-computer"
+                src="../assets/images/computer.svg" alt=""></div>
+          </div>
+
+          <div class="row my-3 d-flex align-items-center">
+              <div class="col-md-6 presentations animate__animated animate__flipInY"><img class="img-presentation presentation img-computer"
+                src="../assets/images/19184614_6101000.svg" alt="">
+            </div>
+            <div class="col-md-6 card animate__animated animate__flipInY">
+              <div class="mb-1">
+                <span class="fs-5 text">{{ $t('ste_pl') }}</span>
+              </div>
+              <div class="mt-3">
+                <p>{{ $t('exp_stefanini') }}</p> 
+                <span> (Mar de 2021 - Abr de 2022)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row my-3 d-flex align-items-center">
+            <div class="col-md-6 card animate__animated animate__flipInY">
+              <div class="mb-1">
+                <span class="fs-5 text">{{ $t('ste_pl_jr') }}</span>
+              </div>
+              <div class="mt-3">
+                <p>{{ $t('exp_stefanini_pl') }}</p> 
+                <span> (Jan de 2020 - Fev de 2021)</span>
               </div>
             </div>
             <div class="col-md-6 presentations animate__animated animate__flipInY"><img class="img-presentation img-computer"
-                src="../assets/images/computer.svg" alt=""></div>
+                src="../assets/images/achieve.svg" alt=""></div>
           </div>
 
         </div>
@@ -59,17 +89,21 @@
               <span class="fs-5 text">{{ $t('aboutGraduation') }}</span>
               <p class="mt-4">{{ $t('institute') }}</p>
             </div>
-            <div class="col-md-6 presentations animate__animated animate__flipInY"><img class="img-presentation img-mobile"
+            <div class="col-md-6 presentations animate__animated animate__flipInY"><img class="img-presentation img-mobile-none"
                 src="../assets/images/html.svg" alt=""></div>
           </div>
 
           <div class="row my-3 d-flex align-items-center justify-content-center animate__animated  animate__flipInY">
             <div class="col-md-6 presentation">
-              <img class="img-presentation" src="../assets/images/pc.svg" alt=""></div>
+              <img class="img-presentation" src="../assets/images/pc.svg" alt="">
+            </div>
             <div class="col-md-6 card">
               <span class="fs-5 text">Curso</span>
               <p class="mt-3">{{ $t('conclusion') }}</p>
               <img class="w-25 rounded mt-2" src="../assets/images/callan-method.jpg" alt="">
+            </div>
+            <div class="col-md-6 presentation-desk">
+              <img class="img-presentation" src="../assets/images/pc.svg" alt="">
             </div>
           </div>
         </div>
@@ -77,7 +111,7 @@
     </div>
   </section>
 </div>
-  <section class="skills">
+  <section class="skills mt-5">
     <div class="text-center">
       <h1>{{ $t('skills') }}</h1>
 
@@ -175,6 +209,7 @@ section {
   justify-content: center;
 }
 
+.presentation-desk{display: none !important;}
 .cursor {
   animation: blink 1s infinite;
   color: white !important;
@@ -222,6 +257,7 @@ p {
     padding: 35px;
     height: auto;
     border-radius: 40px;
+    z-index: -1;
 }
 
 .card li {
@@ -261,9 +297,7 @@ p {
   }
 
   .img-presentation {
-    width: 50%;
-    display: flex;
-    justify-content: center;
+    width: 100%;
   }
 
   .skills {
@@ -277,6 +311,10 @@ p {
 
   .presentation {
     display: none;
+  }
+  .presentation-desk{
+    display: block !important; 
+    margin-top: 30px;
   }
 
 }

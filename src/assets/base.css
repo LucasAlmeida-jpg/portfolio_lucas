@@ -167,7 +167,7 @@ body {
     display: flex;
   }
   .img-mobile{
-   display: none;
+   display: none !important;
   }
   .img-computer{
     position: absolute;

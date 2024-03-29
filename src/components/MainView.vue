@@ -224,12 +224,16 @@ section {
 .img-thumb-user{
   border-radius: 50%;
   padding: 15px;
-  border: 1px dashed yellow;
   filter: hue-rotate(423deg);
   object-fit: cover;
   height: 200px;
   width: 200px;
 }
+.img-thumb-user:hover{
+  filter: hue-rotate(10deg);
+  cursor: pointer;
+}
+
 
 .cursor {
   animation: blink 1s infinite;

@@ -7,7 +7,7 @@
           <span v-bind="showCursor" class="cursor">_</span>
         </h1>
         <div class="d-flex justify-content-center">
-          <div class="col-md-4 my-5">
+          <div class="col-md-4 mt-3">
               <img class="img-thumb-user animate__animated animate__flipInY" src="../assets/images/lucas.jpeg" alt="">
             </div>
         </div>

@@ -221,10 +221,8 @@ section {
 }
 
 .img-thumb-user{
-  border-radius: 200px 200px 200px 200px;
--moz-border-radius: 200px 200px 200px 200px;
--webkit-border-radius: 200px 200px 200px 200px;  width: 259px;
-  padding: 10px;
+  border-radius: 50%;
+  padding: 15px;
   border: 1px dashed yellow;
   filter: hue-rotate(423deg);
   object-fit: cover;

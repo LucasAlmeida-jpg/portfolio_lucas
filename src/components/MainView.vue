@@ -97,6 +97,14 @@
           </p>
         </div>
       </div>
+      <div class="row mt-5 d-flex justify-content-center animate__animated animate__fadeInLeft">
+        <p>Learning</p>
+        <div class="col-auto" v-for="s in back">
+          <p class="mt-2 tag col-md-12 text-center ">
+            {{ s }}
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -132,7 +140,8 @@ export default {
   data() {
     return {
       skills: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Vite', 'NUXT (SSR)', 'Vuex', 'Fetching Data', 'Axios', 'Chart.js', 'Bootstrap', 'Tailwind'],
-      tools: ['Node.Js', 'SCSS (SASS)', 'Bootstrap', 'Webpack', 'I18N', 'Artisan'],
+      tools: ['SCSS (SASS)', 'Webpack', 'I18N', 'Artisan'],
+      back: ['Laravel', 'SQLite', 'SQL', 'Node.js'],
       fullText: "",
       animatedText: "",
       currentIndex: 0,

@@ -131,7 +131,7 @@
 export default {
   data() {
     return {
-      skills: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'NUXT (SSR)', 'Vuex', 'Fetching Data', 'Axios', 'Chart.js'],
+      skills: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Vite', 'NUXT (SSR)', 'Vuex', 'Fetching Data', 'Axios', 'Chart.js', 'Bootstrap', 'Tailwind'],
       tools: ['Node.Js', 'SCSS (SASS)', 'Bootstrap', 'Webpack', 'I18N', 'Artisan'],
       fullText: "",
       animatedText: "",

@@ -225,10 +225,11 @@ section {
 -moz-border-radius: 200px 200px 200px 200px;
 -webkit-border-radius: 200px 200px 200px 200px;  width: 259px;
   padding: 10px;
-  border: 1px solid yellow;
-  filter: hue-rotate(78deg);
+  border: 1px dashed yellow;
+  filter: hue-rotate(423deg);
   object-fit: cover;
-  height: 259px;
+  height: 200px;
+  width: 200px;
 }
 
 .cursor {

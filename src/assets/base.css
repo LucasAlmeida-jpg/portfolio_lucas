@@ -183,4 +183,8 @@ body {
   .skills{
     margin-top: 80px !important;
   }
+
+  .navbar-collapse{
+    padding-left: 12px;
+  }
 }

@@ -45,8 +45,8 @@
                 <h1>{{ $t('experience_tag') }}</h1>
               </div>
               <div class="col-md-6 card animate__animated animate__flipInY">
-                <div class="mb-1">
-                  <span class="fs-5 text">Creators LLC {{ $t('developer') }} {{ $t('frontEnd') }}</span>
+                <div class="mb-1 d-flex align-items-center">
+                  <span class="fs-5 text">Creators LLC {{ $t('developer') }} {{ $t('frontEnd') }}</span><span class="tag ms-3">Remote</span>
                 </div>
                 <div class="mt-3">
                   <p>{{ $t('experience') }}</p>
@@ -62,8 +62,8 @@
                   class="img-presentation presentation img-computer" src="../assets/images/19184614_6101000.svg" alt="">
               </div>
               <div class="col-md-6 card animate__animated animate__flipInY">
-                <div class="mb-1">
-                  <span class="fs-5 text">{{ $t('ste_pl') }}</span>
+                <div class="mb-1 d-flex align-items-center">
+                  <span class="fs-5 text">{{ $t('ste_pl') }}</span><span class="tag ms-3">Remote</span>
                 </div>
                 <div class="mt-3">
                   <p>{{ $t('exp_stefanini') }}</p>
@@ -74,8 +74,8 @@
 
             <div class="row my-3 d-flex align-items-center">
               <div class="col-md-6 card animate__animated animate__flipInY">
-                <div class="mb-1">
-                  <span class="fs-5 text">{{ $t('ste_pl_jr') }}</span>
+                <div class="mb-1 d-flex align-items-center">
+                  <span class="fs-5 text">{{ $t('ste_pl_jr') }}</span><span class="tag ms-3">Remote</span>
                 </div>
                 <div class="mt-3">
                   <p>{{ $t('exp_stefanini_pl') }}</p>
@@ -182,13 +182,18 @@ export default {
     return {
       skills: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Vite', 'NUXT (SSR)', 'Vuex', 'Fetching Data', 'Axios', 'Chart.js', 'Bootstrap', 'Tailwind'],
       tools: ['SCSS (SASS)', 'Webpack', 'I18N', 'Artisan'],
-      back: ['Laravel', 'SQLite', 'SQL', 'Node.js'],
+      back: ['Laravel', 'SQL', 'NUXT'],
       fullText: "",
       animatedText: "",
       currentIndex: 0,
       showCursor: true,
       typingSpeed: 100,
     }
+  },
+  
+  mounted() {
+    this.fullText = this.$t('developer') + " " + this.$t('frontEnd') + " " + this.$t('vue');
+    this.typeText();
   },
 
   methods: {
@@ -203,10 +208,6 @@ export default {
     }
   },
 
-  mounted() {
-    this.fullText = this.$t('developer') + " " + this.$t('frontEnd') + " " + this.$t('vue');
-    this.typeText();
-  }
 }
 </script>
 <style scoped>
@@ -257,8 +258,6 @@ section {
   cursor: pointer;
   font-size: 14px;
   padding: 0px 10px;
-
-
 }
 
 .tag:hover {

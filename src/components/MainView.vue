@@ -59,7 +59,7 @@
 
             <div class="row my-3 d-flex align-items-center">
               <div class="col-md-6 presentations animate__animated animate__flipInY"><img
-                  class="img-presentation presentation img-computer" src="../assets/images/19184614_6101000.svg" alt="">
+                  class="img-presentation presentation img-computer" src="../assets/images/html.svg" alt="">
               </div>
               <div class="col-md-6 card animate__animated animate__flipInY">
                 <div class="mb-1 d-flex align-items-center">
@@ -97,7 +97,7 @@
                 <p class="mt-4">{{ $t('institute') }}</p>
               </div>
               <div class="col-md-6 presentations animate__animated animate__flipInY"><img
-                  class="img-presentation img-mobile-none" src="../assets/images/html.svg" alt=""></div>
+                  class="img-presentation img-mobile-none" src="../assets/images/19184614_6101000.svg" alt=""></div>
             </div>
 
             <div class="row my-3 d-flex align-items-center justify-content-center animate__animated  animate__flipInY">

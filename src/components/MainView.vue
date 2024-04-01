@@ -180,7 +180,7 @@
 export default {
   data() {
     return {
-      skills: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Vite', 'NUXT (SSR)', 'Vuex', 'Fetching Data', 'Axios', 'Chart.js', 'Bootstrap', 'Tailwind'],
+      skills: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Vite', 'Pinia', 'Nuxt', 'Vuex', 'Fetching Data', 'Axios', 'Chart.js', 'Bootstrap', 'Tailwind'],
       tools: ['SCSS (SASS)', 'Webpack', 'I18N', 'Artisan'],
       back: ['Laravel', 'SQL', 'NUXT'],
       fullText: "",

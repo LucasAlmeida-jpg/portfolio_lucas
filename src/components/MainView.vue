@@ -192,7 +192,7 @@ export default {
   },
   
   mounted() {
-    this.fullText = this.$t('developer') + " " + this.$t('frontEnd') + " " + this.$t('vue');
+    this.fullText = this.$t('developer') + " " + this.$t('frontEnd');
     this.typeText();
   },
 

@@ -8,43 +8,45 @@
         </h1>
         <div class="d-flex justify-content-center">
           <div class="col-md-4 mt-3">
-              <img class="img-thumb-user animate__animated animate__flipInY" src="../assets/images/lucas.jpeg" alt="">
+              <img class="img-thumb-user" src="../assets/images/lucas.jpeg" alt="">
             </div>
         </div>
-        <div class="row">
+        <div  class="row">
           <div class="mt-4 container d-flex justify-content-center align-items-center">
-            <p class="col-md-7 animate__animated animate__flipInY">
+            <p class="col-md-7 card">
               {{ $t('aboutLucas') }} {{ $t('aboutLucasSub') }}
             </p>
           </div>
         </div>
+        <transition name="move">
+      <img v-if="showArrow" class="mt-5 arrow" src="../assets/images/arrow-donw.png" alt="">
+    </transition>
       </div>
     </section>
 
     <section>
-      <div class="container mt-5">
+      <div class="container mt-5" data-aos="fade-up">
         <ul class="nav nav-pills my-3 d-flex justify-content-center" id="pills-tab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <div class="tag me-2 nav-link active animate__animated animate__flipInY" id="pills-home-tab"
+          <li class="nav-item aos-init" role="presentation">
+            <div class="tag me-2 nav-link active" id="pills-home-tab"
               data-bs-toggle="pill" data-bs-target="#pills-home" role="tab" aria-controls="pills-home"
               aria-selected="true">
               {{ $t('professionals_tag') }}</div>
           </li>
           <li class="nav-item" role="presentation">
-            <div class="tag nav-link animate__animated animate__flipInY" id="pills-profile-tab" data-bs-toggle="pill"
+            <div class="tag nav-link" id="pills-profile-tab" data-bs-toggle="pill"
               data-bs-target="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">{{
             $t('educational_tag') }}</div>
           </li>
         </ul>
-        <div class="tab-content" id="pills-tabContent">
-
+        <div class="tab-content aos-init" id="pills-tabContent">
           <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
             tabindex="0">
-            <div class="row my-3 d-flex align-items-center">
-              <div class="mt-3 text-center experience">
+            <div class="row my-3 d-flex align-items-center aos-init">
+              <div class="mt-3 text-center experience" data-aos="fade-left" data-aos-offset="200">
                 <h1>{{ $t('experience_tag') }}</h1>
               </div>
-              <div class="col-md-6 card animate__animated animate__flipInY">
+              <div class="col-md-6 card" data-aos="fade-left" data-aos-offset="200">
                 <div class="mb-1 d-flex align-items-center">
                   <span class="fs-5 text">Creators LLC {{ $t('developer') }} {{ $t('frontEnd') }}</span><span class="tag ms-3">Remote</span>
                 </div>
@@ -53,15 +55,15 @@
                   <span>(2022 - {{ $t('currently') }})</span>
                 </div>
               </div>
-              <div class="col-md-6 presentations animate__animated animate__flipInY"><img
+              <div class="col-md-6 presentations" data-aos="fade-right" data-aos-offset="200"><img
                   class="img-presentation presentation img-computer" src="../assets/images/computer.svg" alt=""></div>
             </div>
 
             <div class="row my-3 d-flex align-items-center">
-              <div class="col-md-6 presentations animate__animated animate__flipInY"><img
+              <div class="col-md-6 presentations" data-aos="fade-right" data-aos-offset="200"><img
                   class="img-presentation presentation img-computer" src="../assets/images/html.svg" alt="">
               </div>
-              <div class="col-md-6 card animate__animated animate__flipInY">
+              <div class="col-md-6 card" data-aos="fade-left" data-aos-offset="200">
                 <div class="mb-1 d-flex align-items-center">
                   <span class="fs-5 text">{{ $t('ste_pl') }}</span><span class="tag ms-3">Remote</span>
                 </div>
@@ -72,8 +74,8 @@
               </div>
             </div>
 
-            <div class="row my-3 d-flex align-items-center">
-              <div class="col-md-6 card animate__animated animate__flipInY">
+            <div class="row my-3 d-flex align-items-center aos-init">
+              <div class="col-md-6 card" data-aos="fade-left" data-aos-offset="200">
                 <div class="mb-1 d-flex align-items-center">
                   <span class="fs-5 text">{{ $t('ste_pl_jr') }}</span><span class="tag ms-3">Remote</span>
                 </div>
@@ -82,34 +84,34 @@
                   <span> (Jan de 2020 - Fev de 2021)</span>
                 </div>
               </div>
-              <div class="col-md-6 presentations animate__animated animate__flipInY"><img
+              <div class="col-md-6 presentations" data-aos="fade-right" data-aos-offset="200"><img
                   class="img-presentation img-computer" src="../assets/images/achieve.svg" alt=""></div>
             </div>
 
           </div>
           <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
             tabindex="0">
-            <div class="row my-3 d-flex align-items-center">
+            <div class="row my-3 d-flex align-items-center aos-init">
               <h1 class="mt-3 text-center experience">{{ $t('graduate') }}</h1>
-              <div class="col-md-6 card animate__animated animate__flipInY">
+              <div class="col-md-6 card" data-aos="fade-right" data-aos-offset="200">
                 <span class="mt-3 fs-5 text">{{ $t('course') }}</span>
                 <span class="fs-5 text">{{ $t('aboutGraduation') }}</span>
                 <p class="mt-4">{{ $t('institute') }}</p>
               </div>
-              <div class="col-md-6 presentations animate__animated animate__flipInY"><img
+              <div class="col-md-6 presentations" data-aos="fade-left" data-aos-offset="200"><img
                   class="img-presentation img-mobile-none" src="../assets/images/19184614_6101000.svg" alt=""></div>
             </div>
 
-            <div class="row my-3 d-flex align-items-center justify-content-center animate__animated  animate__flipInY">
-              <div class="col-md-6 presentation">
+            <div class="row my-3 d-flex align-items-center justify-content-center">
+              <div class="col-md-6 presentation"  data-aos="fade-right" data-aos-offset="200">
                 <img class="img-presentation" src="../assets/images/pc.svg" alt="">
               </div>
-              <div class="col-md-6 card">
+              <div class="col-md-6 card" data-aos="fade-left" data-aos-offset="200">
                 <span class="fs-5 text">Curso</span>
                 <p class="mt-3">{{ $t('conclusion') }}</p>
                 <img class="w-25 rounded mt-2" src="../assets/images/callan-method.jpg" alt="">
               </div>
-              <div class="col-md-6 presentation-desk">
+              <div class="col-md-6 presentation-desk" data-aos="fade-left" data-aos-offset="200" >
                 <img class="img-presentation" src="../assets/images/pc.svg" alt="">
               </div>
             </div>
@@ -119,28 +121,28 @@
     </section>
   </div>
   <section class="skills mt-5">
-    <div class="text-center">
-      <h1>{{ $t('skills') }}</h1>
+    <div class="text-center" >
+      <h1 data-aos="fade-left" data-aos-offset="200">{{ $t('skills') }}</h1>
 
-      <div class="row d-flex justify-content-center animate__animated animate__fadeInRight">
-        <p class="mt-2">Front-End</p>
-        <div class="col-auto" v-for="s in skills">
-          <p class="mt-2 tag text-center ">
+      <div class="row d-flex justify-content-center">
+        <p class="mt-2" data-aos="fade-right" data-aos-offset="200">Front-End</p>
+        <div class="col-auto" v-for="s in skills" data-aos="fade-left" data-aos-offset="200">
+          <p class="mt-2 tag text-center " >
             {{ s }}
           </p>
         </div>
       </div>
-      <div class="row mt-5 d-flex justify-content-center animate__animated animate__fadeInLeft">
-        <p>{{ $t('tools') }}</p>
-        <div class="col-auto" v-for="s in tools">
+      <div class="row mt-5 d-flex justify-content-center">
+        <p data-aos="fade-right" data-aos-offset="200">{{ $t('tools') }}</p>
+        <div class="col-auto" v-for="s in tools" data-aos="fade-left" data-aos-offset="200">
           <p class="mt-2 tag col-md-12 text-center ">
             {{ s }}
           </p>
         </div>
       </div>
-      <div class="row mt-5 d-flex justify-content-center animate__animated animate__fadeInLeft">
-        <p>{{ $t('learning') }}</p>
-        <div class="col-auto" v-for="s in back">
+      <div class="row mt-5 d-flex justify-content-center">
+        <p  data-aos="fade-right" data-aos-offset="200">{{ $t('learning') }}</p>
+        <div class="col-auto" v-for="s in back"  data-aos="fade-left" data-aos-offset="200">
           <p class="mt-2 tag col-md-12 text-center ">
             {{ s }}
           </p>
@@ -149,7 +151,7 @@
     </div>
   </section>
 
-  <div class="mainViewSection">
+  <div class="mainViewSection" data-aos="fade-left" data-aos-offset="200">
     <section class="mt-5">
       <div class="text-center">
         <h1>{{ $t('contact') }}</h1>
@@ -177,6 +179,8 @@
 </template>
 
 <script>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default {
   data() {
     return {
@@ -188,12 +192,21 @@ export default {
       currentIndex: 0,
       showCursor: true,
       typingSpeed: 100,
+      showArrow: true 
+
     }
   },
   
   mounted() {
     this.fullText = this.$t('developer') + " " + this.$t('frontEnd');
     this.typeText();
+    AOS.init({
+      once: false, 
+    });
+
+    setInterval(() => {
+      this.showArrow = !this.showArrow;
+    }, 300); 
   },
 
   methods: {
@@ -207,6 +220,7 @@ export default {
       }
     }
   },
+ 
 
 }
 </script>
@@ -216,6 +230,24 @@ section {
   align-items: center;
   justify-content: center;
 }
+
+.move-enter-active, .move-leave-active {
+  transition: transform 2s ease;
+}
+
+.move-enter {
+  transform: translateY(100%);
+}
+
+.move-leave-to {
+  transform: translateY(100%);
+}
+
+.move-leave {
+  transition: transform 0.1s ease;
+}
+
+
 
 .presentation-desk {
   display: none !important;
@@ -229,11 +261,18 @@ section {
   height: 200px;
   width: 200px;
 }
+
 .img-thumb-user:hover{
   filter: hue-rotate(10deg);
   cursor: pointer;
 }
 
+.arrow {
+  width: 40px;
+    border: 1px solid #00DC82;
+    border-radius: 50%;
+    padding: 3px;
+}
 
 .cursor {
   animation: blink 1s infinite;

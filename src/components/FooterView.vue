@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer-bg">
+    <footer class="footer-bg" id="footer">
         <span>© 2024 Lucas Gouvea de Almeida </span>   
     </footer>
 </template>

@@ -166,10 +166,10 @@
           <div class="d-flex align-items-center justify-content-center social">
             <div>
               <a class="me-3" href="https://github.com/LucasAlmeida-jpg" target="_blank" rel="noopener noreferrer"><img
-                  src="/src/assets/images/github.png" alt=""></a>
+                class="img"  src="/src/assets/images/github.png" alt=""></a>
 
               <a href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank"
-                rel="noopener noreferrer"><img src="/src/assets/images/linkedin.png" alt=""></a>
+                rel="noopener noreferrer"><img class="img" src="/src/assets/images/linkedin.png" alt=""></a>
             </div>
           </div>
         </div>
@@ -322,6 +322,7 @@ p {
   height: auto;
   border-radius: 40px;
   z-index: -1;
+  border:none;
 }
 
 .card li {

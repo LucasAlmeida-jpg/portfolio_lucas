@@ -105,11 +105,11 @@ body {
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
-  color: var(--vt-bg-primary) !important;
+  color: var(--vt-bg-primary) ;
 }
 
 .nav-pills .nav-link{
-  color: white !important;
+  color: white;
   background: transparent !important;
   cursor: pointer;
 }
@@ -178,6 +178,7 @@ body {
     min-height: 254px !important;
     text-align: start !important;
     display: flex;
+    border: none !important;
   }
   .img-mobile-none{
    display: none !important;

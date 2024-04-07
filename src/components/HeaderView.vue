@@ -1,32 +1,42 @@
 <template>
   <nav class="navbar nav navbar-expand-lg py-3">
     <div class="container-fluid">
-      <a class="navbar-brand animate__animated animate__shakeY fw-bold" href="#" @click="closeMobileMenu()">Lucas Almeida</a>
-      <button class="navbar-toggler animate__animated animate__flipInY" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand animate__animated animate__shakeY fw-bold" href="#" @click="closeMobileMenu()">Lucas
+        Almeida</a>
+      <button class="navbar-toggler animate__animated animate__flipInY" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse  animate__animated animate__shakeY" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#" @click="closeMobileMenu">{{ $t('aboutMe') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/LucasAlmeida-jpg" target="_blank" @click="closeMobileMenu">{{ $t('github') }}</a>
+            <a class="nav-link" href="https://github.com/LucasAlmeida-jpg" target="_blank" @click="closeMobileMenu">{{
+        $t('github') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank" @click="closeMobileMenu">Linkedin</a>
+            <a class="nav-link" href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank"
+              @click="closeMobileMenu">Linkedin</a>
           </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img class="translate" src="../assets/images/translate.png" alt="">
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item dropdown-item-mobile" @click="$i18n.locale = 'EN';" :class="{ active: $i18n.locale === 'EN' }">EN(US)</a></li>
-            <li><a class="dropdown-item dropdown-item-mobile" @click="$i18n.locale = 'PT';" :class="{ active: $i18n.locale === 'PT' }">PT(BR)</a></li>
-          </ul>
-        </li>
-          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class="translate" src="../assets/images/translate.png" alt="">
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item dropdown-item-mobile" @click="$i18n.locale = 'EN';"
+                  :class="{ active: $i18n.locale === 'EN' }">EN(US)</a></li>
+              <li><a class="dropdown-item dropdown-item-mobile" @click="$i18n.locale = 'PT';"
+                  :class="{ active: $i18n.locale === 'PT' }">PT(BR)</a></li>
+            </ul>
+          </li>
+          <li>
+            <label class="switch mt-2">
+              <input type="checkbox" @click="changeBackgroundColor" v-model="checked">
+              <span class="slider round"></span>
+            </label>
+          </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#" @click="closeMobileMenu">{{ $t('contact') }}</a>
           </li> -->
@@ -59,16 +69,80 @@
   transition: color 0.3s ease-in-out;
 }
 
-.translate{
+.translate {
   filter: invert(1);
-    width: 20px;
+  width: 20px;
 
 }
-.dropdown-item.active, .dropdown-item:active{
-background-color: var(--vt-bg-primary);
-border-radius: 40px; 
-margin: 12px 0px;
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 24px;
 }
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 7px;
+  bottom: -1px;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: black;
+  border: 1px solid white;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px black;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--vt-bg-primary);
+  border-radius: 40px;
+  margin: 12px 0px;
+}
+
 .language-switch button:hover {
   color: var(--vt-bg-primary);
 }
@@ -77,11 +151,13 @@ margin: 12px 0px;
   font-weight: bold;
   color: var(--vt-bg-primary);
 }
-.navbar-brand{
+
+.navbar-brand {
   padding: 10px;
   border-radius: 12px;
   min-width: 123px;
 }
+
 .wave-text {
   font-size: 2em;
   animation: wave 1.5s infinite;
@@ -104,15 +180,16 @@ margin: 12px 0px;
   z-index: 1 !important;
 }
 
-.nav-link, a{
-  color: white !important;
+.nav-link,
+a {
+  color: white;
 }
 
-.navbar-toggler{
+.navbar-toggler {
   background: var(--vt-bg-primary);
-    border-radius: 50%;
-    padding: 8px;
-    margin: 0px 10px;
+  border-radius: 50%;
+  padding: 8px;
+  margin: 0px 10px;
 }
 
 .navbar-toggler {
@@ -160,7 +237,6 @@ margin: 12px 0px;
   transform: rotate(-45deg);
 }
 
-/* Estilos para o botão do hamburguer quando ativo */
 .is-active .icon-bar {
   background-color: transparent;
 }
@@ -172,34 +248,80 @@ margin: 12px 0px;
 
 @keyframes wave {
 
-0%,
-100% {
-  transform: scaleY(1);
-}
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
 
-50% {
-  transform: scaleY(1.5);
-}
+  50% {
+    transform: scaleY(1.5);
+  }
 }
 </style>
 
 <script>
 export default {
- data(){
-  return {
-    localFilePath: '/src/file/Profile.pdf',
-  }
- }, 
- methods: {
- 
+  data() {
+    return {
+      localFilePath: '/src/file/Profile.pdf',
+      checked: true
+    }
+  },
+  mounted(){
+    const navbarTogglerIcon = document.querySelector('.navbar-toggler-icon');
+    navbarTogglerIcon.addEventListener('click', this.handleNavbarToggleClick);
+  },
+  methods: {
+
     toggleMobileMenu() {
       const navbar = document.querySelector('.navbar-collapse');
       navbar.classList.toggle('show');
     },
+
     closeMobileMenu() {
       const navbar = document.querySelector('.navbar-collapse');
       navbar.classList.remove('show');
-    }
+    },
+
+    changeBackgroundColor() {
+      const checked = this.checked;
+      const body = document.body;
+      const textColor = checked ? 'rgb(33, 53, 71)' : '';
+      const backgroundColor = checked ? 'white' : '';
+      const elementsToChangeColor = document.querySelectorAll('h1, .card, .tag, a[href], .img, .translate, .dropdown-item');
+      const footerBackgroundColor = checked ? 'white' : '';
+
+      body.style.backgroundColor = backgroundColor;
+      body.style.color = textColor;
+
+      elementsToChangeColor.forEach(element => {
+        element.style.color = textColor;
+        if (element.classList.contains('card')) {
+          element.style.backgroundColor = checked ? '#f9f9f9' : '';
+        } else if (element.classList.contains('tag')) {
+          element.style.border = checked ? '1px solid rgb(0, 220, 130)' : '';
+          element.style.color = checked ? 'rgb(0, 220, 130)' : '';
+        } else if (element.tagName.toLowerCase() === 'a') {
+          element.style.color = checked ? 'rgb(33, 53, 71)' : '';
+        } else if (element.className === 'img') {
+          element.style.filter = checked ? 'contrast(0.5)' : '';
+        } else if (element.className === 'translate') {
+          element.style.filter = checked ? 'contrast(0.5)' : '';
+        } else if (element.className === 'dropdown-item') {
+          element.style.color = checked ? 'rgb(33, 53, 71)' : '';
+        }
+      });
+
+      const footer = document.getElementById('footer');
+      if (footer) {
+        footer.style.backgroundColor = footerBackgroundColor;
+      }
+
+      
+    },
+
+
+
   }
 }
 </script>

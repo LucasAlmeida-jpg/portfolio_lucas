@@ -121,6 +121,8 @@
       </div>
     </section>
   </div>
+
+  <!-- <ProjectsView/> -->
   <section class="skills mt-5">
     <div class="text-center" >
       <h1 data-aos="fade-left" data-aos-offset="200">{{ $t('skills') }}</h1>
@@ -152,6 +154,8 @@
     </div>
   </section>
 
+  
+
   <div class="mainViewSection" data-aos="fade-left" data-aos-offset="200">
     <section class="mt-5">
       <div class="text-center">
@@ -177,15 +181,20 @@
       </div>
     </section>
   </div>
+
+
 </template>
 
 <script>
 import AOS from 'aos';
 import AnimationView from './AnimationView.vue';
+import ProjectsView from './ProjectsView.vue';
+
 import 'aos/dist/aos.css';
 export default {
   components: {
-    AnimationView
+    AnimationView,
+    ProjectsView
   },
   data() {
     return {

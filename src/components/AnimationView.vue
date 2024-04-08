@@ -60,6 +60,8 @@
 }
 
 @media only screen and (max-width: 600px) {
-   
+    .wave {
+    width: 100%;
+  }
 }
 </style>

@@ -161,9 +161,12 @@ body {
   filter: invert(1);
 }
 @media only screen and (max-width: 600px) { 
-  body {
+  html, body {
     overflow-x: hidden !important;
+    width: 100vw !important;
   }
+
+ 
 
    p, ul, li{
     font-size: 15px !important;

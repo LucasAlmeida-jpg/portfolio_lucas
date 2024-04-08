@@ -14,7 +14,7 @@
 .wave {
     background: rgba(40, 61, 59, 140);
     border-radius: 1000% 1000% 0 0;
-    position: fixed;
+    position: absolute;
     width: 200%;
     height: 70%;
     animation: wave 10s -3s linear infinite;

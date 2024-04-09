@@ -1,5 +1,5 @@
 <template>
-  <div class="mainViewSection">
+  <div class="mainViewSection mb-5">
     <section class="slide-in">
      <AnimationView />
       <div class="text-center">
@@ -121,7 +121,6 @@
       </div>
     </section>
   </div>
-
   <!-- <ProjectsView/> -->
   <section class="skills mt-5">
     <div class="text-center" >
@@ -153,8 +152,6 @@
       </div>
     </div>
   </section>
-
-  
 
   <div class="mainViewSection" data-aos="fade-left" data-aos-offset="200">
     <section class="mt-5">

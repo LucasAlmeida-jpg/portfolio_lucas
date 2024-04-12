@@ -160,6 +160,17 @@ body {
 .navbar-toggler-icon {
   filter: invert(1);
 }
+
+
+.tag {
+  border: 1px solid;
+  color: var(--vt-bg-primary);
+  border-radius: 31px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0px 10px;
+}
 @media only screen and (max-width: 600px) { 
   html, body {
     overflow-x: hidden !important;

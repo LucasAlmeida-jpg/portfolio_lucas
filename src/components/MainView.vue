@@ -40,24 +40,48 @@
             $t('educational_tag') }}</div>
           </li>
         </ul>
-        <div class="tab-content aos-init" id="pills-tabContent">
+        
+        <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
             tabindex="0">
-            <div class="row my-3 d-flex align-items-center aos-init">
+            <div class="row my-3 d-flex align-items-center">
               <div class="mt-3 text-center experience" data-aos="fade-left" data-aos-offset="200">
                 <h1>{{ $t('experience_tag') }}</h1>
               </div>
-              <div class="col-md-6 card" data-aos="fade-left" data-aos-offset="200">
+             
+              <div class="col-md-6 card" data-aos="fade-left" data-aos-offset="200">                
                 <div class="mb-1 d-flex align-items-center">
-                  <span class="fs-5 text">Creators LLC {{ $t('developer') }} {{ $t('frontEnd') }}</span><span class="tag ms-3">Remote</span>
+                  <span class="fs-5 text">Creators LLC {{ $t('developer') }} {{ $t('frontEnd') }}</span><span class="tag ms-3">Remote</span> 
                 </div>
                 <div class="mt-3">
-                  <p>{{ $t('experience') }}</p>
+                  <p>{{ $t('experience') }} <transition name="move"><span class="role" @click="changeState">{{ seeMore }}</span></transition></p>
+                  <transition name="fade">
+                    <div class="mt-3" v-show="showDetails" @click.stop>
+                      <p>{{ $t('experience') }}</p> 
+                      <p>
+                        A Creators é uma empresa que potencializa os resultados de marcas e creators através da aplicação de tecnologia, análise de dados e expertise em marketing de influência.
+
+                        Na minha posição na <span>Creators.LLC</span>, atuo como Full-Stack, com foco predominante no desenvolvimento Front-End. Tenho experiência significativa em aprimorar produtos web, utilizando uma variedade de ferramentas e tecnologias, tais como:
+                        <ul>
+                          <li>Desenvolvimento de interfaces dinâmicas com o framework Vue.js.</li>
+                          <li>Implementação de design responsivo utilizando Bootstrap.</li>
+                          <li>Integração fluida com APIs para garantir uma experiência de usuário contínua.</li>
+                          <li>Estilização avançada utilizando SCSS para alcançar um design atraente e coeso.</li>
+                          <li>Utilização do Vuex para um eficiente gerenciamento de estado da aplicação.</li>
+                          <li>Criação e manutenção de dashboards dinâmicos utilizando chart.js, enfatizando a visualização de dados de forma clara e informativa.</li>
+                          <li>Controle de versionamento de código utilizando Git/GitHub para garantir a colaboração eficaz e o gerenciamento do código-fonte de forma organizada e segura.</li>
+                          <li>Manutenção e Criação de API Rest usando Laravel</li>
+                        </ul>
+                        Essas habilidades e experiências me capacitam a contribuir de forma significativa para o sucesso dos projetos na Creators.LLC, garantindo produtos de alta qualidade e desempenho excepcional.
+                      </p>
+                    </div>
+                  </transition>
                   <span>(2022 - {{ $t('currently') }})</span>
                 </div>
               </div>
+              
               <div class="col-md-6 presentations" data-aos="fade-right" data-aos-offset="200"><img
-                  class="img-presentation presentation img-computer" src="../assets/images/computer.svg" alt=""></div>
+                  class="img-presentation presentation img-computer" src="../assets/images/computer.svg" alt=""> </div>
             </div>
 
             <div class="row my-3 d-flex align-items-center">
@@ -121,7 +145,7 @@
       </div>
     </section>
   </div>
-  <!-- <ProjectsView/> -->
+  
   <section class="skills mt-5">
     <div class="text-center" >
       <h1 data-aos="fade-left" data-aos-offset="200">{{ $t('skills') }}</h1>
@@ -203,7 +227,9 @@ export default {
       currentIndex: 0,
       showCursor: true,
       typingSpeed: 100,
-      showArrow: true 
+      showArrow: true,
+      showDetails: false,
+      seeMore: 'Saiba Mais'
 
     }
   },
@@ -218,6 +244,7 @@ export default {
     setInterval(() => {
       this.showArrow = !this.showArrow;
     }, 300); 
+
   },
 
   methods: {
@@ -229,6 +256,11 @@ export default {
       } else {
         this.showCursor = false;
       }
+    },
+
+    changeState(){
+      this.showDetails = !this.showDetails
+      this.seeMore = this.showDetails ? 'Saiba Menos' : 'Saiba Mais';
     }
   },
  
@@ -241,7 +273,10 @@ section {
   align-items: center;
   justify-content: center;
 }
-
+.role{
+  cursor: pointer;
+  font-size: 12px;
+}
 .move-enter-active, .move-leave-active {
   transition: transform 2s ease;
 }
@@ -258,7 +293,18 @@ section {
   transition: transform 0.1s ease;
 }
 
-
+.fade-enter-active{
+  transition: opacity 0.3s;
+} 
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter {
+  opacity: 0.3;
+}
+.fade-leave-to {
+  opacity: 0;
+}
 
 .presentation-desk {
   display: none !important;
@@ -332,7 +378,6 @@ p {
   padding: 35px;
   height: auto;
   border-radius: 40px;
-  z-index: -1;
   border:none;
 }
 
@@ -395,6 +440,18 @@ p {
     display: block !important;
     margin-top: 30px;
   }
+
+  .stand:after{
+        display: none !important;
+    }
+   .stand:before {
+        display: none;
+    }
+
+    .monitor {
+    width: 100% !important;
+    height: 100% !important;
+    }
 
 }
 </style>

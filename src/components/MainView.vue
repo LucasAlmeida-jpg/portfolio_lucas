@@ -288,7 +288,9 @@ section {
 .move-leave-to {
   transform: translateY(100%);
 }
-
+/* .move-leave {
+  transition: transform 0.1s ease;
+} */
 .move-leave {
   transition: transform 0.1s ease;
 }

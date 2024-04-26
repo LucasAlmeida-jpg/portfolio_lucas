@@ -19,7 +19,7 @@
                             Na minha posição na <span>Creators.LLC</span>, atuo como Full-Stack, com foco predominante
                             no desenvolvimento Front-End. Tenho experiência significativa em aprimorar produtos web,
                             utilizando uma variedade de ferramentas e tecnologias, tais como:
-                        <ul>
+                        <ul class="animate__animated animate__shakeY">
                             <li>Desenvolvimento de interfaces dinâmicas com o framework Vue.js.</li>
                             <li>Implementação de design responsivo utilizando Bootstrap.</li>
                             <li>Integração fluida com APIs para garantir uma experiência de usuário contínua.</li>

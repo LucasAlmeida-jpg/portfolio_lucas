@@ -56,13 +56,13 @@
                 <div class="mt-3">
                   <p>{{ $t('experience') }} <transition name="move"><span class="role" @click="changeState">{{ seeMore }}</span></transition></p>
                   <transition name="fade">
-                    <div class="mt-3" v-show="showDetails" @click.stop>
-                      <p>{{ $t('experience') }}</p> 
-                      <p>
+                    <div class="mt-3 r" v-show="showDetails" @click.stop>
+                      <p cl>{{ $t('experience') }}</p> 
+                      <p class="role">
                         A Creators é uma empresa que potencializa os resultados de marcas e creators através da aplicação de tecnologia, análise de dados e expertise em marketing de influência.
 
                         Na minha posição na <span>Creators.LLC</span>, atuo como Full-Stack, com foco predominante no desenvolvimento Front-End. Tenho experiência significativa em aprimorar produtos web, utilizando uma variedade de ferramentas e tecnologias, tais como:
-                        <ul>
+                        <ul class="mt-3">
                           <li>Desenvolvimento de interfaces dinâmicas com o framework Vue.js.</li>
                           <li>Implementação de design responsivo utilizando Bootstrap.</li>
                           <li>Integração fluida com APIs para garantir uma experiência de usuário contínua.</li>
@@ -221,7 +221,7 @@ export default {
     return {
       skills: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Vite', 'Pinia', 'Nuxt', 'Vuex', 'Fetching Data', 'Axios', 'Chart.js', 'Bootstrap', 'Tailwind'],
       tools: ['SCSS (SASS)', 'Webpack', 'I18N', 'Artisan'],
-      back: ['Laravel', 'SQL', 'NUXT'],
+      back: ['Laravel', 'NUXT'],
       fullText: "",
       animatedText: "",
       currentIndex: 0,

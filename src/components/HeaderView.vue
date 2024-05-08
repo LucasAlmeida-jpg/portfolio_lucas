@@ -260,36 +260,33 @@ a {
 </style>
 
 <script>
-export default {
-  data() {
-    return {
-      localFilePath: '/src/file/Profile.pdf',
-      checked: true
-    }
-  },
-  mounted(){
-    const navbarTogglerIcon = document.querySelector('.navbar-toggler-icon');
-    navbarTogglerIcon.addEventListener('click', this.handleNavbarToggleClick);
-  },
-  methods: {
+import { ref, onMounted } from 'vue';
 
-    toggleMobileMenu() {
+export default {
+  setup() {
+    const localFilePath = '/src/file/Profile.pdf';
+    const checked = ref(true);
+
+    const handleNavbarToggleClick = () => {
+      toggleMobileMenu();
+    };
+
+    const toggleMobileMenu = () => {
       const navbar = document.querySelector('.navbar-collapse');
       navbar.classList.toggle('show');
-    },
+    };
 
-    closeMobileMenu() {
+    const closeMobileMenu = () => {
       const navbar = document.querySelector('.navbar-collapse');
       navbar.classList.remove('show');
-    },
+    };
 
-    changeBackgroundColor() {
-      const checked = this.checked;
+    const changeBackgroundColor = () => {
       const body = document.body;
-      const textColor = checked ? 'rgb(33, 53, 71)' : '';
-      const backgroundColor = checked ? 'white' : '';
+      const textColor = checked.value ? 'rgb(33, 53, 71)' : '';
+      const backgroundColor = checked.value ? 'white' : '';
       const elementsToChangeColor = document.querySelectorAll('h1, .card, .tag, a[href], .img, .translate, .dropdown-item');
-      const footerBackgroundColor = checked ? 'white' : '';
+      const footerBackgroundColor = checked.value ? 'white' : '';
 
       body.style.backgroundColor = backgroundColor;
       body.style.color = textColor;
@@ -297,18 +294,18 @@ export default {
       elementsToChangeColor.forEach(element => {
         element.style.color = textColor;
         if (element.classList.contains('card')) {
-          element.style.backgroundColor = checked ? '#f9f9f9' : '';
+          element.style.backgroundColor = checked.value ? '#f9f9f9' : '';
         } else if (element.classList.contains('tag')) {
-          element.style.border = checked ? '1px solid rgb(0, 220, 130)' : '';
-          element.style.color = checked ? 'rgb(0, 220, 130)' : '';
+          element.style.border = checked.value ? '1px solid rgb(0, 220, 130)' : '';
+          element.style.color = checked.value ? 'rgb(0, 220, 130)' : '';
         } else if (element.tagName.toLowerCase() === 'a') {
-          element.style.color = checked ? 'rgb(33, 53, 71)' : '';
+          element.style.color = checked.value ? 'rgb(33, 53, 71)' : '';
         } else if (element.className === 'img') {
-          element.style.filter = checked ? 'contrast(0.5)' : '';
+          element.style.filter = checked.value ? 'contrast(0.5)' : '';
         } else if (element.className === 'translate') {
-          element.style.filter = checked ? 'contrast(0.5)' : '';
+          element.style.filter = checked.value ? 'contrast(0.5)' : '';
         } else if (element.className === 'dropdown-item') {
-          element.style.color = checked ? 'rgb(33, 53, 71)' : '';
+          element.style.color = checked.value ? 'rgb(33, 53, 71)' : '';
         }
       });
 
@@ -316,12 +313,20 @@ export default {
       if (footer) {
         footer.style.backgroundColor = footerBackgroundColor;
       }
+    };
 
-      
-    },
+    onMounted(() => {
+      const navbarTogglerIcon = document.querySelector('.navbar-toggler-icon');
+      navbarTogglerIcon.addEventListener('click', handleNavbarToggleClick);
+    });
 
-
-
+    return {
+      localFilePath,
+      checked,
+      toggleMobileMenu,
+      closeMobileMenu,
+      changeBackgroundColor
+    };
   }
-}
+};
 </script>

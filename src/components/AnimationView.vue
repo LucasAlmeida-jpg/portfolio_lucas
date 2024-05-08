@@ -8,9 +8,6 @@
 
 <style scoped>
 
-
-
-
 .wave {
     background: rgba(40, 61, 59, 140);
     border-radius: 1000% 1000% 0 0;

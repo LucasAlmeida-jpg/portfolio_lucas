@@ -43,54 +43,63 @@
 </template>
 
 <script>
-export default {
-    data() {
-        return {
-            company: 'creators',
-            scrollDirection: 'down',
-            scrollInterval: null
-        }
-    },
-    mounted() {
-    this.startScroll();
-  },
-  methods: {
-    handleScroll(event) {
-      const monitor = event.target;
-      if (monitor.scrollTop === 0) {
-        this.scrollDirection = 'down';
-      } else if (monitor.scrollTop === monitor.scrollHeight - monitor.clientHeight) {
-        this.scrollDirection = 'up';
-      }
-    },
-    startScroll() {
-      this.scrollInterval = setInterval(() => {
-        const monitor = this.$refs.monitor;
-        if (this.scrollDirection === 'down') {
-          monitor.scrollTop += 1;
-          if (monitor.scrollTop === monitor.scrollHeight - monitor.clientHeight) {
-            clearInterval(this.scrollInterval);
-            setTimeout(() => {
-              this.scrollDirection = 'up';
-              this.startScroll();
-            }, 200);
-          }
-        } else if (this.scrollDirection === 'up') {
-          monitor.scrollTop -= 1;
-          if (monitor.scrollTop === 0) {
-            clearInterval(this.scrollInterval);
-            setTimeout(() => {
-              this.scrollDirection = 'down';
-              this.startScroll();
-            }, 20); 
-          }
-        }
-      }, 20); 
-    }
-}
-}
+import { ref, onMounted } from 'vue';
 
+export default {
+    setup() {
+        const company = 'creators';
+        const scrollDirection = ref('down');
+        let scrollInterval = null;
+
+        const handleScroll = (event) => {
+            const monitor = event.target;
+            if (monitor.scrollTop === 0) {
+                scrollDirection.value = 'down';
+            } else if (monitor.scrollTop === monitor.scrollHeight - monitor.clientHeight) {
+                scrollDirection.value = 'up';
+            }
+        };
+
+        const startScroll = () => {
+            scrollInterval = setInterval(() => {
+                const monitor = document.querySelector('.monitor');
+                if (!monitor) return;
+
+                if (scrollDirection.value === 'down') {
+                    monitor.scrollTop += 1;
+                    if (monitor.scrollTop === monitor.scrollHeight - monitor.clientHeight) {
+                        clearInterval(scrollInterval);
+                        setTimeout(() => {
+                            scrollDirection.value = 'up';
+                            startScroll();
+                        }, 200);
+                    }
+                } else if (scrollDirection.value === 'up') {
+                    monitor.scrollTop -= 1;
+                    if (monitor.scrollTop === 0) {
+                        clearInterval(scrollInterval);
+                        setTimeout(() => {
+                            scrollDirection.value = 'down';
+                            startScroll();
+                        }, 20);
+                    }
+                }
+            }, 20);
+        };
+
+        onMounted(() => {
+            startScroll();
+        });
+
+        return {
+            company,
+            handleScroll,
+            startScroll
+        };
+    }
+};
 </script>
+
 
 <style scoped>
 .cel {
@@ -168,16 +177,17 @@ img {
 }
 
 @media only screen and (max-width: 600px) {
-  .stand:after{
+    .stand:after {
         display: none !important;
     }
-   .stand:before {
+
+    .stand:before {
         display: none;
     }
 
     .monitor {
-    width: 100% !important;
-    height: 100% !important;
+        width: 100% !important;
+        height: 100% !important;
     }
 
 }

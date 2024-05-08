@@ -202,71 +202,81 @@
       </div>
     </section>
   </div>
-
-
 </template>
 
 <script>
+import { ref, onMounted } from 'vue';
 import AOS from 'aos';
 import AnimationView from './AnimationView.vue';
 import ProjectsView from './ProjectsView.vue';
 
 import 'aos/dist/aos.css';
+
 export default {
   components: {
     AnimationView,
     ProjectsView
   },
-  data() {
-    return {
-      skills: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Vite', 'Pinia', 'Nuxt', 'Vuex', 'Fetching Data', 'Axios', 'Chart.js', 'Bootstrap', 'Tailwind'],
-      tools: ['SCSS (SASS)', 'Webpack', 'I18N', 'Artisan'],
-      back: ['Laravel', 'NUXT'],
-      fullText: "",
-      animatedText: "",
-      currentIndex: 0,
-      showCursor: true,
-      typingSpeed: 100,
-      showArrow: true,
-      showDetails: false,
-      seeMore: 'Saiba Mais'
+  setup() {
+    const skills = ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Vite', 'Pinia', 'Nuxt', 'Vuex', 'Fetching Data', 'Axios', 'Chart.js', 'Bootstrap', 'Tailwind'];
+    const tools = ['SCSS (SASS)', 'Webpack', 'I18N', 'Artisan'];
+    const back = ['Laravel', 'NUXT'];
+    const fullText = ref("");
+    const animatedText = ref("");
+    const currentIndex = ref(0);
+    const showCursor = ref(true);
+    const typingSpeed = 100;
+    const showArrow = ref(true);
+    const showDetails = ref(false);
+    const seeMore = ref('Saiba Mais');
 
-    }
-  },
-  
-  mounted() {
-    this.fullText = this.$t('developer') + " " + this.$t('frontEnd');
-    this.typeText();
-    AOS.init({
-      once: false, 
+    const typeText = () => {
+      if (currentIndex.value < fullText.value.length) {
+        animatedText.value += fullText.value.charAt(currentIndex.value);
+        currentIndex.value++;
+        setTimeout(typeText, typingSpeed);
+      } else {
+        showCursor.value = false;
+      }
+    };
+
+    const changeState = () => {
+      showDetails.value = !showDetails.value;
+      seeMore.value = showDetails.value ? 'Saiba Menos' : 'Saiba Mais';
+    };
+
+    onMounted(() => {
+      fullText.value = 'Front-End ' + 'Developer';
+      typeText();
+      AOS.init({
+        once: false,
+      });
+
+      setInterval(() => {
+        showArrow.value = !showArrow.value;
+      }, 300);
     });
 
-    setInterval(() => {
-      this.showArrow = !this.showArrow;
-    }, 300); 
-
-  },
-
-  methods: {
-    typeText() {
-      if (this.currentIndex < this.fullText.length) {
-        this.animatedText += this.fullText.charAt(this.currentIndex);
-        this.currentIndex++;
-        setTimeout(this.typeText, this.typingSpeed);
-      } else {
-        this.showCursor = false;
-      }
-    },
-
-    changeState(){
-      this.showDetails = !this.showDetails
-      this.seeMore = this.showDetails ? 'Saiba Menos' : 'Saiba Mais';
-    }
-  },
- 
-
-}
+    return {
+      skills,
+      tools,
+      back,
+      fullText,
+      animatedText,
+      currentIndex,
+      showCursor,
+      typingSpeed,
+      showArrow,
+      showDetails,
+      seeMore,
+      typeText,
+      changeState
+    };
+  }
+};
 </script>
+
+
 <style scoped>
 section {
   display: flex;

@@ -484,7 +484,7 @@ a {
         transform: translateY(-100%);
         transition: all 0.3s ease-in-out;
         padding: 37px;
-        border-radius: 46px;
+        border-radius: 0px 0px 46px 46px;
 
         transform: translateY(-100%);
         @include transition-ease;

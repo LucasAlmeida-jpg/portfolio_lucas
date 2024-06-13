@@ -1,57 +1,191 @@
 <template>
-  <nav class="navbar nav navbar-expand-lg py-3">
-    <div class="container-fluid">
-      <a class="navbar-brand animate__animated animate__shakeY fw-bold" href="#" @click="closeMobileMenu()">Lucas
-        Almeida</a>
-      <button class="navbar-toggler animate__animated animate__flipInY" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse  animate__animated animate__shakeY" id="navbarNav">
-        <ul class="navbar-nav ">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#" @click="closeMobileMenu">{{ $t('aboutMe') }}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/LucasAlmeida-jpg" target="_blank" @click="closeMobileMenu">{{
-        $t('github') }}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank"
-              @click="closeMobileMenu">Linkedin</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="translate" src="../assets/images/translate.png" alt="">
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item dropdown-item-mobile" @click="$i18n.locale = 'EN';"
-                  :class="{ active: $i18n.locale === 'EN' }">EN(US)</a></li>
-              <li><a class="dropdown-item dropdown-item-mobile" @click="$i18n.locale = 'PT';"
-                  :class="{ active: $i18n.locale === 'PT' }">PT(BR)</a></li>
-            </ul>
-          </li>
-          <li>
-            <label class="switch mt-2">
-              <input type="checkbox" @click="changeBackgroundColor" v-model="checked">
-              <span class="slider round"></span>
-            </label>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#" @click="closeMobileMenu">{{ $t('contact') }}</a>
-          </li> -->
-          <!-- <li class="list-group-item language-switch d-flex align-items-center">
-            <button @click="$i18n.locale = 'EN'; closeMobileMenu()" :class="{ active: $i18n.locale === 'EN' }">EN(US)</button>
-            <button @click="$i18n.locale = 'PT'; closeMobileMenu()" :class="{ active: $i18n.locale === 'PT' }">PT(BR)</button>
-          </li> -->
-        </ul>
+  <header class="header">
+    <nav class="navbar">
+      <div class="container">
+        <div class="brand">
+          <h1 class="lucas_logo">L</h1>
+        </div>
+        <div class="toggle" @click="toggleMenu">
+          <span :class="{ 'toggle-btn': true, open: showMenu }"></span>
+        </div>
+        <div :class="{ 'menu': true, open: showMenu }">
+          <ul :class="{ 'menu-list': true, open: showMenu }">
+            <li class="nav-item" @click="toggleMenu">
+              <a class="menu-link" aria-current="page" href="#" :class="{ 'menu-item': true, open: showMenu }">{{
+          $t('aboutMe') }}</a>
+            </li>
+            <li class="nav-item">
+              <a class="menu-link" href="https://github.com/LucasAlmeida-jpg" target="_blank"
+                :class="{ 'menu-item': true, open: showMenu }">{{
+          $t('github') }}</a>
+            </li>
+            <li class="nav-item">
+              <a class="menu-link" href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank"
+                :class="{ 'menu-item': true, open: showMenu }">Linkedin</a>
+            </li>
+            <li class="nav-item">
+              <a class="menu-link" href="https://www.instagram.com/luccasalmm/" target="_blank"
+                :class="{ 'menu-item': true, open: showMenu }">Instagram</a>
+            </li>
+            <li class="nav-item">
+              <a class="menu-link" href="https://www.instagram.com/luccasalmm/" target="_blank"
+                :class="{ 'menu-item': true, open: showMenu }">Contato (35) 9 9132-9111</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <img class="translate" src="../assets/images/translate.png" alt="">
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item dropdown-item-mobile" @click="$i18n.locale = 'EN';"
+                    :class="{ active: $i18n.locale === 'EN' }">EN(US)</a></li>
+                <li><a class="dropdown-item dropdown-item-mobile" @click="$i18n.locale = 'PT';"
+                    :class="{ active: $i18n.locale === 'PT' }">PT(BR)</a></li>
+              </ul>
+            </li> -->
+            <li>
+              <!-- <label class="switch mt-2">
+                <input type="checkbox" @click="changeBackgroundColor" v-model="checked">
+                <span class="slider round"></span>
+              </label> -->
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      showMenu: false,
+      menuItems: [
+        { text: 'Home' },
+        { text: 'About' },
+        { text: 'Works' },
+        { text: 'Contact' },
+      ],
+      checked: true,
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.showMenu = !this.showMenu;
+    },
+    changeBackgroundColor() {
+      const body = document.body;
+      const textColor = this.checked.value ? 'rgb(33, 53, 71)' : '';
+      const backgroundColor = this.checked.value ? 'white' : '';
+      const elementsToChangeColor = document.querySelectorAll('h1, .card, .tag, a[href], .img, .translate, .dropdown-item');
+      const footerBackgroundColor = this.checked.value ? 'white' : '';
 
-<style scoped>
+      body.style.backgroundColor = backgroundColor;
+      body.style.color = textColor;
+
+      elementsToChangeColor.forEach(element => {
+        element.style.color = textColor;
+        if (element.classList.contains('card')) {
+          element.style.backgroundColor = this.checked.value ? '#f9f9f9' : '';
+        } else if (element.classList.contains('tag')) {
+          element.style.border = this.checked.value ? '1px solid rgb(0, 220, 130)' : '';
+          element.style.color = this.checked.value ? 'rgb(0, 220, 130)' : '';
+        } else if (element.tagName.toLowerCase() === 'a') {
+          element.style.color = this.checked.value ? 'rgb(33, 53, 71)' : '';
+        } else if (element.className === 'img') {
+          element.style.filter = this.checked.value ? 'contrast(0.5)' : '';
+        } else if (element.className === 'translate') {
+          element.style.filter = this.checked.value ? 'contrast(0.5)' : '';
+        } else if (element.className === 'dropdown-item') {
+          element.style.color = this.checked.value ? 'rgb(33, 53, 71)' : '';
+        }
+      });
+
+      const footer = document.getElementById('footer');
+      if (footer) {
+        footer.style.backgroundColor = footerBackgroundColor;
+      }
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+$color-white: #ffffff;
+$color-black: #121212;
+$color-dark: #212121;
+$color-orange: #ff652f;
+
+// Transition Mixin
+@mixin transition-ease {
+  transition: all 0.3s ease-in-out;
+}
+
+// Base Style
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  background-color: #020420;
+  color: (--vt-bg-primary);
+}
+.dropdown-menu{
+  background-color: #020420;
+}
+
+.container {
+  max-width: 75rem;
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+@keyframes rotate-border {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.lucas_logo {
+  border: 4px solid transparent;
+  padding: 15px;
+  border-radius: 50%;
+  width: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 58px;
+  position: relative;
+}
+
+.lucas_logo::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 6px solid rgb(0, 220, 130);
+  border-radius: 50%;
+  clip-path: polygon(-55% 0%, 50% 50%, 100% 100%, 100% 100%, 100% 50%, 92% 0%);
+  animation: rotate-border 2s linear infinite;
+  font-size: 20px;
+}
+
 .language-switch button {
   border: none;
   background: none;
@@ -141,10 +275,13 @@ input:checked+.slider:before {
   background-color: var(--vt-bg-primary);
   border-radius: 40px;
   margin: 12px 0px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .language-switch button:hover {
   color: var(--vt-bg-primary);
+  
 }
 
 .language-switch button.active {
@@ -257,76 +394,148 @@ a {
     transform: scaleY(1.5);
   }
 }
-</style>
 
-<script>
-import { ref, onMounted } from 'vue';
+.header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem;
+  top: 7px;
 
-export default {
-  setup() {
-    const localFilePath = '/src/file/Profile.pdf';
-    const checked = ref(true);
+  .navbar {
+    .toggle {
+      position: absolute;
+      width: 2rem;
+      height: 1.4rem;
+      top: 11px;
+      right: 4rem;
+      z-index: 2;
+      cursor: pointer;
+      color: var(--vt-bg-primary);
+      @include transition-ease;
 
-    const handleNavbarToggleClick = () => {
-      toggleMobileMenu();
-    };
+      &-btn {
+        position: absolute;
+        top: 0.5rem;
+        right: 0;
+        width: 1.6rem;
+        height: 2px;
+        background-color: var(--vt-bg-primary);
+        @include transition-ease;
 
-    const toggleMobileMenu = () => {
-      const navbar = document.querySelector('.navbar-collapse');
-      navbar.classList.toggle('show');
-    };
-
-    const closeMobileMenu = () => {
-      const navbar = document.querySelector('.navbar-collapse');
-      navbar.classList.remove('show');
-    };
-
-    const changeBackgroundColor = () => {
-      const body = document.body;
-      const textColor = checked.value ? 'rgb(33, 53, 71)' : '';
-      const backgroundColor = checked.value ? 'white' : '';
-      const elementsToChangeColor = document.querySelectorAll('h1, .card, .tag, a[href], .img, .translate, .dropdown-item');
-      const footerBackgroundColor = checked.value ? 'white' : '';
-
-      body.style.backgroundColor = backgroundColor;
-      body.style.color = textColor;
-
-      elementsToChangeColor.forEach(element => {
-        element.style.color = textColor;
-        if (element.classList.contains('card')) {
-          element.style.backgroundColor = checked.value ? '#f9f9f9' : '';
-        } else if (element.classList.contains('tag')) {
-          element.style.border = checked.value ? '1px solid rgb(0, 220, 130)' : '';
-          element.style.color = checked.value ? 'rgb(0, 220, 130)' : '';
-        } else if (element.tagName.toLowerCase() === 'a') {
-          element.style.color = checked.value ? 'rgb(33, 53, 71)' : '';
-        } else if (element.className === 'img') {
-          element.style.filter = checked.value ? 'contrast(0.5)' : '';
-        } else if (element.className === 'translate') {
-          element.style.filter = checked.value ? 'contrast(0.5)' : '';
-        } else if (element.className === 'dropdown-item') {
-          element.style.color = checked.value ? 'rgb(33, 53, 71)' : '';
+        &::before {
+          content: "";
+          position: absolute;
+          top: -0.5rem;
+          width: 2rem;
+          height: 2px;
+          background-color: var(--vt-bg-primary);
+          @include transition-ease;
         }
-      });
 
-      const footer = document.getElementById('footer');
-      if (footer) {
-        footer.style.backgroundColor = footerBackgroundColor;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0.5rem;
+          width: 1.2rem;
+          height: 2px;
+          background-color: var(--vt-bg-primary);
+          @include transition-ease;
+        }
+
+        &.open {
+          transform: rotate(720deg);
+          background: transparent;
+
+          &::before {
+            transform: rotate(45deg) translate(5px, 8px);
+          }
+
+          &::after {
+            width: 2rem;
+            transform: rotate(-45deg) translate(3px, -6px);
+          }
+        }
       }
-    };
+    }
 
-    onMounted(() => {
-      const navbarTogglerIcon = document.querySelector('.navbar-toggler-icon');
-      navbarTogglerIcon.addEventListener('click', handleNavbarToggleClick);
-    });
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      opacity: 1;
+      visibility: hidden;
 
-    return {
-      localFilePath,
-      checked,
-      toggleMobileMenu,
-      closeMobileMenu,
-      changeBackgroundColor
-    };
+      &.open {
+        visibility: visible;
+      }
+
+      &-list {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        overflow: hidden;
+        list-style: none;
+        list-style-type: none;
+        padding-right: 1rem;
+        background-color: #020420;
+        color: var(--vt-bg-primary);
+        transform: translateY(-100%);
+        transition: all 0.3s ease-in-out;
+        padding: 37px;
+        border-radius: 46px;
+
+        transform: translateY(-100%);
+        @include transition-ease;
+
+        &.open {
+          transform: translateY(0);
+        }
+      }
+
+      &-item {
+        transform: translateX(100vw);
+        @include transition-ease;
+
+        &.open {
+          transform: translateX(0);
+        }
+      }
+
+      &-link {
+        display: inline-block;
+        padding-bottom: 12px;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: inherit;
+        color:  #00DC82;
+        @include transition-ease;
+
+        &:hover {
+          color:  #00DC82;
+        }
+      }
+
+      @for $i from 1 through 4 {
+        .menu-list {
+          color: (--vt-bg-primary);
+
+          .menu-item:nth-child(#{$i}) {
+            transition-delay: ($i * 0.1s) + 0.15s;
+          }
+        }
+      }
+    }
+
+    .brand {
+      font-family: inherit;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: inherit;
+      color: rgb(0, 220, 130) !important;
+      text-transform: uppercase;
+    }
   }
-};
-</script>
+}
+</style>

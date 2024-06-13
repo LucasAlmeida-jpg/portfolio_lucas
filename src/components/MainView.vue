@@ -3,10 +3,10 @@
     <section class="slide-in">
      <AnimationView />
       <div class="text-center">
-        <h1>
+        <!-- <h1>
           <span v-for="(char, index) in animatedText" :key="index">{{ char }}</span>
           <span v-bind="showCursor" class="cursor">_</span>
-        </h1>
+        </h1> -->
         <div class="d-flex justify-content-center">
           <div class="col-md-4 mt-3">
               <img class="img-thumb-user" src="../assets/images/lucas.jpeg" alt="">

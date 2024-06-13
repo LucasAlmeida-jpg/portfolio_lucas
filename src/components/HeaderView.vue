@@ -2,9 +2,10 @@
   <header class="header">
     <nav class="navbar">
       <div class="container">
-        <div class="brand">
-          <h1 class="lucas_logo">L</h1>
-        </div>
+        <h1 class="front-animation">
+          <span v-for="(char, index) in animatedText" :key="index">{{ char }}</span>
+          <span v-bind="showCursor" class="cursor">_</span>
+        </h1>
         <div class="toggle" @click="toggleMenu">
           <span :class="{ 'toggle-btn': true, open: showMenu }"></span>
         </div>
@@ -68,12 +69,33 @@ export default {
         { text: 'Contact' },
       ],
       checked: true,
+      animatedText: '',
+      fullText: '',
+      currentIndex: '',
+      typingSpeed: 100,
+      showCursor: true
+
+
     };
   },
+   mounted(){
+    this.fullText = 'Front-End ' + 'Developer';
+    this.typeText();
+   },
   methods: {
     toggleMenu() {
       this.showMenu = !this.showMenu;
     },
+    typeText() {
+      if (this.currentIndex < this.fullText.length) {
+        this.animatedText += this.fullText.charAt(this.currentIndex);
+        this.currentIndex++;
+        setTimeout(this.typeText, this.typingSpeed);
+      } else {
+        this.showCursor = false;
+      }
+    },
+
     changeBackgroundColor() {
       const body = document.body;
       const textColor = this.checked.value ? 'rgb(33, 53, 71)' : '';
@@ -160,6 +182,10 @@ body {
   }
 }
 
+.front-animation{
+  font-size: 25px;
+  margin-top: 12px;
+}
 .lucas_logo {
   border: 4px solid transparent;
   padding: 15px;
@@ -407,7 +433,7 @@ a {
       position: absolute;
       width: 2rem;
       height: 1.4rem;
-      top: 11px;
+      top: 11ƒpx;
       right: 4rem;
       z-index: 2;
       cursor: pointer;
@@ -535,6 +561,16 @@ a {
       line-height: inherit;
       color: rgb(0, 220, 130) !important;
       text-transform: uppercase;
+    }
+  }
+
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    .toggle {
+      top: 18px !important;
+      right: 2rem !important;
     }
   }
 }

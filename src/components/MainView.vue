@@ -3,10 +3,10 @@
     <section class="slide-in">
      <AnimationView />
       <div class="text-center">
-        <!-- <h1>
+        <h1>
           <span v-for="(char, index) in animatedText" :key="index">{{ char }}</span>
           <span v-bind="showCursor" class="cursor">_</span>
-        </h1> -->
+        </h1>
         <div class="d-flex justify-content-center">
           <div class="col-md-4 mt-3">
               <img class="img-thumb-user" src="../assets/images/lucas.jpeg" alt="">
@@ -24,7 +24,6 @@
     </transition>
       </div>
     </section>
-
     <section>
       <div class="container mt-5" data-aos="fade-up">
         <ul class="nav nav-pills my-3 d-flex justify-content-center" id="pills-tab" role="tablist">
@@ -145,7 +144,10 @@
       </div>
     </section>
   </div>
-  
+  <!-- <button @click="changeView">See CV</button>
+  <div v-if="seeCV">
+    <cv />
+  </div> -->
   <section class="skills mt-5">
     <div class="text-center" >
       <h1 data-aos="fade-left" data-aos-offset="200">{{ $t('skills') }}</h1>
@@ -209,15 +211,18 @@ import { ref, onMounted } from 'vue';
 import AOS from 'aos';
 import AnimationView from './AnimationView.vue';
 import ProjectsView from './ProjectsView.vue';
+import cv from './cv.vue';
 
 import 'aos/dist/aos.css';
 
 export default {
   components: {
     AnimationView,
-    ProjectsView
+    ProjectsView,
+    cv
   },
   setup() {
+    const seeCV = ref(false);
     const skills = ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Vite', 'Pinia', 'Nuxt', 'Vuex', 'Fetching Data', 'Axios', 'Chart.js', 'Bootstrap', 'Tailwind'];
     const tools = ['SCSS (SASS)', 'Webpack', 'I18N', 'Artisan'];
     const back = ['Laravel', 'NUXT'];
@@ -240,6 +245,10 @@ export default {
       }
     };
 
+    const changeView = () => {
+    seeCV.value = true;      
+    }
+    
     const changeState = () => {
       showDetails.value = !showDetails.value;
       seeMore.value = showDetails.value ? 'Saiba Menos' : 'Saiba Mais';
@@ -270,7 +279,8 @@ export default {
       showDetails,
       seeMore,
       typeText,
-      changeState
+      changeState,
+      changeView
     };
   }
 };

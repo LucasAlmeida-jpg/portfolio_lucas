@@ -225,7 +225,7 @@ export default {
     const seeCV = ref(false);
     const skills = ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Vite', 'Pinia', 'Nuxt', 'Vuex', 'Fetching Data', 'Axios', 'Chart.js', 'Bootstrap', 'Tailwind'];
     const tools = ['SCSS (SASS)', 'Webpack', 'I18N', 'Artisan'];
-    const back = ['Laravel', 'NUXT'];
+    const back = ['Laravel', 'NUXT', 'React.js'];
     const fullText = ref("");
     const animatedText = ref("");
     const currentIndex = ref(0);

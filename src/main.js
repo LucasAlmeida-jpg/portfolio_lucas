@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap';
+// import 'bootstrap';
 import './assets/main.css';
 import { createI18n } from 'vue-i18n';
 import EN from './locale/en.json'

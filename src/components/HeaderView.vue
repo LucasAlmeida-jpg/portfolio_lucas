@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar nav navbar-expand-lg py-3">
     <div class="container-fluid">
-      <a class="navbar-brand animate__animated animate__shakeY fw-bold" href="#" @click="closeMobileMenu()">Lucas
-        Almeida</a>
+      <div class="navbar-brand animate__animated animate__shakeY fw-bold" @click="closeMobileMenu()">
+        {{ title }}</div>
       <button class="navbar-toggler animate__animated animate__flipInY" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -156,9 +156,11 @@ input:checked+.slider:before {
   padding: 10px;
   border-radius: 12px;
   min-width: 123px;
+  color: white !important;
+  font-weight: 100;
 }
 .navbar-brand:hover{
-  color: white;
+  color: white !important;
 }
 .wave-text {
   font-size: 2em;
@@ -268,6 +270,7 @@ export default {
   setup() {
     const localFilePath = '/src/file/Profile.pdf';
     const checked = ref(true);
+    const title = "<Lucas Almeida />";
 
     const handleNavbarToggleClick = () => {
       toggleMobileMenu();
@@ -327,7 +330,8 @@ export default {
       checked,
       toggleMobileMenu,
       closeMobileMenu,
-      changeBackgroundColor
+      changeBackgroundColor,
+      title
     };
   }
 };

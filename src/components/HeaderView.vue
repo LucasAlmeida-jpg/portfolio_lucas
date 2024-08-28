@@ -157,7 +157,9 @@ input:checked+.slider:before {
   border-radius: 12px;
   min-width: 123px;
 }
-
+.navbar-brand:hover{
+  color: white;
+}
 .wave-text {
   font-size: 2em;
   animation: wave 1.5s infinite;

@@ -1,7 +1,7 @@
 <template>
     <footer class="footer-bg" id="footer">
        <div>
-        <span>Codificado por mim. Especialmente para praticar <img class="vue" src="../assets/logo.svg" alt=""></span>
+        <span>Codificado por mim.</span>
        </div>
        <div>
         <span>© 2024 Lucas Gouvea de Almeida </span>   

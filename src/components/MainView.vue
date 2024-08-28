@@ -160,14 +160,14 @@
           </p>
         </div>
       </div>
-      <div class="row mt-5 d-flex justify-content-center">
+      <!-- <div class="row mt-5 d-flex justify-content-center">
         <p data-aos="fade-right" data-aos-offset="200">{{ $t('tools') }}</p>
         <div class="col-auto" v-for="s in tools" data-aos="fade-left" data-aos-offset="200">
           <p class="mt-2 tag col-md-12 text-center ">
             {{ s }}
           </p>
         </div>
-      </div>
+      </div> -->
       <div class="row mt-5 d-flex justify-content-center">
         <p  data-aos="fade-right" data-aos-offset="200">{{ $t('learning') }}</p>
         <div class="col-auto" v-for="s in back"  data-aos="fade-left" data-aos-offset="200">
@@ -198,6 +198,10 @@
 
               <a href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank"
                 rel="noopener noreferrer"><img class="img" src="/src/assets/images/linkedin.png" alt=""></a>
+
+                <!-- <a class="ms-3" href="https://github.com/LucasAlmeida-jpg" target="_blank" rel="noopener noreferrer"><img
+                class="img" src="/src/assets/images/phone-call.svg" alt=""></a> -->
+
             </div>
           </div>
         </div>
@@ -224,7 +228,7 @@ export default {
   setup() {
     const seeCV = ref(false);
     const skills = ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Vite', 'Pinia', 'Nuxt', 'Vuex', 'Fetching Data', 'Axios', 'Chart.js', 'Bootstrap', 'Tailwind'];
-    const tools = ['SCSS (SASS)', 'Webpack', 'I18N', 'Artisan'];
+    // const tools = ['SCSS (SASS)', 'Webpack', 'I18N', 'Composer'];
     const back = ['Laravel', 'NUXT', 'React.js'];
     const fullText = ref("");
     const animatedText = ref("");
@@ -268,7 +272,7 @@ export default {
 
     return {
       skills,
-      tools,
+      // tools,
       back,
       fullText,
       animatedText,

@@ -50,7 +50,7 @@
              
               <div class="col-md-6 card" data-aos="fade-left" data-aos-offset="200">                
                 <div class="mb-1 d-flex align-items-center">
-                  <span class="fs-5 text">Creators LLC {{ $t('developer') }} {{ $t('frontEnd') }}</span><span class="tag ms-3">Remote</span> 
+                  <span class="fs-5 text">Creators LLC - {{ $t('frontEnd') }}</span><span class="tag ms-3">Remote</span> 
                 </div>
                 <div class="mt-3">
                   <p>{{ $t('experience') }} <transition name="move"><span class="role" @click="changeState">{{ seeMore }}</span></transition></p>

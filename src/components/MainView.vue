@@ -19,9 +19,9 @@
             </p>
           </div>
         </div>
-        <transition name="move">
+        <!-- <transition name="move">
       <img v-if="showArrow" class="mt-5 arrow" src="../assets/images/arrow-donw.png" alt="">
-    </transition>
+    </transition> -->
       </div>
     </section>
     <section>
@@ -339,16 +339,11 @@ section {
 .img-thumb-user{
   border-radius: 50%;
   padding: 15px;
-  filter: hue-rotate(423deg);
   object-fit: cover;
   height: 200px;
   width: 200px;
 }
 
-.img-thumb-user:hover{
-  filter: hue-rotate(10deg);
-  cursor: pointer;
-}
 
 .arrow {
   width: 40px;

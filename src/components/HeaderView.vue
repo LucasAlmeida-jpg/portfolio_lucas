@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="navbar-brand animate__animated animate__shakeY fw-bold" @click="closeMobileMenu">
         {{ title }}</div>
-      <button class="navbar-toggler animate__animated animate__flipInY" type="button" data-bs-toggle="collapse"
+      <button  @click="closeMobileMenu" class="navbar-toggler animate__animated animate__flipInY" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

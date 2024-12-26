@@ -15,9 +15,9 @@
     data() {
       return {
         skills: [
-          { name: 'JavaScript', level: 90 },
-          { name: 'Vue.js', level: 90 },
-          { name: 'Nuxt', level: 60 },
+          { name: 'JavaScript', level: 100 },
+          { name: 'Vue.js', level: 100 },
+          { name: 'Nuxt', level: 90 },
           { name: 'Laravel', level: 40 },
           { name: 'React', level: 30 },
           { name: 'Next', level: 20 },

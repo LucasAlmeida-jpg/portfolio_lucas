@@ -35,9 +35,9 @@
   .bar-container {
     flex: 1;
     background-color: #333;
-    border-radius: 5px;
+    border-radius: 25px;
     overflow: hidden;
-    height: 10px;
+    height: 25px;
     margin-left: 10px;
   }
   

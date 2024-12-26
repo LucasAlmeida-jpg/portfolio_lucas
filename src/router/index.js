@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import All from '../views/All.vue';
 import HeaderView from '../components/HeaderView.vue';
 import MainView from '../components/MainView.vue';
+import Project from '../components/Project.vue';
 import About from '../views/About.vue';
 
 const router = createRouter({
@@ -20,7 +21,13 @@ const router = createRouter({
       name: 'mainView',
       component: MainView
     },
-    { path: '/about/:company', component: About },
+    { path: '/about/:company', 
+      component: About 
+    },
+    { path: '/projects/:id', 
+     component: Project 
+  },
+   
   ]
 });
 

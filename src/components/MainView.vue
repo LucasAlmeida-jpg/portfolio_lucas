@@ -161,7 +161,7 @@
   <section class="skills mt-5">
     <div class="text-center">
       <h1 data-aos="fade-left" data-aos-offset="200">{{ $t('skills') }}</h1>
-
+      <p>{{ $t('someSkills') }}</p>
       <!-- <div class="row d-flex justify-content-center">
         <p class="mt-2" data-aos="fade-right" data-aos-offset="200">Tools</p>
         <div class="col-auto" v-for="s in skills" data-aos="fade-left" data-aos-offset="200">

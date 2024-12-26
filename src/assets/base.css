@@ -195,16 +195,7 @@ body {
   .skills{
     margin-top: 20px;
   }
-  .modal-content{
-    background: rgba(15 23 42);
-  }
-  .modal-content .form-control{
-    background-color: rgba(15 23 42) !important;
-    color: white;
-  }
-  .modal-content .textarea {
-  color: white;
-  }
+
   .card {
     min-height: 254px !important;
     text-align: start !important;

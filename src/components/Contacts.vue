@@ -38,7 +38,18 @@
   </div>
 
 </template>
-
+<style>
+  .modal-content{
+    background-color: rgba(15 23 42) !important;
+  }
+  .modal-content .form-control{
+    background-color: rgba(15 23 42) !important;
+    color: white;
+  }
+  .modal-content .textarea {
+  color: white;
+  }
+  </style>
 <script>
 import emailjs from '@emailjs/browser';
 

@@ -8,6 +8,8 @@
   </template>
   
   <script>
+  import AOS from 'aos';
+
   export default {
     props: {
       skill: {
@@ -15,7 +17,9 @@
         required: true,
       },
     },
-  
+    mounted(){
+        AOS.init
+      }
   };
   </script>
   
@@ -35,9 +39,9 @@
   .bar-container {
     flex: 1;
     background-color: #333;
-    border-radius: 25px;
+    border-radius: 5px;
     overflow: hidden;
-    height: 25px;
+    height: 10px;
     margin-left: 10px;
   }
   
@@ -46,5 +50,6 @@
     background-color:  rgb(0, 220, 130) !important;
     transition: width 0.3s ease;
   }
+
   </style>
   

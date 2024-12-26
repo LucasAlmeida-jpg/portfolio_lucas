@@ -38,5 +38,14 @@
     border-radius: 10px;
     color: white;
   }
+  @media only screen and (max-width: 600px) {
+    .skills-container {
+    min-width: 370px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+  }
+}
   </style>
   

@@ -7,11 +7,7 @@
           <span v-for="(char, index) in animatedText" :key="index">{{ char }}</span>
           <span v-bind="showCursor" class="cursor">_</span>
         </h1>
-        <div class="d-flex justify-content-center">
-          <div class="col-md-4 mt-3">
-            <!-- <img class="img-thumb-user" src="../assets/images/gfs.JPG" alt=""> -->
-          </div>
-        </div>
+
         <div class="row">
           <div class="mt-4 container d-flex justify-content-center align-items-center">
             <p class="col-md-7 card">
@@ -19,9 +15,9 @@
             </p>
           </div>
         </div>
-        <!-- <transition name="move">
-      <img v-if="showArrow" class="mt-5 arrow" src="../assets/images/arrow-donw.png" alt="">
-    </transition> -->
+        <transition name="move">
+          <img v-if="showArrow" class="mt-5 arrow" src="../assets/images/arrow-donw.png" alt="">
+        </transition>
       </div>
     </section>
     <section>
@@ -42,90 +38,87 @@
         <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
             tabindex="0">
-            <div class="row my-3 d-flex align-items-center">
-              <div class="mt-3 text-center experience" data-aos="fade-left" data-aos-offset="200">
-                <h1>{{ $t('experience_tag') }}</h1>
-              </div>
-
-              <div class="col-md-6 card" data-aos="fade-left" data-aos-offset="200">
-                <div class="mb-1 d-flex align-items-center">
-                  <span class="fs-5 text">Creators LLC - {{ $t('frontEnd') }}</span><span class="tag ms-3">Remote</span>
-                </div>
-                <div class="mt-3">
-                  <p>{{ $t('experience') }} <transition name="move"><span class="role" @click="changeState">{{ seeMore
-                        }}</span></transition>
-                  </p>
-                  <transition name="fade">
-                    <div class="mt-3 r" v-show="showDetails" @click.stop>
-                      <p class="role">
-                        {{ $t('aboutXp') }}
-                      </p>
-                      <p>{{ $t('conclusionNanads') }}</p>
-                    </div>
-                  </transition>
-                  <span>(2022 - {{ $t('currently') }})</span>
-                </div>
-              </div>
-
-              <div class="col-md-6 presentations" data-aos="fade-right" data-aos-offset="200"><img
-                  class="img-presentation presentation img-computer" src="../assets/images/computer.svg" alt=""> </div>
+            <div class="my-4 text-center experience" data-aos="fade-left" data-aos-offset="200">
+              <h1>{{ $t('experience_tag') }}</h1>
             </div>
-
-            <div class="row my-3 d-flex align-items-center">
-              <div class="col-md-6 presentations" data-aos="fade-right" data-aos-offset="200"><img
-                  class="img-presentation presentation img-computer" src="../assets/images/html.svg" alt="">
-              </div>
-              <div class="col-md-6 card" data-aos="fade-left" data-aos-offset="200">
-                <div class="mb-1 d-flex align-items-center">
-                  <span class="fs-5 text">{{ $t('ste_pl') }}</span><span class="tag ms-3">Remote</span>
+            <Timeline :value="events" align="alternate" class="w-full">
+              <template #content="slotProps">
+                <div v-if="slotProps.index === 0">
+                  <div class="mb-1 d-flex align-items-center">
+                    <span class="fs-5 text">Creators LLC - {{ $t('frontEnd') }}</span><span
+                      class="tag ms-3">Remote</span>
+                  </div>
+                  <div class="mt-5">
+                    <p>{{ $t('experience') }}
+                      <transition name="move">
+                        <span class="role" @click="changeState">{{ seeMore }}</span>
+                      </transition>
+                    </p>
+                    <transition name="fade">
+                      <div class="mt-3 r" v-show="showDetails" @click.stop>
+                        <p class="role">
+                          {{ $t('aboutXp') }}
+                        </p>
+                        <p>{{ $t('conclusionNanads') }}</p>
+                      </div>
+                    </transition>
+                    <span>(2022 - {{ $t('currently') }})</span>
+                  </div>
                 </div>
-                <div class="mt-3">
-                  <p>{{ $t('exp_stefanini') }}</p>
-                  <span> (Mar de 2021 - Abr de 2022)</span>
+                <div v-else-if="slotProps.index === 1">
+                  <div class="mb-1 d-flex align-items-center">
+                    <span class="fs-5 text">{{ $t('ste_pl') }}</span><span class="tag ms-3">Remote</span>
+                  </div>
+                  <div class="mt-3">
+                    <p>{{ $t('exp_stefanini') }}</p>
+                    <span> (Mar de 2021 - Abr de 2022)</span>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="row my-3 d-flex align-items-center aos-init">
-              <div class="col-md-6 card" data-aos="fade-left" data-aos-offset="200">
-                <div class="mb-1 d-flex align-items-center">
-                  <span class="fs-5 text">{{ $t('ste_pl_jr') }}</span><span class="tag ms-3">Remote</span>
+                <div v-else-if="slotProps.index === 2">
+                  <div class="mb-1 d-flex align-items-center">
+                    <span class="fs-5 text">{{ $t('ste_pl_jr') }}</span><span class="tag ms-3">Remote</span>
+                  </div>
+                  <div class="mt-3">
+                    <p>{{ $t('exp_stefanini_pl') }}</p>
+                    <span> (Jan de 2020 - Fev de 2021)</span>
+                  </div>
                 </div>
-                <div class="mt-3">
-                  <p>{{ $t('exp_stefanini_pl') }}</p>
-                  <span> (Jan de 2020 - Fev de 2021)</span>
-                </div>
-              </div>
-              <div class="col-md-6 presentations" data-aos="fade-right" data-aos-offset="200"><img
-                  class="img-presentation img-computer" src="../assets/images/achieve.svg" alt=""></div>
-            </div>
+              </template>
+              <template #opposite="slotProps">
+                <img v-if="slotProps.index === 0" class="img-presentation presentation img-computer mb-5"
+                  src="../assets/images/computer.svg" alt="" />
+                <img v-else-if="slotProps.index === 1" class="img-presentation presentation img-computer my-5"
+                  src="../assets/images/html.svg" alt="" />
+                <img v-else-if="slotProps.index === 2" class="img-presentation img-computer mt-5"
+                  src="../assets/images/achieve.svg" alt="" />
+              </template>
+            </Timeline>
 
           </div>
           <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
             tabindex="0">
-            <div class="row my-3 d-flex align-items-center aos-init">
-              <h1 class="mt-3 text-center experience">{{ $t('graduate') }}</h1>
-              <div class="col-md-6 card" data-aos="fade-right" data-aos-offset="200">
-                <span class="mt-3 fs-5 text">{{ $t('course') }}</span>
-                <span class="fs-5 text">{{ $t('aboutGraduation') }}</span>
-                <p class="mt-4">{{ $t('institute') }}</p>
-              </div>
-              <div class="col-md-6 presentations" data-aos="fade-left" data-aos-offset="200"><img
-                  class="img-presentation img-mobile-none" src="../assets/images/19184614_6101000.svg" alt=""></div>
-            </div>
-
-            <div class="row my-3 d-flex align-items-center justify-content-center">
-              <div class="col-md-6 presentation" data-aos="fade-right" data-aos-offset="200">
-                <img class="img-presentation" src="../assets/images/pc.svg" alt="">
-              </div>
-              <div class="col-md-6 card" data-aos="fade-left" data-aos-offset="200">
-                <span class="fs-5 text">Curso</span>
-                <p class="mt-3">{{ $t('conclusion') }}</p>
-                <img class="w-25 rounded mt-2" src="../assets/images/callan-method.jpg" alt="">
-              </div>
-              <div class="col-md-6 presentation-desk" data-aos="fade-left" data-aos-offset="200">
-                <img class="img-presentation" src="../assets/images/pc.svg" alt="">
-              </div>
-            </div>
+            <h1 class="my-4 text-center experience">{{ $t('graduate') }}</h1>
+            <Timeline :value="educationEvents" align="alternate" class="w-full">
+              <template #content="slotProps">
+                <div v-if="slotProps.index === 0">
+                  <div class="mt-3">
+                    <span class="fs-5 text">{{ $t('course') }}</span>
+                    <span class="fs-5 text">{{ $t('aboutGraduation') }}</span>
+                    <p class="mt-4">{{ $t('institute') }}</p>
+                  </div>
+                </div>
+                <div v-else-if="slotProps.index === 1">
+                  <span class="fs-5 text">Curso</span>
+                  <p class="mt-3">{{ $t('conclusion') }}</p>
+                  <img class="w-25 rounded mt-2" src="../assets/images/callan-method.jpg" alt="">
+                </div>
+              </template>
+              <template #opposite="slotProps">
+                <img v-if="slotProps.index === 0" class="img-presentation img-mobile-none mb-5"
+                  src="../assets/images/19184614_6101000.svg" alt="" />
+                <img v-else-if="slotProps.index === 1" class="img-presentation mt-5" src="../assets/images/pc.svg" alt="" />
+              </template>
+            </Timeline>
           </div>
         </div>
       </div>
@@ -143,33 +136,9 @@
     <div class="text-center">
       <h1 data-aos="fade-left" data-aos-offset="200">{{ $t('skills') }}</h1>
       <p>{{ $t('someSkills') }}</p>
-      <!-- <div class="row d-flex justify-content-center">
-        <p class="mt-2" data-aos="fade-right" data-aos-offset="200">Tools</p>
-        <div class="col-auto" v-for="s in skills" data-aos="fade-left" data-aos-offset="200">
-          <p class="mt-2 tag text-center ">
-            {{ s }}
-          </p>
-        </div>
-      </div> -->
-      <!-- <div class="row mt-5 d-flex justify-content-center">
-        <p data-aos="fade-right" data-aos-offset="200">{{ $t('tools') }}</p>
-        <div class="col-auto" v-for="s in tools" data-aos="fade-left" data-aos-offset="200">
-          <p class="mt-2 tag col-md-12 text-center ">
-            {{ s }}
-          </p>
-        </div>
-      </div> -->
       <div class="row mt-5">
         <Habilities />
       </div>
-      <!-- <div class="row mt-5 d-flex justify-content-center">
-        <p data-aos="fade-right" data-aos-offset="200">{{ $t('learning') }}</p>
-        <div class="col-auto" v-for="s in back" data-aos="fade-left" data-aos-offset="200">
-          <p class="mt-2 tag col-md-12 text-center ">
-            {{ s }}
-          </p>
-        </div>
-      </div> -->
     </div>
   </section>
 
@@ -193,9 +162,6 @@
 
               <a href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank"
                 rel="noopener noreferrer"><img class="img" src="/src/assets/images/linkedin.png" alt=""></a>
-
-              <!-- <a class="ms-3" href="https://github.com/LucasAlmeida-jpg" target="_blank" rel="noopener noreferrer"><img
-                class="img" alt="/src/assets/images/letter.png"></a> -->
 
             </div>
           </div>
@@ -255,6 +221,20 @@ export default {
       seeCV.value = true;
     }
 
+    const events = ref([
+      { id: 1, type: "Creators LLC" },
+      { id: 2, type: "Stefanini PL" },
+      { id: 3, type: "Stefanini PL Junior" },
+      { id: 4, type: "" }
+
+    ]);
+
+    const educationEvents = ref([
+      { id: 1, type: "Graduation" },
+      { id: 2, type: "English Course" },
+      { id: 3, type: "" },
+    ]);
+
     const changeState = () => {
       showDetails.value = !showDetails.value;
       seeMore.value = showDetails.value ? 'Saiba Menos' : 'Saiba Mais';
@@ -274,7 +254,6 @@ export default {
 
     return {
       skills,
-      // tools,
       back,
       fullText,
       animatedText,
@@ -286,7 +265,9 @@ export default {
       seeMore,
       typeText,
       changeState,
-      changeView
+      changeView,
+      events,
+      educationEvents
     };
   }
 };
@@ -294,6 +275,7 @@ export default {
 
 
 <style scoped>
+
 section {
   display: flex;
   align-items: center;
@@ -352,7 +334,6 @@ section {
   height: 200px;
   width: 200px;
 }
-
 
 .arrow {
   width: 40px;
@@ -438,9 +419,18 @@ p {
   width: 30px;
 }
 
-
+.img-presentation{
+  width: 250px;
+}
 
 @media only screen and (max-width: 600px) {
+  :deep(.p-timeline-event-opposite){
+    display: none !important;
+  }
+  :deep(.p-timeline-event){
+    margin: 20px 0px;
+  }
+
   .carousel-item {
     width: 107% !important;
   }

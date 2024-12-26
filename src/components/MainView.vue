@@ -163,7 +163,7 @@
       <h1 data-aos="fade-left" data-aos-offset="200">{{ $t('skills') }}</h1>
 
       <div class="row d-flex justify-content-center">
-        <p class="mt-2" data-aos="fade-right" data-aos-offset="200">Front-End</p>
+        <p class="mt-2" data-aos="fade-right" data-aos-offset="200">Tools</p>
         <div class="col-auto" v-for="s in skills" data-aos="fade-left" data-aos-offset="200">
           <p class="mt-2 tag text-center ">
             {{ s }}
@@ -178,6 +178,9 @@
           </p>
         </div>
       </div> -->
+      <div class="row mt-5">
+        <Habilities />
+      </div>
       <div class="row mt-5 d-flex justify-content-center">
         <p data-aos="fade-right" data-aos-offset="200">{{ $t('learning') }}</p>
         <div class="col-auto" v-for="s in back" data-aos="fade-left" data-aos-offset="200">
@@ -227,6 +230,7 @@ import AnimationView from './AnimationView.vue';
 import ProjectsView from './ProjectsView.vue';
 import PortfolioView from './PortfolioView.vue';
 import Contacts from './Contacts.vue';
+import Habilities from './Habilities.vue';
 
 import cv from './cv.vue';
 
@@ -238,7 +242,8 @@ export default {
     ProjectsView,
     cv,
     PortfolioView,
-    Contacts
+    Contacts,
+    Habilities
   },
   setup() {
     const seeCV = ref(false);

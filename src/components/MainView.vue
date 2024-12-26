@@ -9,7 +9,7 @@
         </h1>
         <div class="d-flex justify-content-center">
           <div class="col-md-4 mt-3">
-            <img class="img-thumb-user" src="../assets/images/gfs.JPG" alt="">
+            <!-- <img class="img-thumb-user" src="../assets/images/gfs.JPG" alt=""> -->
           </div>
         </div>
         <div class="row">

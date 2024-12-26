@@ -57,29 +57,10 @@
                   </p>
                   <transition name="fade">
                     <div class="mt-3 r" v-show="showDetails" @click.stop>
-                      <p cl>{{ $t('experience') }}</p>
                       <p class="role">
-                        A Creators é uma empresa que potencializa os resultados de marcas e creators através da
-                        aplicação de tecnologia, análise de dados e expertise em marketing de influência.
-
-                        Na minha posição na <span>Creators.LLC</span>, atuo como Full-Stack, com foco predominante no
-                        desenvolvimento Front-End. Tenho experiência significativa em aprimorar produtos web, utilizando
-                        uma variedade de ferramentas e tecnologias, tais como:
-                      <ul class="mt-3">
-                        <li>Desenvolvimento de interfaces dinâmicas com o framework Vue.js.</li>
-                        <li>Implementação de design responsivo utilizando Bootstrap.</li>
-                        <li>Integração fluida com APIs para garantir uma experiência de usuário contínua.</li>
-                        <li>Estilização avançada utilizando SCSS para alcançar um design atraente e coeso.</li>
-                        <li>Utilização do Vuex para um eficiente gerenciamento de estado da aplicação.</li>
-                        <li>Criação e manutenção de dashboards dinâmicos utilizando chart.js, enfatizando a visualização
-                          de dados de forma clara e informativa.</li>
-                        <li>Controle de versionamento de código utilizando Git/GitHub para garantir a colaboração eficaz
-                          e o gerenciamento do código-fonte de forma organizada e segura.</li>
-                        <li>Manutenção e Criação de API Rest usando Laravel</li>
-                      </ul>
-                      Essas habilidades e experiências me capacitam a contribuir de forma significativa para o sucesso
-                      dos projetos na Creators.LLC, garantindo produtos de alta qualidade e desempenho excepcional.
+                        {{ $t('aboutXp') }}
                       </p>
+                      <p>{{ $t('conclusionNanads') }}</p>
                     </div>
                   </transition>
                   <span>(2022 - {{ $t('currently') }})</span>
@@ -199,7 +180,8 @@
 
         <div class="row d-flex justify-content-center">
           <div class="col-md-12">
-            <p class="mt-2 text-center">{{ $t('getInTouch') }}<a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">{{
+            <p class="mt-2 text-center">{{ $t('getInTouch') }}<a href="#" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">{{
             $t('thisEmail') }}</a>
             </p>
           </div>
@@ -213,7 +195,7 @@
                 rel="noopener noreferrer"><img class="img" src="/src/assets/images/linkedin.png" alt=""></a>
 
               <!-- <a class="ms-3" href="https://github.com/LucasAlmeida-jpg" target="_blank" rel="noopener noreferrer"><img
-                class="img" src="/src/assets/images/phone-call.svg" alt=""></a> -->
+                class="img" alt="/src/assets/images/letter.png"></a> -->
 
             </div>
           </div>

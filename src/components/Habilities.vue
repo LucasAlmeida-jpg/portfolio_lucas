@@ -17,8 +17,8 @@
         skills: [
           { name: 'JavaScript', level: 100 },
           { name: 'Vue.js', level: 100 },
-          { name: 'Nuxt', level: 90 },
-          { name: 'Laravel', level: 40 },
+          { name: 'Nuxt', level: 60 },
+          { name: 'Laravel', level: 30 },
           { name: 'React', level: 60 },
           { name: 'Next', level: 20 },
         ],

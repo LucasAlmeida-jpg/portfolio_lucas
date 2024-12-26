@@ -32,7 +32,7 @@
   
   <style>
   .skills-container {
-    max-width: 600px;
+    min-width: 850px;
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;

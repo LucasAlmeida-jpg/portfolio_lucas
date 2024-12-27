@@ -23,8 +23,8 @@
               <label for="floatingTextarea2">Mensagem</label>
             </div>
             <div class="modal-footer">
-              <button type="submit" class="btn btn-secondary">Enviar</button>
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+              <Button type="submit" class="btn btn-secondary" :loading="loading" @click="load">Enviar</Button>
+              <Button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</Button>
             </div>
             <span v-show="messageSuccess" color="success">Email enviado com sucesso!</span>
           </form>
@@ -35,17 +35,19 @@
 
 </template>
 <style>
-  .modal-content{
-    background-color: rgba(15 23 42) !important;
-  }
-  .modal-content .form-control{
-    background-color: rgba(15 23 42) !important;
-    color: white;
-  }
-  .modal-content .textarea {
+.modal-content {
+  background-color: rgba(15 23 42) !important;
+}
+
+.modal-content .form-control {
+  background-color: rgba(15 23 42) !important;
   color: white;
-  }
-  </style>
+}
+
+.modal-content .textarea {
+  color: white;
+}
+</style>
 <script>
 import emailjs from '@emailjs/browser';
 
@@ -53,6 +55,8 @@ export default {
   data() {
     return {
       messageSuccess: false,
+      loading: false,
+
     }
   },
   methods: {
@@ -70,6 +74,14 @@ export default {
           },
         );
     },
+    load() {
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+        this.sendEmail()
+      }, 2000);
+    }
+
   },
 };
 </script>

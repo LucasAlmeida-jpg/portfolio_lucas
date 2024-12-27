@@ -15,8 +15,12 @@
             </p>
           </div>
         </div>
+        <ScrollTop />
         <transition name="move">
-          <img v-if="showArrow" class="mt-5 arrow" src="../assets/images/arrow-donw.png" alt="">
+          <span
+            class="slidedown-icon h-8 w-8 text-primary-contrast rounded-full inline-flex items-center justify-center">
+            <i class="pi pi-arrow-down" />
+          </span>
         </transition>
       </div>
     </section>
@@ -31,7 +35,7 @@
           <li class="nav-item" role="presentation">
             <div class="tag nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
               role="tab" aria-controls="pills-profile" aria-selected="false">{{
-            $t('educational_tag') }}</div>
+        $t('educational_tag') }}</div>
           </li>
         </ul>
 
@@ -43,9 +47,9 @@
             </div>
             <Timeline :value="events" align="alternate" class="w-full">
               <template #content="slotProps">
-                <div v-if="slotProps.index === 0">
+                <div v-if="slotProps.index === 0" data-aos="fade-left" data-aos-offset="200">
                   <div class="mb-1 d-flex align-items-center">
-                    <span class="fs-5 text">Creators LLC - {{ $t('frontEnd') }}</span><span
+                    <span class=" text">Creators LLC - {{ $t('frontEnd') }}</span><span
                       class="tag ms-3">Remote</span>
                   </div>
                   <div class="mt-5">
@@ -65,18 +69,18 @@
                     <span>(2022 - {{ $t('currently') }})</span>
                   </div>
                 </div>
-                <div v-else-if="slotProps.index === 1">
+                <div v-else-if="slotProps.index === 1" data-aos="fade-left" data-aos-offset="200">
                   <div class="mb-1 d-flex align-items-center">
-                    <span class="fs-5 text">{{ $t('ste_pl') }}</span><span class="tag ms-3">Remote</span>
+                    <span class=" text">{{ $t('ste_pl') }}</span><span class="tag ms-3">Remote</span>
                   </div>
                   <div class="mt-3">
                     <p>{{ $t('exp_stefanini') }}</p>
                     <span> (Mar de 2021 - Abr de 2022)</span>
                   </div>
                 </div>
-                <div v-else-if="slotProps.index === 2">
+                <div v-else-if="slotProps.index === 2" data-aos="fade-left" data-aos-offset="200">
                   <div class="mb-1 d-flex align-items-center">
-                    <span class="fs-5 text">{{ $t('ste_pl_jr') }}</span><span class="tag ms-3">Remote</span>
+                    <span class=" text">{{ $t('ste_pl_jr') }}</span><span class="tag ms-3">Remote</span>
                   </div>
                   <div class="mt-3">
                     <p>{{ $t('exp_stefanini_pl') }}</p>
@@ -85,11 +89,11 @@
                 </div>
               </template>
               <template #opposite="slotProps">
-                <img v-if="slotProps.index === 0" class="img-presentation presentation img-computer mb-5"
+                <img data-aos="fade-right" data-aos-offset="200" v-if="slotProps.index === 0" class="img-presentation presentation img-computer mb-5"
                   src="../assets/images/computer.svg" alt="" />
-                <img v-else-if="slotProps.index === 1" class="img-presentation presentation img-computer my-5"
+                <img data-aos="fade-right" data-aos-offset="200" v-else-if="slotProps.index === 1" class="img-presentation presentation img-computer my-5"
                   src="../assets/images/html.svg" alt="" />
-                <img v-else-if="slotProps.index === 2" class="img-presentation img-computer mt-5"
+                <img data-aos="fade-right" data-aos-offset="200" v-else-if="slotProps.index === 2" class="img-presentation img-computer mt-5"
                   src="../assets/images/achieve.svg" alt="" />
               </template>
             </Timeline>
@@ -102,13 +106,13 @@
               <template #content="slotProps">
                 <div v-if="slotProps.index === 0">
                   <div class="mt-3">
-                    <span class="fs-5 text">{{ $t('course') }}</span>
-                    <span class="fs-5 text">{{ $t('aboutGraduation') }}</span>
+                    <span class=" text">{{ $t('course') }}</span>
+                    <span class=" text">{{ $t('aboutGraduation') }}</span>
                     <p class="mt-4">{{ $t('institute') }}</p>
                   </div>
                 </div>
                 <div v-else-if="slotProps.index === 1">
-                  <span class="fs-5 text">Curso</span>
+                  <span class=" text">Curso</span>
                   <p class="mt-3">{{ $t('conclusion') }}</p>
                   <img class="w-25 rounded mt-2" src="../assets/images/callan-method.jpg" alt="">
                 </div>
@@ -116,7 +120,8 @@
               <template #opposite="slotProps">
                 <img v-if="slotProps.index === 0" class="img-presentation img-mobile-none mb-5"
                   src="../assets/images/19184614_6101000.svg" alt="" />
-                <img v-else-if="slotProps.index === 1" class="img-presentation mt-5" src="../assets/images/pc.svg" alt="" />
+                <img v-else-if="slotProps.index === 1" class="img-presentation mt-5" src="../assets/images/pc.svg"
+                  alt="" />
               </template>
             </Timeline>
           </div>
@@ -151,18 +156,25 @@
           <div class="col-md-12">
             <p class="mt-2 text-center">{{ $t('getInTouch') }}<a href="#" data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop">{{
-            $t('thisEmail') }}</a>
+        $t('thisEmail') }}</a>
             </p>
           </div>
 
-          <div class="d-flex align-items-center justify-content-center social">
+          <div id="contacts" class="d-flex align-items-center justify-content-center social">
             <div>
-              <a class="me-3" href="https://github.com/LucasAlmeida-jpg" target="_blank" rel="noopener noreferrer"><img
-                  class="img" src="/src/assets/images/github.png" alt=""></a>
 
-              <a href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank"
-                rel="noopener noreferrer"><img class="img" src="/src/assets/images/linkedin.png" alt=""></a>
+              <a href="https://github.com/LucasAlmeida-jpg" target="_blank" rel="noopener noreferrer">
+                <i class="pi pi-github"></i> </a>
 
+
+              <a class="mx-3" href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank"
+                rel="noopener noreferrer">
+                <i class="pi pi-linkedin"></i>
+              </a>
+
+              <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <i class=" pi pi-envelope"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -202,6 +214,7 @@ export default {
     const animatedText = ref("");
     const currentIndex = ref(0);
     const showCursor = ref(true);
+    const iconClass = ref('pi-moon');
     const typingSpeed = 100;
     const showArrow = ref(true);
     const showDetails = ref(false);
@@ -240,6 +253,15 @@ export default {
       seeMore.value = showDetails.value ? 'Saiba Menos' : 'Saiba Mais';
     };
 
+    const onThemeToggler = () => {
+      const root = document.getElementsByTagName('html')[0];
+
+      root.classList.toggle('p-dark');
+
+      iconClass.value = iconClass.value === 'pi-moon' ? 'pi-sun' : 'pi-moon';
+    };
+
+
     onMounted(() => {
       fullText.value = 'Software ' + 'Developer';
       typeText();
@@ -267,7 +289,9 @@ export default {
       changeState,
       changeView,
       events,
-      educationEvents
+      educationEvents,
+      iconClass,
+      onThemeToggler
     };
   }
 };
@@ -275,9 +299,30 @@ export default {
 
 
 <style scoped>
-.main-title{
+@keyframes slidedown-icon {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.slidedown-icon {
+  animation: slidedown-icon;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.main-title {
   margin: 50px 0px !important;
 }
+
 section {
   display: flex;
   align-items: center;
@@ -343,7 +388,9 @@ section {
   border-radius: 50%;
   padding: 3px;
 }
-
+:deep(.p-timeline-event-connector){
+background-color: #00DC82;
+}
 .cursor {
   animation: blink 1s infinite;
   color: white !important;
@@ -421,7 +468,7 @@ p {
   width: 30px;
 }
 
-.img-presentation{
+.img-presentation {
   width: 250px;
 }
 
@@ -430,10 +477,11 @@ p {
     display: none !important;
   }
 
-  :deep(.p-timeline-event-opposite){
+  :deep(.p-timeline-event-opposite) {
     display: none !important;
   }
-  :deep(.p-timeline-event){
+
+  :deep(.p-timeline-event) {
     margin: 20px 0px;
   }
 

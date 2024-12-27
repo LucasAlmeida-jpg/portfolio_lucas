@@ -20,6 +20,10 @@
             <a class="nav-link" href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank"
               @click="closeMobileMenu">Linkedin</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacts"
+              @click="closeMobileMenu">Contatos</a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <img class="translate" src="../assets/images/translate.png" alt="">
@@ -32,10 +36,15 @@
             </ul>
           </li>
           <li>
-            <label class="switch mt-2">
+            <button type="button"
+              class="mt-2 px-1 inline-flex w-8 h-8 p-0 items-center justify-center surface-0 dark:surface-800 border border-surface-200 dark:border-surface-600 rounded"
+              @click="onThemeToggler">
+              <i :class="`dark:text-white pi ${iconClass}`" />
+            </button>
+            <!-- <label class="switch mt-2">
               <input type="checkbox" @click="changeBackgroundColor" v-model="checked">
               <span class="slider round"></span>
-            </label>
+            </label> -->
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#" @click="closeMobileMenu">{{ $t('contact') }}</a>
@@ -135,12 +144,16 @@ input:checked+.slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+.dropdown-item {
+  width: 90px;
+}
 
 .dropdown-item.active,
 .dropdown-item:active {
   background-color: var(--vt-bg-primary);
   border-radius: 40px;
   margin: 12px 0px;
+  width: 90px;
 }
 
 .language-switch button:hover {
@@ -269,8 +282,9 @@ import { ref, onMounted } from 'vue';
 export default {
   setup() {
     const localFilePath = '/src/file/Profile.pdf';
-    const checked = ref(true);
+    const checked = ref(false);
     const title = "<Lucas Almeida />";
+    const iconClass = ref('pi-moon');
 
     const handleNavbarToggleClick = () => {
       toggleMobileMenu();
@@ -284,6 +298,20 @@ export default {
     const closeMobileMenu = () => {
       const navbar = document.querySelector('.navbar-collapse');
       navbar.classList.remove('show');
+    };
+
+    const onThemeToggler = () => {
+      const root = document.getElementsByTagName('html')[0];
+      root.classList.toggle('p-dark');
+
+      // Alterna o ícone
+      iconClass.value = iconClass.value === 'pi-sun' ? 'pi-moon' : 'pi-sun';
+
+      // Alterna o valor de 'checked' para gerenciar o tema
+      checked.value = !checked.value;
+
+      // Chama a função para atualizar a cor de fundo e texto
+      changeBackgroundColor();
     };
 
     const changeBackgroundColor = () => {
@@ -300,7 +328,7 @@ export default {
         element.style.color = textColor;
         if (element.classList.contains('card')) {
           element.style.backgroundColor = checked.value ? '#f9f9f9' : '';
-        } else if (element.classList.contains('tag')) {
+        } else if (element.classList.contains('tag', 'skill-name')) {
           element.style.border = checked.value ? '1px solid rgb(0, 220, 130)' : '';
           element.style.color = checked.value ? 'rgb(0, 220, 130)' : '';
         } else if (element.tagName.toLowerCase() === 'a') {
@@ -331,7 +359,9 @@ export default {
       toggleMobileMenu,
       closeMobileMenu,
       changeBackgroundColor,
-      title
+      title,
+      onThemeToggler,
+      iconClass
     };
   }
 };

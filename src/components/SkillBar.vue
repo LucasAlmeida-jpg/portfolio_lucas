@@ -1,8 +1,8 @@
 <template>
     <div class="skill-bar">
-      <span class="skill-name">{{ skill.name }}</span>
-      <div class="bar-container">
-        <div class="bar" :style="{ width: skill.level + '%' }"></div>
+      <span data-aos="fade-right" data-aos-offset="200" class="skill-name">{{ skill.name }}</span>
+      <div class="bar-container" data-aos="fade-left" data-aos-offset="200" >
+        <div data-aos="fade-left" data-aos-offset="200" class="bar" :style="{ width: skill.level + '%' }"></div>
       </div>
     </div>
   </template>

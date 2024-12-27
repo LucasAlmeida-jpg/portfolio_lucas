@@ -12,6 +12,13 @@ import PrimeVue from 'primevue/config';
 import Aura from '@primevue/themes/aura';
 import Button from "primevue/button"
 import Timeline from 'primevue/timeline';
+import ScrollTop from 'primevue/scrolltop';
+import MeterGroup from 'primevue/metergroup';
+import Card from 'primevue/card';
+import 'primeicons/primeicons.css'
+import AnimateOnScroll from 'primevue/animateonscroll';
+import Fieldset from 'primevue/fieldset';
+import OrganizationChart from 'primevue/organizationchart';
 
 
 const app = createApp(App);
@@ -33,3 +40,11 @@ app.use(i18n);
 app.mount('#app');
 
 app.component('Timeline', Timeline);
+app.component('ScrollTop', ScrollTop);
+app.component('MeterGroup', MeterGroup);
+app.component('Card', Card);
+app.component('Button', Button);
+app.component('Fieldset', Fieldset);
+app.component('OrganizationChart', OrganizationChart);
+
+app.directive('animateonscroll', AnimateOnScroll);

@@ -12,16 +12,15 @@
           <div class="mt-4 container d-flex justify-content-center align-items-center">
             <p class="col-md-7 card">
               {{ $t('aboutLucas') }} {{ $t('aboutLucasSub') }}
+              <img class="emoji" src="../assets/emoji.png" alt="">
             </p>
           </div>
         </div>
         <ScrollTop />
-        <transition name="move">
-          <span
-            class="slidedown-icon h-8 w-8 text-primary-contrast rounded-full inline-flex items-center justify-center">
-            <i class="pi pi-arrow-down" />
-          </span>
-        </transition>
+        <span
+  class="slidedown-icon h-8 w-8 text-primary-contrast rounded-full inline-flex items-center justify-center">
+  <i class="pi pi-arrow-down" />
+</span>
       </div>
     </section>
     <section>
@@ -299,24 +298,18 @@ export default {
 
 
 <style scoped>
-@keyframes slidedown-icon {
-  0% {
-    transform: translateY(0);
-  }
 
-  50% {
-    transform: translateY(20px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
 
 .slidedown-icon {
-  animation: slidedown-icon;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
+  opacity: 0;
+  transform: translateY(-10px); /* Ajuste a posição inicial se necessário */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Quando o ícone estiver visível */
+.slidedown-icon.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .main-title {
@@ -333,7 +326,13 @@ section {
   cursor: pointer;
   font-size: 12px;
 }
-
+.emoji{
+  position: absolute;
+    width: 85px;
+    top: -40px;
+    right: -40px;
+    transform: rotate(30deg);
+}
 .move-enter-active,
 .move-leave-active {
   transition: transform 2s ease;

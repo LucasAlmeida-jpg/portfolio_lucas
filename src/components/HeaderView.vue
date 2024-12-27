@@ -22,7 +22,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contacts"
-              @click="closeMobileMenu">Contatos</a>
+              @click="closeMobileMenu">{{ $t('contacts') }}</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -41,18 +41,7 @@
               @click="onThemeToggler">
               <i :class="`dark:text-white pi ${iconClass}`" />
             </button>
-            <!-- <label class="switch mt-2">
-              <input type="checkbox" @click="changeBackgroundColor" v-model="checked">
-              <span class="slider round"></span>
-            </label> -->
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#" @click="closeMobileMenu">{{ $t('contact') }}</a>
-          </li> -->
-          <!-- <li class="list-group-item language-switch d-flex align-items-center">
-            <button @click="$i18n.locale = 'EN'; closeMobileMenu()" :class="{ active: $i18n.locale === 'EN' }">EN(US)</button>
-            <button @click="$i18n.locale = 'PT'; closeMobileMenu()" :class="{ active: $i18n.locale === 'PT' }">PT(BR)</button>
-          </li> -->
         </ul>
       </div>
     </div>

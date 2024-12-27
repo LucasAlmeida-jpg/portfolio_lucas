@@ -19,6 +19,7 @@ import 'primeicons/primeicons.css'
 import AnimateOnScroll from 'primevue/animateonscroll';
 import Fieldset from 'primevue/fieldset';
 import OrganizationChart from 'primevue/organizationchart';
+// import Menubar from 'primevue/menubar';
 
 
 const app = createApp(App);
@@ -28,7 +29,7 @@ app.use(PrimeVue, {
     }
 });
 const i18n = createI18n({
-    locale: 'PT',
+    locale: 'EN',
     messages: {
         EN: EN,
         PT: PT
@@ -46,5 +47,6 @@ app.component('Card', Card);
 app.component('Button', Button);
 app.component('Fieldset', Fieldset);
 app.component('OrganizationChart', OrganizationChart);
+// app.component('Menubar', Menubar);
 
 app.directive('animateonscroll', AnimateOnScroll);

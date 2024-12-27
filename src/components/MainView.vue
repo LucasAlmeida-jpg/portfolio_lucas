@@ -111,7 +111,7 @@
                   </div>
                 </div>
                 <div v-else-if="slotProps.index === 1">
-                  <span class=" text">Curso</span>
+                  <span class=" text">{{ $t('courseType') }}</span>
                   <p class="mt-3">{{ $t('conclusion') }}</p>
                   <img class="w-25 rounded mt-2" src="../assets/images/callan-method.jpg" alt="">
                 </div>
@@ -217,7 +217,7 @@ export default {
     const typingSpeed = 100;
     const showArrow = ref(true);
     const showDetails = ref(false);
-    const seeMore = ref('Saiba Mais');
+    const seeMore = ref('+');
 
     const typeText = () => {
       if (currentIndex.value < fullText.value.length) {
@@ -249,7 +249,7 @@ export default {
 
     const changeState = () => {
       showDetails.value = !showDetails.value;
-      seeMore.value = showDetails.value ? 'Saiba Menos' : 'Saiba Mais';
+      seeMore.value = showDetails.value ? '-' : '+';
     };
 
     const onThemeToggler = () => {
@@ -298,19 +298,6 @@ export default {
 
 
 <style scoped>
-
-
-.slidedown-icon {
-  opacity: 0;
-  transform: translateY(-10px); /* Ajuste a posição inicial se necessário */
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Quando o ícone estiver visível */
-.slidedown-icon.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 .main-title {
   margin: 50px 0px !important;

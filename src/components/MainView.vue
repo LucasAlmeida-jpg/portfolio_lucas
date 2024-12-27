@@ -39,7 +39,7 @@
           <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
             tabindex="0">
             <div class="my-4 text-center experience" data-aos="fade-left" data-aos-offset="200">
-              <h1>{{ $t('experience_tag') }}</h1>
+              <h1 class="main-title">{{ $t('experience_tag') }}</h1>
             </div>
             <Timeline :value="events" align="alternate" class="w-full">
               <template #content="slotProps">
@@ -97,7 +97,7 @@
           </div>
           <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
             tabindex="0">
-            <h1 class="my-4 text-center experience">{{ $t('graduate') }}</h1>
+            <h1 class="my-4 text-center experience main-title">{{ $t('graduate') }}</h1>
             <Timeline :value="educationEvents" align="alternate" class="w-full">
               <template #content="slotProps">
                 <div v-if="slotProps.index === 0">
@@ -225,7 +225,7 @@ export default {
       { id: 1, type: "Creators LLC" },
       { id: 2, type: "Stefanini PL" },
       { id: 3, type: "Stefanini PL Junior" },
-      { id: 4, type: "" }
+      { id: 3, type: "" }
 
     ]);
 
@@ -275,7 +275,9 @@ export default {
 
 
 <style scoped>
-
+.main-title{
+  margin: 50px 0px !important;
+}
 section {
   display: flex;
   align-items: center;
@@ -424,6 +426,10 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
+  ::v-deep(.p-timeline-event-marker:last-child) {
+    display: none !important;
+  }
+
   :deep(.p-timeline-event-opposite){
     display: none !important;
   }

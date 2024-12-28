@@ -8,14 +8,14 @@
           <span v-bind="showCursor" class="cursor">_</span>
         </h1>
 
-        <!-- <div class="row">
+        <div class="row">
           <div class="mt-4 container d-flex justify-content-center align-items-center">
             <p class="col-md-7 card">
               {{ $t('aboutLucas') }} {{ $t('aboutLucasSub') }}
               <img class="emoji" src="../assets/emoji.png" alt="">
             </p>
           </div>
-        </div> -->
+        </div>
         <ScrollTop />
         <span
   class="slidedown-icon h-8 w-8 text-primary-contrast rounded-full inline-flex items-center justify-center">

@@ -17,10 +17,10 @@
           </div>
         </div>
         <ScrollTop />
-        <span
-  class="slidedown-icon h-8 w-8 text-primary-contrast rounded-full inline-flex items-center justify-center">
-  <i class="pi pi-arrow-down" />
-</span>
+        <!-- <span
+          class="slidedown-icon h-8 w-8 text-primary-contrast rounded-full inline-flex items-center justify-center">
+          <i class="pi pi-arrow-down" />
+        </span> -->
       </div>
     </section>
     <section>

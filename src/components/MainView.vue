@@ -142,7 +142,7 @@
     </div>
   </section>
 
-  <div class="mainViewSection" data-aos="fade-left" data-aos-offset="200">
+  <div class="mainViewSection">
     <div>
         <Contacts />
       </div>   

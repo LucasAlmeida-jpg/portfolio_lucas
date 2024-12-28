@@ -1,7 +1,7 @@
 <template>
   <Toast />
   <div class="container">
-    <div class="row">
+    <div class="row" data-aos="fade-left" data-aos-offset="200">
       <section class="mt-5">
         <div class="text-center">
           <h1>{{ $t('contact') }}</h1>
@@ -14,7 +14,7 @@
       </section>
     </div>
     <div class="row mt-3 d-flex align-items-center justify-content-between">
-      <div class="col-md-6">
+      <div class="col-md-6" data-aos="fade-right" data-aos-offset="200">
         <div class="personal-info">
           <h2 class="mb-4">Lucas Gouvêa de Almeida</h2>
           <p class="d-flex align-items-center gap-2 info"><i class="pi pi-envelope"></i> lucasalmeidagouvea123@gmail.com</p>
@@ -27,7 +27,7 @@
           </p>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6" data-aos="fade-left" data-aos-offset="200">
         <form ref="form" @submit.prevent="sendEmail">
           <div class="form-floating">
             <input required type="text" name="subject" class="form-control" id="floatingAssunto" />
@@ -51,10 +51,12 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import emailjs from "@emailjs/browser";
 import { useToast } from "primevue/usetoast";
 import Toast from "primevue/toast";
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 export default {
   name: "ContactForm",
@@ -83,7 +85,6 @@ export default {
           }
         );
     };
-
     const showSuccess = () => {
       toast.add({
         severity: "success",
@@ -92,6 +93,11 @@ export default {
         life: 5000,
       });
     };
+    onMounted(() => {    
+      AOS.init({
+        once: false,
+      });    
+    });
 
     return {
       form,

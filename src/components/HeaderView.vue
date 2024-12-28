@@ -308,11 +308,9 @@ export default {
   const body = document.body;
   const isDarkMode = checked.value;
 
-  // Aplicar estilos ao body
   body.style.backgroundColor = isDarkMode ? 'white' : '';
   body.style.color = isDarkMode ? 'rgb(33, 53, 71)' : '';
 
-  // Atualizar elementos específicos
   const elementsToChangeColor = document.querySelectorAll('h1, .card, .tag, a[href], .img, .translate, .dropdown-item, .title-name');
   elementsToChangeColor.forEach(element => {
     if (element.classList.contains('card')) {
@@ -326,12 +324,9 @@ export default {
       element.style.filter = isDarkMode ? 'contrast(0.5)' : '';
     } else if (element.classList.contains('dropdown-item')) {
       element.style.color = isDarkMode ? 'rgb(33, 53, 71)' : '';
-    } else if (element.classList.contains('title-name')) {
-      element.style.color = isDarkMode ? 'rgb(0, 220, 130)' : '';
     }
   });
 
-  // Atualizar estilo do footer
   const footer = document.getElementById('footer');
   if (footer) {
     footer.style.backgroundColor = isDarkMode ? 'white' : '';

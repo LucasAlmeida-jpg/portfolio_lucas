@@ -1,28 +1,24 @@
 <template>
+  <Toast />
   <div class="container">
     <div class="row">
       <section class="mt-5">
         <div class="text-center">
           <h1>{{ $t('contact') }}</h1>
-
           <div class="row mt-4 d-flex justify-content-center">
             <div class="col-md-12">
-              <p class="mb-4 text-center">{{ $t('getInTouch') }}
-              </p>
+              <p class="mb-4 text-center">{{ $t('getInTouch') }}</p>
             </div>
           </div>
         </div>
-
       </section>
     </div>
     <div class="row mt-3 d-flex align-items-center justify-content-between">
       <div class="col-md-6">
         <div class="personal-info">
           <h2 class="mb-4">Lucas Gouvêa de Almeida</h2>
-          <p class="d-flex align-items-center gap-2 info"><i class="pi pi-envelope"></i> lucasalmeidagouvea123@gmail.com
-          </p>
-          <p class="d-flex align-items-center gap-2 info"><i class="pi pi-map-marker"></i> Poços de Caldas - MG - Brasil
-          </p>
+          <p class="d-flex align-items-center gap-2 info"><i class="pi pi-envelope"></i> lucasalmeidagouvea123@gmail.com</p>
+          <p class="d-flex align-items-center gap-2 info"><i class="pi pi-map-marker"></i> Poços de Caldas - MG - Brasil</p>
           <p class="d-flex align-items-center gap-2">
             <i class="pi pi-github"></i><a href="https://github.com/LucasAlmeida-jpg" target="_blank">Github</a>
           </p>
@@ -34,11 +30,11 @@
       <div class="col-md-6">
         <form ref="form" @submit.prevent="sendEmail">
           <div class="form-floating">
-            <input required type="text" name="subject" class="form-control" id="floatingAssunto">
+            <input required type="text" name="subject" class="form-control" id="floatingAssunto" />
             <label for="floatingAssunto">Assunto</label>
           </div>
           <div class="form-floating my-4">
-            <input required type="text" name="from_name" class="form-control" id="floatingName">
+            <input required type="text" name="from_name" class="form-control" id="floatingName" />
             <label for="floatingName">Nome</label>
           </div>
           <div class="form-floating">
@@ -57,12 +53,17 @@
 <script>
 import { ref } from "vue";
 import emailjs from "@emailjs/browser";
+import { useToast } from "primevue/usetoast";
+import Toast from "primevue/toast";
 
 export default {
   name: "ContactForm",
+  components: {
+    Toast,
+  },
   setup() {
     const form = ref(null);
-    const messageSuccess = ref(false);
+    const toast = useToast();
 
     const sendEmail = () => {
       emailjs
@@ -74,8 +75,7 @@ export default {
         )
         .then(
           () => {
-            messageSuccess.value = true;
-            alert("E-mail enviado com sucesso!");
+            showSuccess();
           },
           (error) => {
             console.error("Erro ao enviar email:", error);
@@ -84,14 +84,24 @@ export default {
         );
     };
 
+    const showSuccess = () => {
+      toast.add({
+        severity: "success",
+        summary: "E-mail enviado!",
+        detail: "Aguarde, retorno em breve!",
+        life: 5000,
+      });
+    };
+
     return {
       form,
       sendEmail,
-      messageSuccess,
+      toast,
     };
   },
 };
 </script>
+
 
 <style scoped>
 i {

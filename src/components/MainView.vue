@@ -131,11 +131,7 @@
   <!-- <section>
     <PortfolioView />
   </section> -->
-  <section class="mt-5">
-    <div>
-      <Contacts />
-    </div>
-  </section>
+
   <section class="skills mt-5">
     <div class="text-center">
       <h1 data-aos="fade-left" data-aos-offset="200">{{ $t('skills') }}</h1>
@@ -147,38 +143,9 @@
   </section>
 
   <div class="mainViewSection" data-aos="fade-left" data-aos-offset="200">
-    <section class="mt-5">
-      <div class="text-center">
-        <h1>{{ $t('contact') }}</h1>
-
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-12">
-            <p class="mt-2 text-center">{{ $t('getInTouch') }}<a href="#" data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop">{{
-        $t('thisEmail') }}</a>
-            </p>
-          </div>
-
-          <div id="contacts" class="d-flex align-items-center justify-content-center social">
-            <div>
-
-              <a href="https://github.com/LucasAlmeida-jpg" target="_blank" rel="noopener noreferrer">
-                <i class="pi pi-github"></i> </a>
-
-
-              <a class="mx-3" href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank"
-                rel="noopener noreferrer">
-                <i class="pi pi-linkedin"></i>
-              </a>
-
-              <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                <i class=" pi pi-envelope"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div>
+        <Contacts />
+      </div>   
   </div>
 </template>
 

@@ -1,87 +1,138 @@
 <template>
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Contato</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="container">
+    <div class="row">
+      <section class="mt-5">
+        <div class="text-center">
+          <h1>{{ $t('contact') }}</h1>
+
+          <div class="row mt-4 d-flex justify-content-center">
+            <div class="col-md-12">
+              <p class="mb-4 text-center">{{ $t('getInTouch') }}
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="modal-body">
-          <form ref="form" @submit.prevent="sendEmail">
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="floatingInputAssunto" placeholder="Assunto" name="subject">
-              <label for="floatingInputAssunto">Assunto</label>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="floatingInputNome" placeholder="Nome" name="from_name">
-              <label for="floatingInputNome">Nome</label>
-            </div>
-            <div class="form-floating">
-              <textarea name="message" class="form-control" placeholder="Mensagem" id="floatingTextarea2"
-                style="height: 100px"></textarea>
-              <label for="floatingTextarea2">Mensagem</label>
-            </div>
-            <div class="modal-footer">
-              <Button type="submit" class="btn btn-secondary" :loading="loading" @click="load">Enviar</Button>
-              <Button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</Button>
-            </div>
-            <span v-show="messageSuccess" color="success">Email enviado com sucesso!</span>
-          </form>
+
+      </section>
+    </div>
+    <div class="row mt-3 d-flex align-items-center justify-content-between">
+      <div class="col-md-6">
+        <div class="personal-info">
+          <h2 class="mb-4">Lucas Gouvêa de Almeida</h2>
+          <p class="d-flex align-items-center gap-2 info"><i class="pi pi-envelope"></i> lucasalmeidagouvea123@gmail.com
+          </p>
+          <p class="d-flex align-items-center gap-2 info"><i class="pi pi-map-marker"></i> Poços de Caldas - MG - Brasil
+          </p>
+          <p class="d-flex align-items-center gap-2">
+            <i class="pi pi-github"></i><a href="https://github.com/LucasAlmeida-jpg" target="_blank">Github</a>
+          </p>
+          <p class="d-flex align-items-center gap-2">
+            <i class="pi pi-linkedin"></i><a href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank">Linkedin</a>
+          </p>
         </div>
+      </div>
+      <div class="col-md-6">
+        <form ref="form" @submit.prevent="sendEmail">
+          <div class="form-floating">
+            <input required type="text" name="subject" class="form-control" id="floatingAssunto">
+            <label for="floatingAssunto">Assunto</label>
+          </div>
+          <div class="form-floating my-4">
+            <input required type="text" name="from_name" class="form-control" id="floatingName">
+            <label for="floatingName">Nome</label>
+          </div>
+          <div class="form-floating">
+            <textarea required class="form-control" name="message" id="floatingTextarea2" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Mensagem</label>
+          </div>
+          <div class="mt-4">
+            <Button type="submit">{{ $t('sendEmail') }}</Button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-
 </template>
-<style>
-.modal-content {
-  background-color: rgba(15 23 42) !important;
-}
 
-.modal-content .form-control {
-  background-color: rgba(15 23 42) !important;
-  color: white;
-}
-
-.modal-content .textarea {
-  color: white;
-}
-</style>
 <script>
-import emailjs from '@emailjs/browser';
+import { ref } from "vue";
+import emailjs from "@emailjs/browser";
 
 export default {
-  data() {
-    return {
-      messageSuccess: false,
-      loading: false,
+  name: "ContactForm",
+  setup() {
+    const form = ref(null);
+    const messageSuccess = ref(false);
 
-    }
-  },
-  methods: {
-    sendEmail() {
+    const sendEmail = () => {
       emailjs
-        .sendForm('service_0ydsod8', 'template_bi2lph3', this.$refs.form, {
-          publicKey: 'KDiWjLI_r_9YY6t7p',
-        })
+        .sendForm(
+          "service_0ydsod8",
+          "template_bi2lph3",
+          form.value,
+          "KDiWjLI_r_9YY6t7p"
+        )
         .then(
           () => {
-            this.messageSuccess = true;
+            messageSuccess.value = true;
+            alert("E-mail enviado com sucesso!");
           },
           (error) => {
-            console.log('Erro ao enviar email!');
-          },
+            console.error("Erro ao enviar email:", error);
+            alert("Erro ao enviar e-mail. Tente novamente.");
+          }
         );
-    },
-    load() {
-      this.loading = true;
-      setTimeout(() => {
-        this.loading = false;
-        this.sendEmail()
-      }, 2000);
-    }
+    };
 
+    return {
+      form,
+      sendEmail,
+      messageSuccess,
+    };
   },
 };
 </script>
+
+<style scoped>
+i {
+  color: var(--vt-bg-primary);
+}
+
+input,
+textarea {
+  background-color: transparent;
+  border: 1px solid var(--vt-bg-primary);
+  color: var(--vt-bg-primary);
+  padding: 0.5rem;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  background-color: transparent;
+  border-color: var(--vt-bg-primary);
+  color: var(--vt-bg-primary);
+}
+
+input:active,
+textarea:active {
+  background-color: transparent;
+  border-color: var(--vt-bg-primary);
+}
+
+.info {
+  color: var(--vt-bg-primary);
+}
+
+Button {
+  color: white !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: white !important;
+  opacity: 0.7;
+}
+</style>

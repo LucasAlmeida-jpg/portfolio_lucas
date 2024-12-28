@@ -27,7 +27,7 @@
     "professionals_tag": "Profissional",
     "educational_tag": "Educacional",
     "experience_tag": "Experiência Profissional",
-    "getInTouch": "Entre em contato através dos dados ou enviando um e-mail para",
+    "getInTouch": "Entre em contato através dos dados ou enviando um e-mail",
     "thisEmail": "este e-mail.",
     "contact": "Contato",
     "conclusion": "Conclusão de curso de inglês pela metodologia Callan Method, através do Instituto USK Callan Method, Poços de Caldas - MG",
@@ -44,7 +44,8 @@
     "coded": "Codificado por mim",
     "contacts": "Contatos",
     "courseType": "Curso",
-    "knowMore": "Saiba Mais"
+    "knowMore": "Saiba Mais",
+    "sendEmail": "Enviar Email"
 
 
 

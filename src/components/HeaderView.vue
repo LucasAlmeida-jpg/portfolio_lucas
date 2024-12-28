@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar nav navbar-expand-lg py-3">
     <div class="container-fluid">
-      <div class="navbar-brand animate__animated animate__shakeY fw-bold" @click="closeMobileMenu">
+      <div class="navbar-brand title-name animate__animated animate__shakeY fw-bold" @click="closeMobileMenu">
         {{ title }}</div>
       <button  @click="closeMobileMenu" class="navbar-toggler animate__animated animate__flipInY" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,10 +20,10 @@
             <a class="nav-link" href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank"
               @click="closeMobileMenu">Linkedin</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#contacts"
               @click="closeMobileMenu">{{ $t('contacts') }}</a>
-          </li>
+          </li> -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <img class="translate" src="../assets/images/translate.png" alt="">
@@ -293,49 +293,47 @@ export default {
       const root = document.getElementsByTagName('html')[0];
       root.classList.toggle('p-dark');
 
-      // Alterna o ícone
       iconClass.value = iconClass.value === 'pi-sun' ? 'pi-moon' : 'pi-sun';
 
-      // Alterna o valor de 'checked' para gerenciar o tema
       checked.value = !checked.value;
 
-      // Chama a função para atualizar a cor de fundo e texto
       changeBackgroundColor();
     };
 
     const changeBackgroundColor = () => {
-      const body = document.body;
-      const textColor = checked.value ? 'rgb(33, 53, 71)' : '';
-      const backgroundColor = checked.value ? 'white' : '';
-      const elementsToChangeColor = document.querySelectorAll('h1, .card, .tag, a[href], .img, .translate, .dropdown-item');
-      const footerBackgroundColor = checked.value ? 'white' : '';
+  const body = document.body;
+  const isDarkMode = checked.value;
 
-      body.style.backgroundColor = backgroundColor;
-      body.style.color = textColor;
+  // Aplicar estilos ao body
+  body.style.backgroundColor = isDarkMode ? 'white' : '';
+  body.style.color = isDarkMode ? 'rgb(33, 53, 71)' : '';
 
-      elementsToChangeColor.forEach(element => {
-        element.style.color = textColor;
-        if (element.classList.contains('card')) {
-          element.style.backgroundColor = checked.value ? '#f9f9f9' : '';
-        } else if (element.classList.contains('tag', 'skill-name')) {
-          element.style.border = checked.value ? '1px solid rgb(0, 220, 130)' : '';
-          element.style.color = checked.value ? 'rgb(0, 220, 130)' : '';
-        } else if (element.tagName.toLowerCase() === 'a') {
-          element.style.color = checked.value ? 'rgb(33, 53, 71)' : '';
-        } else if (element.className === 'img') {
-          element.style.filter = checked.value ? 'contrast(0.5)' : '';
-        } else if (element.className === 'translate') {
-          element.style.filter = checked.value ? 'contrast(0.5)' : '';
-        } else if (element.className === 'dropdown-item') {
-          element.style.color = checked.value ? 'rgb(33, 53, 71)' : '';
-        }
-      });
+  // Atualizar elementos específicos
+  const elementsToChangeColor = document.querySelectorAll('h1, .card, .tag, a[href], .img, .translate, .dropdown-item, .title-name');
+  elementsToChangeColor.forEach(element => {
+    if (element.classList.contains('card')) {
+      element.style.backgroundColor = isDarkMode ? '#f9f9f9' : '';
+    } else if (element.classList.contains('tag') && element.classList.contains('skill-name')) {
+      element.style.border = isDarkMode ? '1px solid rgb(0, 220, 130)' : '';
+      element.style.color = isDarkMode ? 'rgb(0, 220, 130)' : '';
+    } else if (element.tagName.toLowerCase() === 'a') {
+      element.style.color = isDarkMode ? 'rgb(33, 53, 71)' : '';
+    } else if (element.classList.contains('img') || element.classList.contains('translate')) {
+      element.style.filter = isDarkMode ? 'contrast(0.5)' : '';
+    } else if (element.classList.contains('dropdown-item')) {
+      element.style.color = isDarkMode ? 'rgb(33, 53, 71)' : '';
+    } else if (element.classList.contains('title-name')) {
+      element.style.color = isDarkMode ? 'rgb(0, 220, 130)' : '';
+    }
+  });
 
-      const footer = document.getElementById('footer');
-      if (footer) {
-        footer.style.backgroundColor = footerBackgroundColor;
-      }
-    };
+  // Atualizar estilo do footer
+  const footer = document.getElementById('footer');
+  if (footer) {
+    footer.style.backgroundColor = isDarkMode ? 'white' : '';
+  }
+};
+
 
     onMounted(() => {
       const navbarTogglerIcon = document.querySelector('.navbar-toggler-icon');

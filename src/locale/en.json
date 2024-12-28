@@ -44,7 +44,10 @@
     "contacts": "Contacts",
     "courseType": "Course",
     "knowMore": "Saiba Mais",
-    "sendEmail": "Send Email"
+    "sendEmail": "Send Email",
+    "subject": "Subject",
+    "message": "Message"
+
 
 
 

@@ -45,7 +45,10 @@
     "contacts": "Contatos",
     "courseType": "Curso",
     "knowMore": "Saiba Mais",
-    "sendEmail": "Enviar Email"
+    "sendEmail": "Enviar Email",
+    "subject": "Assunto",
+    "message": "Mensagem"
+
 
 
 

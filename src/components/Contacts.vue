@@ -31,15 +31,15 @@
         <form ref="form" @submit.prevent="sendEmail">
           <div class="form-floating">
             <input required type="text" name="subject" class="form-control" id="floatingAssunto" />
-            <label for="floatingAssunto">Assunto</label>
+            <label for="floatingAssunto">{{ $t('subject') }}</label>
           </div>
           <div class="form-floating my-4">
             <input required type="text" name="from_name" class="form-control" id="floatingName" />
-            <label for="floatingName">Nome</label>
+            <label for="floatingName">E-mail</label>
           </div>
           <div class="form-floating">
             <textarea required class="form-control" name="message" id="floatingTextarea2" style="height: 100px"></textarea>
-            <label for="floatingTextarea2">Mensagem</label>
+            <label for="floatingTextarea2">{{ $t('message') }}</label>
           </div>
           <div class="mt-4">
             <Button type="submit">{{ $t('sendEmail') }}</Button>

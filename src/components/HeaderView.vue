@@ -3,22 +3,29 @@
     <div class="container-fluid">
       <div class="navbar-brand title-name animate__animated animate__shakeY fw-bold" @click="closeMobileMenu">
         {{ title }}</div>
-      <button  @click="closeMobileMenu" class="navbar-toggler animate__animated animate__flipInY" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button @click="closeMobileMenu" class="navbar-toggler animate__animated animate__flipInY" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse  animate__animated animate__shakeY" id="navbarNav">
         <ul class="navbar-nav ">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#" @click="closeMobileMenu">{{ $t('aboutMe') }}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/LucasAlmeida-jpg" target="_blank" @click="closeMobileMenu">{{
-        $t('github') }}</a>
+            <a class="nav-link" href="https://github.com/LucasAlmeida-jpg" target="_blank" @click="closeMobileMenu">Github<i
+                class="ms-2 pi pi-github"></i></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank"
-              @click="closeMobileMenu">Linkedin</a>
+              @click="closeMobileMenu"> Linkedin <i class="ms-2 pi pi-linkedin"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" 
+              :href="$i18n.locale === 'pt-BR' 
+                ?  '/files/curriculum_2024_pt_br.pdf'
+                : '/files/LucasCV.pdf' " 
+              target="_blank" >            
+              <i class="pi me-2 pi-download"></i> Download CV 
+            </a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#contacts"
@@ -26,7 +33,7 @@
           </li> -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="translate" src="../assets/images/translate.png" alt="">
+              <img class="translate" src="../assets/images/translate.png" alt=""> {{ $t('translation') }}
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item dropdown-item-mobile" @click="$i18n.locale = 'EN';"
@@ -134,6 +141,7 @@ input:checked+.slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
 .dropdown-item {
   width: 90px;
 }
@@ -162,16 +170,19 @@ input:checked+.slider:before {
   color: white !important;
   font-weight: 100;
 }
-.navbar-brand:hover{
+
+.navbar-brand:hover {
   color: white !important;
 }
+
 .wave-text {
   font-size: 2em;
   animation: wave 1.5s infinite;
   color: rgb(230, 219, 219);
   font-weight: bold;
 }
-.title-name{
+
+.title-name {
   color: var(--vt-bg-primary) !important;
 }
 
@@ -270,7 +281,7 @@ a {
 </style>
 
 <script>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 
 export default {
   setup() {
@@ -303,36 +314,39 @@ export default {
 
       changeBackgroundColor();
     };
-
+    const goTo = () => {
+      router.push('../files/LucasCV.pdf');
+    };
     const changeBackgroundColor = () => {
-  const body = document.body;
-  const isDarkMode = checked.value;
+      const body = document.body;
+      const isDarkMode = checked.value;
 
-  body.style.backgroundColor = isDarkMode ? 'white' : '';
-  body.style.color = isDarkMode ? 'rgb(33, 53, 71)' : '';
+      body.style.backgroundColor = isDarkMode ? 'white' : '';
+      body.style.color = isDarkMode ? 'rgb(33, 53, 71)' : '';
 
-  const elementsToChangeColor = document.querySelectorAll('h1, .card, .tag, a[href], .img, .translate, .dropdown-item, .title-name');
-  elementsToChangeColor.forEach(element => {
-    if (element.classList.contains('card')) {
-      element.style.backgroundColor = isDarkMode ? '#f9f9f9' : '';
-    } else if (element.classList.contains('tag') && element.classList.contains('skill-name')) {
-      element.style.border = isDarkMode ? '1px solid rgb(0, 220, 130)' : '';
-      element.style.color = isDarkMode ? 'rgb(0, 220, 130)' : '';
-    } else if (element.tagName.toLowerCase() === 'a') {
-      element.style.color = isDarkMode ? 'rgb(33, 53, 71)' : '';
-    } else if (element.classList.contains('img') || element.classList.contains('translate')) {
-      element.style.filter = isDarkMode ? 'contrast(0.5)' : '';
-    } else if (element.classList.contains('dropdown-item')) {
-      element.style.color = isDarkMode ? 'rgb(33, 53, 71)' : '';
-    }
-  });
+      const elementsToChangeColor = document.querySelectorAll('h1, .card, .tag, a[href], .img, .translate, .dropdown-item, .title-name');
+      elementsToChangeColor.forEach(element => {
+        if (element.classList.contains('card')) {
+          element.style.backgroundColor = isDarkMode ? '#f9f9f9' : '';
+        } else if (element.classList.contains('tag') && element.classList.contains('skill-name')) {
+          element.style.border = isDarkMode ? '1px solid rgb(0, 220, 130)' : '';
+          element.style.color = isDarkMode ? 'rgb(0, 220, 130)' : '';
+        } else if (element.tagName.toLowerCase() === 'a') {
+          element.style.color = isDarkMode ? 'rgb(33, 53, 71)' : '';
+        } else if (element.classList.contains('img') || element.classList.contains('translate')) {
+          element.style.filter = isDarkMode ? 'contrast(0.5)' : '';
+        } else if (element.classList.contains('dropdown-item')) {
+          element.style.color = isDarkMode ? 'rgb(33, 53, 71)' : '';
+        }
+      });
 
-  const footer = document.getElementById('footer');
-  if (footer) {
-    footer.style.backgroundColor = isDarkMode ? 'white' : '';
-  }
-};
+      const footer = document.getElementById('footer');
+      if (footer) {
+        footer.style.backgroundColor = isDarkMode ? 'white' : '';
+      }
+    };
 
+  
 
     onMounted(() => {
       const navbarTogglerIcon = document.querySelector('.navbar-toggler-icon');
@@ -347,7 +361,7 @@ export default {
       changeBackgroundColor,
       title,
       onThemeToggler,
-      iconClass
+      iconClass,
     };
   }
 };

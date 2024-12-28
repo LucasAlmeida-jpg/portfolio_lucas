@@ -1,7 +1,7 @@
 <template>
   <div class="mainViewSection mb-5">
     <section class="slide-in">
-      <AnimationView />
+      <!-- <AnimationView /> -->
       <div class="text-center">
         <h1>
           <span v-for="(char, index) in animatedText" :key="index">{{ char }}</span>

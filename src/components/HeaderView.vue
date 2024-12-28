@@ -67,6 +67,7 @@
   transition: color 0.3s ease-in-out;
 }
 
+
 .translate {
   filter: invert(1);
   width: 20px;
@@ -169,6 +170,9 @@ input:checked+.slider:before {
   animation: wave 1.5s infinite;
   color: rgb(230, 219, 219);
   font-weight: bold;
+}
+.title-name{
+  color: var(--vt-bg-primary) !important;
 }
 
 .list-group-item {

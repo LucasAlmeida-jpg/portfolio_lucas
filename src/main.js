@@ -30,7 +30,7 @@ app.use(PrimeVue, {
     }
 });
 const i18n = createI18n({
-    locale: 'EN',
+    locale: 'PT',
     messages: {
         EN: EN,
         PT: PT

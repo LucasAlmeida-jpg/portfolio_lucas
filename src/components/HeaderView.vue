@@ -19,11 +19,10 @@
               @click="closeMobileMenu"> Linkedin <i class="ms-2 pi pi-linkedin"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" 
-              :href="$i18n.locale === 'pt-BR' 
-                ?  '/files/curriculum_2024_pt_br.pdf'
-                : '/files/LucasCV.pdf' " 
-              target="_blank" >            
+            <a 
+              class="nav-link" 
+              :href="$i18n.locale === 'EN' ? '/files/LucasCVEnglish.pdf' : '/files/LucasCV.pdf'" 
+              target="_blank">            
               <i class="pi me-2 pi-download"></i> Download CV 
             </a>
           </li>

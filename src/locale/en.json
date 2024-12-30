@@ -1,7 +1,6 @@
 {
     "aboutMe": "About Me",
     "habilities": "Skills",
-    "contact": "Contact",
     "github" :"GitHub",
     "aboutLucas": "I am Lucas, I graduated in Internet Systems Technology from the Federal Institute of São Paulo (IFSP São João da Boa Vista). I am passionate about Front End, with expertise in Vue.js 3.",
     "frontEnd": "Software Developer (MID)",
@@ -30,7 +29,6 @@
     "thisEmail": "this email.",
     "contact": "Contact",
     "conclusion": "English course completion using the Callan Method at Institute USK Callan Method at Poços de Caldas - MG",
-    "skills": "Skills",
     "someSkills": "Some of my technical skills.",
     "tools": "Tools",
     "learning": "I am focus in", 

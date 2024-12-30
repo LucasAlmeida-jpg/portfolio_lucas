@@ -11,12 +11,12 @@
       <div class="collapse navbar-collapse  animate__animated animate__shakeY" id="navbarNav">
         <ul class="navbar-nav ">
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/LucasAlmeida-jpg" target="_blank" @click="closeMobileMenu">Github<i
-                class="ms-2 pi pi-github"></i></a>
+            <a class="nav-link" href="https://github.com/LucasAlmeida-jpg" target="_blank" @click="closeMobileMenu"><i
+                class="me-2 pi pi-github"></i>Github</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank"
-              @click="closeMobileMenu"> Linkedin <i class="ms-2 pi pi-linkedin"></i></a>
+             <a class="nav-link" href="https://www.linkedin.com/in/lucas-almeida-425b781b1/" target="_blank"
+              @click="closeMobileMenu"><i class="me-2 pi pi-linkedin"></i>Linkedin</a>
           </li>
           <li class="nav-item">
             <a 
@@ -323,7 +323,7 @@ export default {
       body.style.backgroundColor = isDarkMode ? 'white' : '';
       body.style.color = isDarkMode ? 'rgb(33, 53, 71)' : '';
 
-      const elementsToChangeColor = document.querySelectorAll('h1, .card, .tag, a[href], .img, .translate, .dropdown-item, .title-name');
+      const elementsToChangeColor = document.querySelectorAll('h1, .card, .tag, a[href], .img, .translate, .dropdown-item, .title-name, .skill-name, .info, .nav-link');
       elementsToChangeColor.forEach(element => {
         if (element.classList.contains('card')) {
           element.style.backgroundColor = isDarkMode ? '#f9f9f9' : '';
@@ -336,6 +336,12 @@ export default {
           element.style.filter = isDarkMode ? 'contrast(0.5)' : '';
         } else if (element.classList.contains('dropdown-item')) {
           element.style.color = isDarkMode ? 'rgb(33, 53, 71)' : '';
+        } else if (element.classList.contains('skill-name')) {
+          element.style.color = isDarkMode ? 'black' : '';
+        } else if (element.classList.contains('info')) {
+          element.style.color = isDarkMode ? 'black' : '';
+        } else if (element.classList.contains('nav-link')) {
+          element.style.color = isDarkMode ? 'black' : '';
         }
       });
 

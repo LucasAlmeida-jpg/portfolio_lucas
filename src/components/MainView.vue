@@ -17,8 +17,7 @@
           </div>
         </div>
         <ScrollTop />
-        <span
-          class="slidedown-icon h-8 w-8 text-primary-contrast rounded-full inline-flex items-center justify-center">
+        <span class="slidedown-icon h-8 w-8 text-primary-contrast rounded-full inline-flex items-center justify-center">
           <i class="pi pi-arrow-down" />
         </span>
       </div>
@@ -34,7 +33,7 @@
           <li class="nav-item" role="presentation">
             <div class="tag nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
               role="tab" aria-controls="pills-profile" aria-selected="false">{{
-        $t('educational_tag') }}</div>
+            $t('educational_tag') }}</div>
           </li>
         </ul>
 
@@ -48,13 +47,14 @@
               <template #content="slotProps">
                 <div v-if="slotProps.index === 0" data-aos="fade-left" data-aos-offset="200">
                   <div class="mb-1 d-flex align-items-center">
-                    <span class=" text">Creators LLC - {{ $t('frontEnd') }}</span><span
-                      class="tag ms-3">Remote</span>
+                    <span class=" text">Creators LLC - {{ $t('frontEnd') }}</span><span class="tag ms-3">Remote</span>
                   </div>
                   <div class="mt-5">
                     <p>{{ $t('experience') }}
                       <transition name="move">
-                        <span class="role" @click="changeState">{{ seeMore }}</span>
+                        <span class="role" @click="changeState"> <i
+                            :class="showDetails ? 'pi pi-arrow-up' : 'pi pi-arrow-down'"></i>
+                        </span>
                       </transition>
                     </p>
                     <transition name="fade">
@@ -88,12 +88,12 @@
                 </div>
               </template>
               <template #opposite="slotProps">
-                <img data-aos="fade-right" data-aos-offset="200" v-if="slotProps.index === 0" class="img-presentation presentation img-computer mb-5"
-                  src="../assets/images/computer.svg" alt="" />
-                <img data-aos="fade-right" data-aos-offset="200" v-else-if="slotProps.index === 1" class="img-presentation presentation img-computer my-5"
-                  src="../assets/images/html.svg" alt="" />
-                <img data-aos="fade-right" data-aos-offset="200" v-else-if="slotProps.index === 2" class="img-presentation img-computer mt-5"
-                  src="../assets/images/achieve.svg" alt="" />
+                <img data-aos="fade-right" data-aos-offset="200" v-if="slotProps.index === 0"
+                  class="img-presentation presentation img-computer mb-5" src="../assets/images/computer.svg" alt="" />
+                <img data-aos="fade-right" data-aos-offset="200" v-else-if="slotProps.index === 1"
+                  class="img-presentation presentation img-computer my-5" src="../assets/images/html.svg" alt="" />
+                <img data-aos="fade-right" data-aos-offset="200" v-else-if="slotProps.index === 2"
+                  class="img-presentation img-computer mt-5" src="../assets/images/achieve.svg" alt="" />
               </template>
             </Timeline>
 
@@ -143,8 +143,8 @@
 
   <div class="mainViewSection">
     <div>
-        <Contacts />
-      </div>   
+      <Contacts />
+    </div>
   </div>
 </template>
 
@@ -183,7 +183,7 @@ export default {
     const typingSpeed = 100;
     const showArrow = ref(true);
     const showDetails = ref(false);
-    const seeMore = ref('+');
+    const seeMore = ref('<i class="pi pi-arrow-down"></i>');
 
     const typeText = () => {
       if (currentIndex.value < fullText.value.length) {
@@ -215,9 +215,10 @@ export default {
 
     const changeState = () => {
       showDetails.value = !showDetails.value;
-      seeMore.value = showDetails.value ? '-' : '+';
+      seeMore.value = showDetails.value
+        ? '<i class="pi pi-arrow-up"></i>'
+        : '<i class="pi pi-arrow-down"></i>';
     };
-
     const onThemeToggler = () => {
       const root = document.getElementsByTagName('html')[0];
 
@@ -264,7 +265,6 @@ export default {
 
 
 <style scoped>
-
 .main-title {
   margin: 50px 0px !important;
 }
@@ -279,13 +279,15 @@ section {
   cursor: pointer;
   font-size: 12px;
 }
-.emoji{
+
+.emoji {
   position: absolute;
-    width: 85px;
-    top: -40px;
-    right: -40px;
-    transform: rotate(30deg);
+  width: 85px;
+  top: -40px;
+  right: -40px;
+  transform: rotate(30deg);
 }
+
 .move-enter-active,
 .move-leave-active {
   transition: transform 2s ease;
@@ -340,9 +342,11 @@ section {
   border-radius: 50%;
   padding: 3px;
 }
-:deep(.p-timeline-event-connector){
-background-color: #00DC82;
+
+:deep(.p-timeline-event-connector) {
+  background-color: #00DC82;
 }
+
 .cursor {
   animation: blink 1s infinite;
   color: white !important;

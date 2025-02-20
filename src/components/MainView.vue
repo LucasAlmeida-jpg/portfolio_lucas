@@ -47,6 +47,21 @@
               <template #content="slotProps">
                 <div v-if="slotProps.index === 0" data-aos="fade-left" data-aos-offset="200">
                   <div class="mb-1 d-flex align-items-center">
+                    <span class=" text">Onpoint Insurtech - {{ $t('frontEnd') }}</span><span class="tag ms-3">Remote</span>
+                  </div>
+                  <div class="mt-5">
+                    <p>{{ $t('onpointInsurtech') }}
+                      <!-- <transition name="move">
+                        <span class="role" @click="changeState"> <i
+                            :class="showDetails ? 'pi pi-arrow-up' : 'pi pi-arrow-down'"></i>
+                        </span>
+                      </transition> -->
+                    </p>                   
+                    <span>(Janeiro de 2025 - {{ $t('currently') }})</span>
+                  </div>
+                </div>
+                <div v-if="slotProps.index === 1" data-aos="fade-left" data-aos-offset="200">
+                  <div class="mb-1 d-flex align-items-center">
                     <span class=" text">Creators LLC - {{ $t('frontEnd') }}</span><span class="tag ms-3">Remote</span>
                   </div>
                   <div class="mt-5">
@@ -65,10 +80,10 @@
                         <p>{{ $t('conclusionNanads') }}</p>
                       </div>
                     </transition>
-                    <span>(2022 - {{ $t('currently') }})</span>
+                    <span>(Abril de 2022 - Janeiro de 2025)</span>
                   </div>
                 </div>
-                <div v-else-if="slotProps.index === 1" data-aos="fade-left" data-aos-offset="200">
+                <div v-else-if="slotProps.index === 2" data-aos="fade-left" data-aos-offset="200">
                   <div class="mb-1 d-flex align-items-center">
                     <span class=" text">{{ $t('ste_pl') }}</span><span class="tag ms-3">Remote</span>
                   </div>
@@ -77,7 +92,7 @@
                     <span> (Mar de 2021 - Abr de 2022)</span>
                   </div>
                 </div>
-                <div v-else-if="slotProps.index === 2" data-aos="fade-left" data-aos-offset="200">
+                <!-- <div v-else-if="slotProps.index === 3" data-aos="fade-left" data-aos-offset="200">
                   <div class="mb-1 d-flex align-items-center">
                     <span class=" text">{{ $t('ste_pl_jr') }}</span><span class="tag ms-3">Remote</span>
                   </div>
@@ -85,7 +100,7 @@
                     <p>{{ $t('exp_stefanini_pl') }}</p>
                     <span> (Jan de 2020 - Fev de 2021)</span>
                   </div>
-                </div>
+                </div> -->
               </template>
               <template #opposite="slotProps">
                 <img data-aos="fade-right" data-aos-offset="200" v-if="slotProps.index === 0"

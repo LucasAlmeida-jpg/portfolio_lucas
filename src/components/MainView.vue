@@ -146,7 +146,7 @@
   <!-- <section>
     <PortfolioView />
   </section> -->
-  <section class="skills mt-5">
+  <!-- <section class="skills mt-5">
     <div class="text-center">
       <h1 data-aos="fade-left" data-aos-offset="200">{{ $t('skills') }}</h1>
       <p>{{ $t('someSkills') }}</p>
@@ -154,7 +154,7 @@
         <Habilities />
       </div>
     </div>
-  </section>
+  </section> -->
 
   <div class="mainViewSection">
     <div>

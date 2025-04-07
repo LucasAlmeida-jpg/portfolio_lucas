@@ -4,7 +4,7 @@
         <span>{{ $t('coded') }}</span>
        </div>
        <div>
-        <span>© {{ currentYear }} Lucas Gouvêa de Almeida </span>   
+        <span>© {{ currentYear }} Lucas Almeida </span>   
        </div>
     </footer>
 </template>

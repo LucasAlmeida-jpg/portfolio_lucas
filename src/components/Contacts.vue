@@ -16,8 +16,8 @@
     <div class="row mt-3 d-flex align-items-center justify-content-between">
       <div class="col-md-6" data-aos="fade-right" data-aos-offset="200">
         <div class="personal-info">
-          <h2 class="mb-4">Lucas Gouvêa de Almeida</h2>
-          <p class="d-flex align-items-center gap-2 info"><i class="pi pi-envelope"></i> lucasalmeidagouvea123@gmail.com</p>
+          <h2 class="mb-4">Lucas Almeida</h2>
+          <!-- <p class="d-flex align-items-center gap-2 info"><i class="pi pi-envelope"></i> lucasalmeidagouvea123@gmail.com</p> -->
           <p class="d-flex align-items-center gap-2 info"><i class="pi pi-map-marker"></i> Poços de Caldas - MG - Brasil</p>
           <p class="d-flex align-items-center gap-2">
             <i class="pi pi-github"></i><a href="https://github.com/LucasAlmeida-jpg" target="_blank">Github</a>
